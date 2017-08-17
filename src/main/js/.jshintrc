@@ -1,0 +1,40 @@
+// http://jshint.com/docs/options/
+{
+    /* enforcing options */
+    "bitwise": true,
+    "curly": true,
+    "eqeqeq": true,
+    "esversion": 6,
+    "forin": true,
+    "freeze": true,
+    "funcscope": true,
+    "futurehostile": true,
+    "globals": ["define", "require", "console"],
+    "noarg": true,
+    "nocomma": true,
+    "nonbsp": true,
+    "nonew": true,
+    "shadow": true,
+    "undef": true,
+    "unused": "vars",
+    // nice to have
+    "singleGroups": false,
+    "strict": false,
+    "varstmt": false,
+
+    /* relaxing options */
+    "asi": true,
+    "boss": true,
+    "debug": true,
+    "loopfunc": true,
+    "noyield": true,
+    // nice to have
+    "expr": true,
+
+    /* environment */
+    "browser": true,
+    "dojo": true,
+    "module": true,
+    "node": true,
+    "worker": true
+}

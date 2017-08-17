@@ -1,0 +1,61 @@
+{
+    "name": "sample_camera",
+    "version": "0.0.1",
+    "dependencies": {
+        "esri": "~4.4.0",
+        "apprt-vue": "^4.1.1-SNAPSHOT"
+    },
+    "main": "",
+    "layout-widgets": [
+        {
+            "widgetRole": "camera",
+            "template": "seasons",
+            "window": {
+                "autofocus": false,
+                "dockTool": "cameraToggleTool",
+                "minimizeOnClose": true,
+                "marginBox": {
+                    "w": 300,
+                    "h": 255,
+                    "b": 100,
+                    "l": 50
+                }
+            }
+        }
+    ],
+    "components": [
+        {
+            "name": "CameraControlFactory",
+            "provides": "dijit.Widget",
+            "instanceFactory": true,
+            "properties": {
+                "widgetRole": "camera"
+            },
+            "references": [
+                {
+                    "name": "_mapWidgetModel",
+                    "providing": "map-widget.MapWidgetModel"
+                }
+            ]
+        },
+        {
+            "name": "CameraToggleTool",
+            "impl": "ct/tools/Tool",
+            "provides": [
+                "ct.tools.Tool"
+            ],
+            "propertiesConstructor": true,
+            "properties": {
+                "id": "cameraToggleTool",
+                "title": "${ui.windowTitle}",
+                "tooltip": "${tool.tooltip}",
+                "iconClass": "icon-camera",
+                "toolRole": "toolset",
+                "togglable": true,
+                "rules": {
+                    "noGroup": true
+                }
+            }
+        }
+    ]
+}

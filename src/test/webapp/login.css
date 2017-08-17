@@ -1,0 +1,117 @@
+/*
+*
+*styles for login window
+*
+*/
+.start.notheme .esriSignInDialog {
+    font-family: Helvetica, 'sans-serifs';
+    background-color: #48484B;
+    border: none;
+    color: #fff;
+    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25) ;
+    -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25) ;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25) ;
+    font-size: .688em;
+    padding: 0;
+}
+.start.notheme .esriSignInDialog .dijitDialogTitleBar{
+    background-color: #2C2D2E;
+    font-size: 1.5em;
+    padding: 5px 8px;
+    cursor: move;
+}
+.start.notheme .esriSignInDialog .dijitDialogCloseIcon{
+    float: right;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+    right: 1px;
+}
+.start.notheme .esriSignInDialog .dijitDialogPaneContentArea{
+    padding: 5px 7px 4px 7px;
+}
+.start.notheme .esriSignInDialog .dijitDialogPaneActionBar{
+    padding: 5px 8px 14px;
+    text-align: right;
+}
+.start.notheme .esriSignInDialog .dijitButtonNode{
+    padding: 4px 12px;
+    color: #fff;
+    font-weight: bold;
+    background-color: #12A5F4;
+}
+.start.notheme .dijitDialogPaneActionBar .dijitButton:last-child .dijitButtonNode{
+    background: #7C7C7C;
+}
+.start.notheme .esriSignInDialog .dijitButtonHover .dijitButtonNode{
+    background-color: #2AAEF5;
+}
+.start.notheme .esriSignInDialog .dijitTextBox {
+    background-color: #FFF;
+     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #48484B;
+    color: #000;
+    margin-top: 3px;
+}
+.start.notheme .esriSignInDialog .dijitTextBox .dijitInputField {
+    padding-left: 5px;
+}
+.start.notheme .esriSignInDialog .dijitInputInner {
+    border: 0 !important;
+    vertical-align: middle !important;
+    background-color: transparent !important;
+    width: 100% !important;
+}
+.start.notheme .esriSignInDialog .dijitTextBox .dijitInputInner{
+    padding: 1px 2px 1px 0;
+    outline: none;
+}
+.start.notheme .esriSignInDialog .dijitTextBox .dijitValidationContainer,
+.start.notheme .esriSignInDialog .dijitToggleButtonIconChar {
+    display: none !important;
+}
+.start.notheme .dijitButton{
+    margin: 0.2em;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.start.notheme .dijitOffScreen {
+    position: absolute;
+    left: 50%;
+    top: -10000px;
+}
+.start.notheme .esriSignInDialog  .esriErrorMsg{
+    background: #C0392B;
+    padding: 3px;
+}
+.start.notheme .esriSignInDialog  .dijitTextBoxHover,
+.start.notheme .esriSignInDialog  .dijitTextBoxFocused{
+    border-color: #12A5F4;
+    -ms-transition-duration: .1s;
+    -moz-transition-duration: .1s;
+    -webkit-transition-duration: .1s;
+    -o-transition-duration: .1s;
+    transition-duration: .1s;
+}
+
+.start.notheme .esriSignInDialog .dijitTextBoxError{
+    border-color: #C0392B;
+    border-right-width: 10px;
+    position: relative;
+}
+.start.notheme .esriSignInDialog .dijitTextBoxError:after {
+    content: '!';
+    position: absolute;
+    right: -7px;
+    top: 1px;
+    color: #FFF;
+    font-size: 17px;
+}
+
+/*IE and FF calculates the textbox input smaller so that the surround error container doesn't fit'*/
+.dj_ie .start.notheme .dijitInputInner,
+.dj_gecko .start.notheme .dijitInputInner{
+    height: 22px;
+}

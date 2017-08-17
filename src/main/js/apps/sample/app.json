@@ -1,0 +1,51 @@
+{
+    "load": {
+        "allowedBundles": [
+            "system",
+            "splashscreen",
+            "templatelayout",
+            "template-seasons",
+            "theme-everlasting",
+            "toolset",
+            "map-init",
+            "sample_camera"
+        ]
+    },
+    "bundles": {
+        "map-init": {
+            "Config": {
+                "map": {
+                    "basemap": "streets"
+                },
+                "view": {
+                    "viewmode": "2D",
+                    "extent": {
+                        "xmin": 600000,
+                        "ymin": 5800000,
+                        "xmax": 1700000,
+                        "ymax": 7600000,
+                        "spatialReference": 3857
+                    }
+                }
+            }
+        },
+        "toolset": {
+            "ToolsetManager": {
+                "toolsets": [
+                    {
+                        "id": "mapview_tools",
+                        "tools": [
+                            "*"
+                        ],
+                        "registerWidget": {
+                            "widgetRole": "mapview_tools"
+                        },
+                        "container": "ignore",
+                        "windowType": "container",
+                        "cssClass": "muted"
+                    }
+                ]
+            }
+        }
+    }
+}
