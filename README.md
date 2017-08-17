@@ -13,6 +13,11 @@ This Maven project includes some of the core concepts for developing UI driven b
 * How is my **layout** integrated into **map.apps templates**?
 * How do **gulp** processes modify my source code?
 
+## Requirements
+
+* map.apps 4.2.0
+* all resources from `CD-Contents/software/m2-repository` are copied manually to your local maven repository (e.g. `%UserProfile%/.m2`).
+
 ## Usage
 
 Start the integrated jetty server with `mvn jetty:run` and activate the `watch-all` maven profile in order to run the samples.
