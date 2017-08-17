@@ -4,10 +4,11 @@ This is project demonstrates how to build maintainable UI elements or widgets in
 
 ## Contents
 
-This Maven project includes some of the core concepts for developing UI driven bundles in map.apps. Use this readme as a guide for what to discover in this blueprint project. After studying this project, you should be able to answer the following questions:
+This Maven project includes some of the core concepts for developing UI driven bundles in map.apps. Use this readme as a guide for what to discover in this project. After studying this project, you should be able to answer the following questions:
 
 * How can I use **Vue.js** to build widgets following the **MVVM** pattern?
 * How does the **MVVM** pattern help to make UI components and models **testable**?
+* How do I build widgets with ready-to-use UI components from Vuetify.js?
 * How can the view-model interact via **bindings** with (Accessor) models from the **ESRI ArcGIS API for JavaScript**?
 * How is my **layout** integrated into **map.apps templates**?
 * How do **gulp** processes modify my source code?
@@ -34,4 +35,5 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 ## References
 
 * [Vue.js](https://vuejs.org)
+* [Vuetify.js](https://vuetifyjs.com)
 * [Gulp](http://gulpjs.com)
