@@ -5,6 +5,6 @@
     "devDependencies": {
         "gulp": "^3.9.1",
         "run-sequence": "^1.2.2",
-        "ct-mapapps-gulp-js": "^0.0.9"
+        "ct-mapapps-gulp-js": "^0.0.18"        
     }
 }
