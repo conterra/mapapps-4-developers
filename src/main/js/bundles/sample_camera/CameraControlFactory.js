@@ -2,6 +2,7 @@ import CameraControls from "./CameraControls.vue";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import Binding from "apprt-binding/Binding";
+import {ifDefined, debounce, debounceOrCancel} from "apprt-binding/Transformers";
 
 function equalsAlmost(a, b, eps) {
     eps = eps || 1e-8;
@@ -23,22 +24,11 @@ class CameraWidgetFactory {
 
     declareModelToVueBinding() {
         return Binding.create()
-                .syncAll("viewmode", "zoom")
-                .sync("rotation", (v) => {
-                    return v || 0;
-                })
-                .syncToRight("center", ["latitude", "longitude"], (center, {ignore}) => {
-                    return center ? [center.latitude, center.longitude] : ignore();
-                })
-                .sync("camera", ["heading", "tilt"],
-                        this._pickHeadingTiltFromCamera,
-                        (values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue()))
+                .syncAll("viewmode", "zoom", "rotation", ifDefined(), ifDefined(debounce()))
+                .syncToRight("center", ["latitude", "longitude"], ifDefined(center => [center.latitude, center.longitude]))
+                .sync("camera", ["heading", "tilt"], ifDefined(({heading, tilt}) => [heading, tilt]),
+                        debounceOrCancel(15,(values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue())))
                 .enable();
-    }
-
-    _pickHeadingTiltFromCamera(camera) {
-        let {heading, tilt} = camera || {heading: 0, tilt: 0};
-        return [heading, tilt];
     }
 
     _putHeadingTiltIntoCamera([heading, tilt], camera) {

@@ -3,7 +3,8 @@
     "version": "0.0.1",
     "dependencies": {
         "esri": "~4.4.0",
-        "apprt-vue": "^4.1.1-SNAPSHOT"
+        "apprt-vue": "^4.2.0",
+        "apprt-vuetify": "^4.2.0"
     },
     "main": "",
     "layout-widgets": [
@@ -15,8 +16,8 @@
                 "dockTool": "cameraToggleTool",
                 "minimizeOnClose": true,
                 "marginBox": {
-                    "w": 300,
-                    "h": 255,
+                    "w": 355,
+                    "h": 455,
                     "b": 100,
                     "l": 50
                 }

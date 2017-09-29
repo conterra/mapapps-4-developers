@@ -1,9 +1,10 @@
 <template>
-    <div>
-        <span><input type="radio" value="2D" v-model="selected" />2D</span>
-        <br/>
-        <span><input type="radio" value="3D" v-model="selected" />3D</span>
-    </div>
+    <v-layout>
+        <v-radio-group v-model="selected" :mandatory="false">
+            <v-radio label="2D" value="2D"></v-radio>
+            <v-radio label="3D" value="3D"></v-radio>
+        </v-radio-group>
+    </v-layout>
 </template>
 <script>
     export default {
@@ -11,14 +12,14 @@
             // external property is named "value" so v-model can be used
             value: String
         },
-        data: function() {
+        data: function () {
             // radio v-model uses "selected" state
             return {
                 selected: this.value
             };
         },
         watch: {
-            selected: function(newVal) {
+            selected: function (newVal) {
                 // on selected state we trigger in input event to match v-model component specification
                 this.$emit("input", newVal);
             }
