@@ -12,14 +12,69 @@
             "theme-everlasting",
             "toolset",
             "map-init",
+            "agssearch",
             "sample_camera"
         ]
     },
     "bundles": {
+        "agssearch": {
+            "AGSStore": [
+                {
+                    "title": "St\u00F6rungen",
+                    "description": "Durchsucht die Beschreibung aller St\u00F6rungsmeldugen.",
+                    "omniSearchLabelAttr": "${details} (${melder})",
+                    "omniSearchSearchAttr": "details",
+                    "idProperty": "objectid",
+                    "url": "https://services.conterra.de/arcgis/rest/services/training/stoerungen/MapServer/0",
+                    "useIn": ["omnisearch", "selection"],
+                    "filterOptions": {
+                        "suggestContains": true
+                    },
+                    "omniSearchTypingDelay": 500,
+                    "omniSearchPageSize": 20,
+                    "omniSearchDefaultLabel": "Suchbegriff eingeben...",
+                    "fetchIdProperty": true,
+                    "id": "stoerungStore",
+                    "pid": "agssearch-AGSStore-0",
+                    "type": "Dynamisch"
+                }
+            ]
+        },
         "map-init": {
             "Config": {
+                "basemaps": [{
+                    "id": "streets",
+                    "basemap": "streets",
+                    "title": "Streets"
+                },{
+                    "id": "satellite",
+                    "basemap": "satellite",
+                    "title": "Satellit"
+                },{
+                    "id": "hybrid",
+                    "basemap": "hybrid",
+                    "title": "Hybrid"
+                }],
                 "map": {
-                    "basemap": "streets"
+                    "layers": [
+                        {
+                            "title": "Gemeinden",
+                            "type": "AGS_FEATURE",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/0",
+                            "definitionExpression": "kgs8 LIKE '05515%'"
+                        },
+                        {
+                            "title": "Kreise",
+                            "type": "AGS_FEATURE",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/1",
+                            "definitionExpression": "land_nr = 5"
+                        },
+                        {
+                            "title": "Bundeslaender",
+                            "type": "AGS_FEATURE",
+                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/2"
+                        }
+                    ]
                 },
                 "view": {
                     "viewmode": "2D",
