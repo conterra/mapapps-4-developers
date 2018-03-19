@@ -92,12 +92,10 @@
             "ToolsetManager": {
                 "toolsets": [
                     {
-                        "id": "mapview_tools",
-                        "tools": [
-                            "*"
-                        ],
+                        "id": "defaultToolSet",
+                        "tools": ["*"],
                         "registerWidget": {
-                            "widgetRole": "mapview_tools"
+                            "widgetRole": "map_topleft"
                         },
                         "container": "ignore",
                         "windowType": "container",
