@@ -1,5 +1,9 @@
 {
     "load": {
+        "bundleLocations": [
+            "localbundles",
+            "bundles"
+        ],
         "allowedBundles": [
             "system",
             "splashscreen",

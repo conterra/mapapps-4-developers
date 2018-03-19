@@ -37,7 +37,7 @@
             <scope>test</scope>
         </dependency>
         <!-- add all js dependencies to let it be a "none" remote project -->
-        <dependency>
+        <!--<dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-api</artifactId>
         </dependency>
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>de.conterra.js</groupId>
             <artifactId>babel-polyfill</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
     <build>
         <pluginManagement>
