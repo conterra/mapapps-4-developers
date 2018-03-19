@@ -2,9 +2,9 @@
     "name": "sample_camera",
     "version": "0.0.1",
     "dependencies": {
-        "esri": "~4.4.0",
-        "apprt-vue": "^4.2.0",
-        "apprt-vuetify": "^4.2.0"
+        "esri": "^4.5.0",
+        "apprt-vue": "^4.3.0",
+        "apprt-vuetify": "^4.3.0"
     },
     "main": "",
     "layout-widgets": [
