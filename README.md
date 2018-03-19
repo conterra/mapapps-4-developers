@@ -15,13 +15,15 @@ This Maven project includes some of the core concepts for developing UI driven b
 
 ## Requirements
 
-* map.apps 4.2.0
+* map.apps 4.3.0
 * all resources from `CD-Contents/software/m2-repository` are copied manually to your local maven repository (e.g. `%UserProfile%/.m2`).
 
 ## Usage
 
 Start the integrated jetty server with `mvn jetty:run` and activate the `watch-all` maven profile in order to run the samples.
 The profile will start a gulp task that watches for changes in your source code.
+
+Compress and upload your apps and bundles with mvn `mvn clean install` and activate the `compress` and `upload` to minimize your code and deploy a published app at your remote instance.
 
 ### Running the tests
 
