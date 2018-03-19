@@ -379,6 +379,33 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>com.google.code.maven-replacer-plugin</groupId>
+                <artifactId>replacer</artifactId>
+                <executions>
+                    <execution>
+                        <id>replace some config settings in app.json</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>replace</goal>
+                        </goals>
+                        <configuration>
+                            <basedir>${js.build.outputPath}</basedir>
+                            <includes>
+                                <include>**/app.json</include>
+                            </includes>
+                            <regex>true</regex>
+                            <replacements>
+                                <replacement>
+                                    <!-- remove bundleLocations from app.json -->
+                                    <token>\s*"bundleLocations"\s*:\s*\[\s*"localbundles"\s*,\s*"bundles"\s*\]\s*,\s*</token>
+                                    <value></value>
+                                </replacement>
+                            </replacements>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <properties>
@@ -463,6 +490,105 @@
                                     <arguments>
                                         <argument>com.github.eirslett:frontend-maven-plugin:gulp@watch-changes</argument>
                                     </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>compress</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.conterra.jsregistry</groupId>
+                        <artifactId>ct-jsregistry-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>calculate js dependencies</id>
+                                <goals>
+                                    <goal>calculateDependencies</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>optimize js</id>
+                                <goals>
+                                    <goal>optimizeJS</goal>
+                                </goals>
+                                <configuration>
+                                    <hasFeatures>
+                                        <ct-debug>false</ct-debug>
+                                    </hasFeatures>
+                                    <jsFiles>
+                                        <excludes>
+                                            <exclude>apps/**</exclude>
+                                            <exclude>**/tests/**</exclude>
+                                        </excludes>
+                                    </jsFiles>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>optimize CSS</id>
+                                <goals>
+                                    <goal>optimizeCSS</goal>
+                                </goals>
+                                <phase>compile</phase>
+                                <configuration>
+                                    <cssFiles>
+                                        <includes>
+                                            <include>bundles/*/*/*.css</include>
+                                        </includes>
+                                        <excludes>
+                                            <exclude>**/themeSettings.css</exclude>
+                                        </excludes>
+                                    </cssFiles>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>upload</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.conterra.mapapps</groupId>
+                        <artifactId>mapapps-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>deploy-apps</id>
+                                <goals>
+                                    <goal>deployApps</goal>
+                                </goals>
+                                <configuration>
+                                    <sourceDirectory>${js.build.outputPath}/apps</sourceDirectory>
+                                    <outputDirectory>${js.build.outputPath}/apps</outputDirectory>
+                                    <skipDeploy>false</skipDeploy>
+                                    <deployAsApp>true</deployAsApp>
+                                    <appEditorState>PUBLISHED</appEditorState>
+                                    <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
+                                    <username>admin</username>
+                                    <password>admin</password>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>de.conterra.jsregistry</groupId>
+                        <artifactId>ct-jsregistry-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>deploy bundles</id>
+                                <goals>
+                                    <goal>deployJSPackage</goal>
+                                </goals>
+                                <configuration>
+                                    <registryEndpoint>${mapapps.remote.base}/resources/jsregistry</registryEndpoint>
+                                    <username>admin</username>
+                                    <password>admin</password>
                                 </configuration>
                             </execution>
                         </executions>
