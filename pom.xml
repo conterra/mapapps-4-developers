@@ -40,12 +40,15 @@
         <!--<dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-api</artifactId>
-        </dependency>
-        <dependency>
+        </dependency>-->
+
+        <!-- include in map.apps 4.4.0 for vue-devtools support -->
+        <!-- <dependency>
             <groupId>org.vuejs</groupId>
             <artifactId>vue</artifactId>
             <classifier>dev</classifier>
         </dependency>
+
         <dependency>
             <groupId>org.vuetifyjs</groupId>
             <artifactId>vuetify</artifactId>
