@@ -45,7 +45,7 @@
                 "basemaps": [{
                     "id": "streets",
                     "basemap": "streets",
-                    "title": "Streets"
+                    "title": "Strassen"
                 },{
                     "id": "satellite",
                     "basemap": "satellite",
