@@ -37,13 +37,13 @@
             <scope>test</scope>
         </dependency>
         <!-- add all js dependencies to let it be a "none" remote project -->
-        <!--<dependency>
+        <dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-api</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- include in map.apps 4.4.0 for vue-devtools support -->
-        <!-- <dependency>
+        <dependency>
             <groupId>org.vuejs</groupId>
             <artifactId>vue</artifactId>
             <classifier>dev</classifier>
@@ -67,14 +67,6 @@
             <artifactId>dstore</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>put-selector</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>xstyle</artifactId>
-        </dependency>
-        <dependency>
             <groupId>com.esri.js</groupId>
             <artifactId>ags-js-api4</artifactId>
         </dependency>
@@ -93,7 +85,7 @@
         <dependency>
             <groupId>de.conterra.js</groupId>
             <artifactId>babel-polyfill</artifactId>
-        </dependency>-->
+        </dependency>
     </dependencies>
     <build>
         <pluginManagement>
@@ -415,11 +407,11 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
         <!-- JS lib versions -->
-        <mapapps.version>4.3.0</mapapps.version>
+        <mapapps.version>4.4.0</mapapps.version>
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.1.6</ct.jsregistry.version>
-        <ct.jsrt-test.version>1.1.2</ct.jsrt-test.version>
+        <ct.jsregistry.version>1.2.2</ct.jsregistry.version>
+        <ct.jsrt-test.version>1.1.5</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>sample</default.app.name>
