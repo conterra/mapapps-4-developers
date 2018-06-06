@@ -160,6 +160,27 @@
             </plugins>
         </pluginManagement>
         <sourceDirectory>src/main/js</sourceDirectory>
+        <resources>
+            <!-- +++++++++++++++++ -->
+            <!-- Copy map.apps base themes -->
+            <!-- +++++++++++++++++ -->
+            <resource>
+                <directory>${project.build.directory}/unpacked/layout/theme-common/styles</directory>
+                <excludes>
+                    <exclude>crossBrowserSettings.less</exclude>
+                </excludes>
+                <targetPath>${js.build.outputPath}/bundles/theme-common/styles/</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${project.build.directory}/unpacked/layout/theme-everlasting/styles</directory>
+                <excludes>
+                    <exclude>themeSettings.less</exclude>
+                </excludes>
+                <targetPath>${js.build.outputPath}/bundles/theme-custom/styles</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
