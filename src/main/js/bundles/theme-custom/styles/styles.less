@@ -1,0 +1,72 @@
+// Import global theme setting like colors variables
+@import "themeSettings.less";
+//*-------------------------
+//    General dojo / dijit
+//    framework  Classes
+//-------------------------*/
+@import url("dijit/dijit.css");
+@import url("dojox/dojox.css");
+@import url("vuetify/main.css");
+
+@import url("esri/esri.css");
+// after compressed build, the common theme styles are integrated into theme-name/styles.less
+@import url("../../theme-common/styles/styles.css");
+
+//-------------------------
+//    General mapApps  UI Classes
+//-------------------------*/
+@import url("ui/ui.css");
+
+//-------------------------
+//    Bundle  Classes
+//-------------------------
+@import url("bundles/bundles.css");
+
+.@{themeName} {
+    background-color: @secondary-color;
+    font-family: @ct-font-family;
+    font-weight: 100;
+    *:focus {
+        outline: none;
+    }
+    // ----------------------
+    //    Header Classes
+    // -----------------------
+    .ct-application-header {
+        .standard-gradient(@ct-header-background-color);
+        .shadow-1();
+        &__logo {
+            background-color: @ct-header-logo-background-color;
+            color: @ct-dialog-title-text-color;
+        }
+        &__app-title {
+            color: @text-color;
+        }
+    }
+    // -----------------------
+    //    Footer Classes
+    // -----------------------
+    .ct-application-footer {
+        .shadow-1();
+    }
+
+    .ct-application-footer,
+    .ct-application-sidebar{
+        .standard-gradient(@ct-footer-background-color);
+        border-bottom: 3px solid @dialog-titlebar-background-color;
+    }
+
+    .ct-application-header,
+    .ct-application-footer{
+        .dijitButtonNode{
+            .box-shadow-none();
+        }
+    }
+
+    /*trumps that should be moved somwhere else than theme's main file'*/
+    .dijitMenuTable.ctWDYWBtn {
+        .border-radius(0, 0, 3px, 3px);
+        border-top-width: 1px;
+    }
+    /*end of trumps that should be moved somwhere als than theme's main file'*/
+}
