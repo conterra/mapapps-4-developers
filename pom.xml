@@ -240,6 +240,16 @@
                                     <classifier>src</classifier>
                                     <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
                                     <includes>layout/theme-everlasting/**,layout/theme-common/**</includes>
+                                    <excludes>layout/theme-everlasting/styles/vuetify/**</excludes>
+                                </artifactItem>
+                                <artifactItem>
+                                    <!-- unpack stylus files provided by beautify to map.apps themes -->
+                                    <groupId>org.vuetifyjs</groupId>
+                                    <artifactId>vuetify</artifactId>
+                                    <version>${vuetify.version}</version>
+                                    <classifier>dev</classifier>
+                                    <outputDirectory>${project.build.directory}/unpacked/layout</outputDirectory>
+                                    <includes>vuetify/stylus/**</includes>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
