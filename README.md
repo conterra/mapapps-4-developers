@@ -1,6 +1,7 @@
 # mapapps-4-developers
 
-This is project demonstrates how to build maintainable UI elements or widgets in your map.apps bundles. You may use this project as a blueprint for starting your own map.apps project.
+This is project demonstrates how to build maintainable UI elements or widgets in your map.apps bundles.
+You may use this project as a blueprint for starting your own map.apps project.
 
 ## Contents
 
@@ -20,10 +21,69 @@ This Maven project includes some of the core concepts for developing UI driven b
 
 ## Usage
 
-Start the integrated jetty server with `mvn jetty:run` and activate the `watch-all` maven profile in order to run the samples.
+The project supports a 'remote project' and 'standalone project' mode.
+
+### Use 'remote project' mode
+
+In this mode a map.apps installation is available elsewhere and most JavaScript resources are fetched from this installation.
+This mode is recommended.
+
+The URL of the mapapps server can be declared in the pom.xml. Replace
+Replace:
+
+```xml
+ <mapapps.remote.base>.</mapapps.remote.base>
+```
+
+by
+
+```xml
+ <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
+```
+
+As alternative the URL can be declared in a file called `build.properties` with the content
+
+```properties
+mapapps.remote.base=http://yourserver/mapapps
+```
+
+and using the "env-dev" maven profile.
+Append `-P env-dev` to any maven execution or declare the profile as activated by default in your maven settings.xml.
+
+### Use 'standalone project' mode
+
+In this mode all JavaScript sources are included to this project during development.
+The drawback of this mode is that you can not test authentication and that the default settings are not read from the remote instance.
+
+This mode requires that the profile `include-mapapps-deps` is activated.
+Append `-P include-mapapps-deps` to any maven execution or declare the profile as activated by default in your maven settings.xml.
+
+### Start a local http server
+
+Start the integrated jetty server with:
+
+```sh
+mvn jetty:run -P watch-all
+```
+
+make sure that the `watch-all` maven profile is activated.
 The profile will start a gulp task that watches for changes in your source code.
 
-Compress and upload your apps and bundles with mvn `mvn clean install` and activate the `compress` and `upload` to minimize your code and deploy a published app at your remote instance.
+### Make your code production ready
+
+To ensure that all files are compressed/minified and a dependencies.json is calculated execute:
+
+```sh
+mvn clean install -P compress
+```
+
+### Upload your code to a map.apps installation
+
+To upload your apps and bundles after compression append the `upload` profile.
+
+```sh
+mvn clean install -P compress,upload
+```
 
 ### Running the tests
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.mapapps</groupId>
     <artifactId>mapapps-4-developers</artifactId>
@@ -36,13 +37,8 @@
             <artifactId>ct-jsregistry-embedded</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- add all js dependencies to let it be a "none" remote project -->
-        <dependency>
-            <groupId>de.conterra.mapapps</groupId>
-            <artifactId>ct-mapapps-js-api</artifactId>
-        </dependency>
 
-        <!-- include in map.apps 4.4.0 for vue-devtools support -->
+        <!-- include for vue-devtools support -->
         <dependency>
             <groupId>org.vuejs</groupId>
             <artifactId>vue</artifactId>
@@ -54,22 +50,8 @@
             <artifactId>vuetify</artifactId>
             <classifier>dev</classifier>
         </dependency>
-        <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>dojo-release</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>dgrid</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.dojotoolkit</groupId>
-            <artifactId>dstore</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.esri.js</groupId>
-            <artifactId>ags-js-api4</artifactId>
-        </dependency>
+
+        <!-- test support libs -->
         <dependency>
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-intern</artifactId>
@@ -78,14 +60,7 @@
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-uitest</artifactId>
         </dependency>
-        <dependency>
-            <groupId>moment-js</groupId>
-            <artifactId>moment-js</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>de.conterra.js</groupId>
-            <artifactId>babel-polyfill</artifactId>
-        </dependency>
+
     </dependencies>
     <build>
         <pluginManagement>
@@ -233,7 +208,7 @@
                         <configuration>
                             <stripVersion>true</stripVersion>
                             <artifactItems>
-                               <artifactItem>
+                                <artifactItem>
                                     <groupId>de.conterra.mapapps</groupId>
                                     <artifactId>ct-mapapps-js-api</artifactId>
                                     <version>${mapapps.version}</version>
@@ -321,7 +296,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v7.2.1</nodeVersion>
+                            <nodeVersion>v8.4.0</nodeVersion>
+                            <npmVersion>5.0.4</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
@@ -338,11 +314,6 @@
                         <goals>
                             <goal>gulp</goal>
                         </goals>
-                        <configuration>
-                            <environmentVariables>
-                                <NODE_ENV>production</NODE_ENV>
-                            </environmentVariables>
-                        </configuration>
                     </execution>
                     <execution>
                         <!-- trigger manual: com.github.eirslett:frontend-maven-plugin:gulp@watch-changes -->
@@ -353,38 +324,9 @@
                         <phase>none</phase>
                         <configuration>
                             <arguments>watch</arguments>
-                            <environmentVariables>
-                                <!--<NODE_ENV>production</NODE_ENV>-->
-                            </environmentVariables>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <!-- run with: com.github.jeluard:plantuml-maven-plugin:generate -->
-                <groupId>com.github.jeluard</groupId>
-                <artifactId>plantuml-maven-plugin</artifactId>
-                <version>1.3-SNAPSHOT</version>
-                <configuration>
-                    <sourceFiles>
-                        <directory>${basedir}</directory>
-                        <includes>
-                            <include>*.puml</include>
-                        </includes>
-                    </sourceFiles>
-                    <config>${basedir}/plantuml-config.cfg</config>
-                    <format>png</format>
-                    <charset>UTF-8</charset>
-                    <withMetadata>false</withMetadata>
-                    <outputInSourceDirectory>true</outputInSourceDirectory>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>net.sourceforge.plantuml</groupId>
-                        <artifactId>plantuml</artifactId>
-                        <version>8050</version>
-                    </dependency>
-                </dependencies>
             </plugin>
             <plugin>
                 <groupId>com.google.code.maven-replacer-plugin</groupId>
@@ -439,6 +381,39 @@
         <jetty.port>9090</jetty.port>
     </properties>
     <profiles>
+        <profile>
+            <id>include-mapapps-deps</id>
+            <dependencies>
+                <dependency>
+                    <groupId>de.conterra.mapapps</groupId>
+                    <artifactId>ct-mapapps-js-api</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.dojotoolkit</groupId>
+                    <artifactId>dojo-release</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.dojotoolkit</groupId>
+                    <artifactId>dgrid</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>org.dojotoolkit</groupId>
+                    <artifactId>dstore</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>com.esri.js</groupId>
+                    <artifactId>ags-js-api4</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>moment-js</groupId>
+                    <artifactId>moment-js</artifactId>
+                </dependency>
+                <dependency>
+                    <groupId>de.conterra.js</groupId>
+                    <artifactId>babel-polyfill</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
         <profile>
             <id>env-dev</id>
             <!-- This is the development profile, per default it points to a build.properties
