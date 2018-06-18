@@ -1,0 +1,14 @@
+{
+ "version": "2.0.0",
+ "tasks": [
+     {
+         "label": "Jetty Server starten",
+         "type": "shell",
+         "command": "mvn jetty:run -P watch-all",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         }
+     }
+ ]
+}
