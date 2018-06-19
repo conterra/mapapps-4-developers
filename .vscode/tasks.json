@@ -4,7 +4,7 @@
      {
          "label": "Jetty Server starten",
          "type": "shell",
-         "command": "mvn jetty:run -P watch-all",
+         "command": "mvn jetty:run -Pwatch-all",
          "group": {
             "kind": "build",
             "isDefault": true
