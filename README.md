@@ -10,6 +10,7 @@ This Maven project includes some of the core concepts for developing UI driven b
 * How can I use **Vue.js** to build widgets following the **MVVM** pattern?
 * How does the **MVVM** pattern help to make UI components and models **testable**?
 * How do I build widgets with ready-to-use UI components from Vuetify.js?
+* How do i build a custom theme (theme-custom)?
 * How can the view-model interact via **bindings** with (Accessor) models from the **ESRI ArcGIS API for JavaScript**?
 * How is my **layout** integrated into **map.apps templates**?
 * How do **gulp** processes modify my source code?
@@ -93,6 +94,15 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 
 * Interaction with ESRI map
 * Use of Binding (e.g. with Accessor)
+
+### The theme-cusotm bundle
+
+* Sample of minimum fileset needed to create a custom theme.
+* Make sure bundle is loaded instead of theme-everlasting in sample app
+* When renaming/copying the theme-custom bundle to e.g.  theme-[projectname] make sure the adjustments (theme-name) have refelected to the following files.
+** gulpfile.js
+** theme-name/manifest.json
+** theme-name/styles/styles.less
 
 ### Build Process
 
