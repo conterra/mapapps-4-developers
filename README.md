@@ -95,7 +95,7 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 * Interaction with ESRI map
 * Use of Binding (e.g. with Accessor)
 
-### The theme-cusotm bundle
+### The theme-custom bundle
 
 * Sample of minimum fileset needed to create a custom theme.
 * Make sure bundle is loaded instead of theme-everlasting in sample app
