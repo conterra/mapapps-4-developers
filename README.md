@@ -90,6 +90,8 @@ mvn clean install -P compress,upload
 
 To execute the unit tests inside the project, run [http://localhost:9090/js/tests/runTests.html](http://localhost:9090/js/tests/runTests.html).
 
+> If you run the project in 'remote project' mode, you will have to edit the `test-init.js` file located in the `/src/test/webapp/js/tests/` folder.
+
 ### The Camera sample bundle
 
 * Interaction with ESRI map
