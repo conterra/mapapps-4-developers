@@ -8,7 +8,7 @@
     
     <!-- NOTE: a META-INF/web-fragment.xml from ct-jsregistry-embedded is also loaded together with this specification ! -->
 
-    <!--<servlet>
+    <servlet>
         <description>ProxyServlet</description>
         <servlet-name>ProxyServlet</servlet-name>
         <servlet-class>de.conterra.mapapps.proxy.ProxyServlet</servlet-class>
@@ -17,6 +17,6 @@
     <servlet-mapping>
         <servlet-name>ProxyServlet</servlet-name>
         <url-pattern>/proxy</url-pattern>
-    </servlet-mapping>-->
+    </servlet-mapping>
     
 </web-app>

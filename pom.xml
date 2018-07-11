@@ -37,7 +37,11 @@
             <artifactId>ct-jsregistry-embedded</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>de.conterra.mapapps</groupId>
+            <artifactId>ct-mapapps-proxy</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!-- include for vue-devtools support -->
         <dependency>
             <groupId>org.vuejs</groupId>
@@ -364,7 +368,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
         <!-- JS lib versions -->
-        <mapapps.version>4.4.0</mapapps.version>
+        <mapapps.version>4.4.2</mapapps.version>
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
         <ct.jsregistry.version>1.2.2</ct.jsregistry.version>
@@ -375,7 +379,7 @@
 
         <!-- don't do this in production configuration! This allows to go any http traffic over the /proxy endpoint -->
         <proxy.allowedServerUrls>
-            http,*;
+            *://*:*/**;
         </proxy.allowedServerUrls>
         <proxy.allowedSSLDNs>*</proxy.allowedSSLDNs>
         <jetty.port>9090</jetty.port>
