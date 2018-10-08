@@ -70,6 +70,12 @@ mvn jetty:run -P watch-all
 make sure that the `watch-all` maven profile is activated.
 The profile will start a gulp task that watches for changes in your source code.
 
+After a successfull start, the jetty server ist available at [http://localhost:9090](http://localhost:9090).
+
+### Start coding
+
+For detailed development documentation have a look at [conterra's developer network](https://developernetwork.conterra.de/de/documentation/mapapps/development-guide) (account required).
+
 ### Make your code production ready
 
 To ensure that all files are compressed/minified and a dependencies.json is calculated execute:
