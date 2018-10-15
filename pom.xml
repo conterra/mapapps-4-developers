@@ -179,7 +179,7 @@
                 </executions>
                 <configuration>
                     <properties>
-                        <mapapps.remote.base>http://localhost:8080/mapapps</mapapps.remote.base>
+                        <mapapps.remote.base>.</mapapps.remote.base>
                     </properties>
                 </configuration>
             </plugin>
