@@ -23,7 +23,12 @@
                 has: {
                     "ct-debug" : true
                 },
-                apprt: {request: {proxyUrl: "@@applicationURL.noscheme@@/proxy"}},
+                apprt: {
+                    request: {
+                        corsEnabledServers: ["@@mapapps.remote.base@@"],
+                        proxyUrl: "@@applicationURL.noscheme@@/proxy"
+                    }
+                },
                 packages: [
                     // add local apps directory as amd package
                     {name: "localapps", location: "@@applicationURL.noscheme@@/js/apps"},
