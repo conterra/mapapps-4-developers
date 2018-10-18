@@ -10,7 +10,7 @@ This Maven project includes some of the core concepts for developing UI driven b
 * How can I use **Vue.js** to build widgets following the **MVVM** pattern?
 * How does the **MVVM** pattern help to make UI components and models **testable**?
 * How do I build widgets with ready-to-use UI components from Vuetify.js?
-* How do i build a custom theme (theme-custom)?
+* How do I build a custom theme (theme-custom)?
 * How can the view-model interact via **bindings** with (Accessor) models from the **ESRI ArcGIS API for JavaScript**?
 * How is my **layout** integrated into **map.apps templates**?
 * How do **gulp** processes modify my source code?
@@ -29,14 +29,13 @@ The project supports a 'remote project' and 'standalone project' mode.
 In this mode a map.apps installation is available elsewhere and most JavaScript resources are fetched from this installation.
 This mode is recommended.
 
-The URL of the mapapps server can be declared in the pom.xml. Replace
-Replace:
+The URL of the mapapps server can be declared in the pom.xml. Replace:
 
 ```xml
  <mapapps.remote.base>.</mapapps.remote.base>
 ```
 
-by
+with
 
 ```xml
  <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
@@ -48,7 +47,7 @@ As alternative the URL can be declared in a file called `build.properties` with 
 mapapps.remote.base=http://yourserver/mapapps
 ```
 
-and using the "env-dev" maven profile.
+and enabling the "env-dev" maven profile.
 Append `-P env-dev` to any maven execution or declare the profile as activated by default in your maven settings.xml.
 
 ### Use 'standalone project' mode
@@ -67,7 +66,7 @@ Start the integrated jetty server with:
 mvn jetty:run -P watch-all
 ```
 
-make sure that the `watch-all` maven profile is activated.
+Make sure that the `watch-all` maven profile is activated.
 The profile will start a gulp task that watches for changes in your source code.
 
 After a successfull start, the jetty server ist available at [http://localhost:9090](http://localhost:9090).
@@ -108,9 +107,9 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 * Sample of minimum fileset needed to create a custom theme.
 * Make sure bundle is loaded instead of theme-everlasting in sample app
 * When renaming/copying the theme-custom bundle to e.g.  theme-[projectname] make sure the adjustments (theme-name) have refelected to the following files.
-** gulpfile.js
-** theme-name/manifest.json
-** theme-name/styles/styles.less
+  * gulpfile.js
+  * theme-name/manifest.json
+  * theme-name/styles/styles.less
 
 ### Build Process
 
