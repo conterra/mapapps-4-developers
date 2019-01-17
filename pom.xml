@@ -471,8 +471,7 @@
                                 </goals>
                                 <configuration>
                                     <async>true</async>
-                                    <executable>${env.M2_HOME}/bin/${mvn.cmd}</executable>
-                                    <!--<workingDirectory>${basedir}</workingDirectory>-->
+                                    <executable>${maven.home}/bin/${mvn.cmd}</executable>
                                     <arguments>
                                         <argument>com.github.eirslett:frontend-maven-plugin:gulp@watch-changes</argument>
                                     </arguments>
