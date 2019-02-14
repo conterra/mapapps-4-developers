@@ -71,6 +71,66 @@ The profile will start a gulp task that watches for changes in your source code.
 
 After a successfull start, the jetty server ist available at [http://localhost:9090](http://localhost:9090).
 
+### Developing map.apps line 3 bundles
+
+To develop line 3 bundles with mapapps-4-developers, some changes are required. This will only be possible in the `'remote project'` mode.
+The map.apps remote base mentioned above should point to a map.apps 4 installation, which also includes the line 3 bundles as well.
+This should be the default case after map.apps 4 was installed.
+
+```xml
+ <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
+```
+
+To force mapapps-4-developers project to use the correct `apprt.version` for line 3 developement, the `index.html` file in 
+`src/main/webapp` has to be changed the following way:
+
+``` 
+  $apprt.changeConfig({ct: {
+                amdPackages: ["apprt@^@@apprt.version@@"]
+            }});
+```
+should be replaced by 
+
+```
+  $apprt.changeConfig({ct: {
+                amdPackages: ["apprt@^3.10.0"]
+            }});
+```
+
+where the targeted map.apps 3.x version should be used.
+
+To ensure that the correct bundle versions are loaded, the `app.json` for a line 3 app needs to be configured with the correct versions:
+
+```
+{
+    "properties": {
+        "amdPackages": "apprt@^3.10.0"
+    },
+    "load": {
+        "bundleLocations" : ["localbundles","bundles"],
+        "allowedBundles" : [
+            "system@^3.10.0",
+            "splashscreen@^3.10.0",
+            "map@^3.10.0",
+            
+    [...]       
+
+```  
+
+Since line 3 bundles are often coded in the old Dojo AMD style and not transpiled from ES6, it is necessary to exclude
+them from the transpilation process. To achieve this, any line 3 app folder and any line 3 bundle folder has to contain a `.babelrc` file in the directory root
+with the following content.
+
+```json
+{
+    "ignore":["**/*"]
+}
+```
+
+With all these changes, the Jetty Server can be started.
+Note, that this will only cover JS bundle development capabilities. To develop themes and templates, the old
+`sampleRemoteProj` should be used. To get a copy, contact [support@conterra.de](support@conterra.de)  
+
 ### Start coding
 
 For detailed development documentation have a look at [conterra's developer network](https://developernetwork.conterra.de/de/documentation/mapapps/development-guide) (account required).
