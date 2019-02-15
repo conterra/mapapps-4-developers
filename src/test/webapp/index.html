@@ -21,11 +21,12 @@
             window.dojoConfig = {
                 isDebug: true,
                 has: {
-                    "ct-debug" : true
+                    "ct-debug" : true,
+                    "ct-log-deprecations": true
                 },
                 apprt: {
                     request: {
-                        corsEnabledServers: ["@@mapapps.remote.base@@"],
+                        trustedServers: ["@@mapapps.remote.base@@"],
                         proxyUrl: "@@applicationURL.noscheme@@/proxy"
                     }
                 },
