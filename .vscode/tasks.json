@@ -2,7 +2,7 @@
  "version": "2.0.0",
  "tasks": [
      {
-         "label": "Jetty Server starten",
+         "label": "Run Jetty Server",
          "type": "shell",
          "command": "mvn jetty:run -Pwatch-all",
          "group": {
