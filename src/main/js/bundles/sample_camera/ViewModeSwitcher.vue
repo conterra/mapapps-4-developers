@@ -1,8 +1,8 @@
 <template>
     <v-layout>
         <v-radio-group v-model="selected" :mandatory="false">
-            <v-radio label="2D" value="2D"></v-radio>
-            <v-radio label="3D" value="3D"></v-radio>
+            <v-radio label="2D" value="2D" color="success"></v-radio>
+            <v-radio label="3D" value="3D" color="success"></v-radio>
         </v-radio-group>
     </v-layout>
 </template>
