@@ -5,14 +5,14 @@
             "bundles"
         ],
         "allowedBundles": [
-            "system@^4.5.0",
-            "splashscreen@^4.5.0",
-            "templatelayout@^4.5.0",
-            "template-seasons@^4.5.0",
-            "theme-everlasting@^4.5.0",
-            "toolset@^4.5.0",
-            "map-init@^4.5.0",
-            "agssearch@^4.5.0",
+            "system@^4.6.0",
+            "splashscreen@^4.6.0",
+            "templatelayout@^4.6.0",
+            "template-seasons@^4.6.0",
+            "theme-everlasting@^4.6.0",
+            "toolset@^4.6.0",
+            "map-init@^4.6.0",
+            "agssearch@^4.6.0",
             "sample_camera@^0.0.1"
         ]
     },
