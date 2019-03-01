@@ -300,8 +300,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v8.11.3</nodeVersion>
-                            <npmVersion>5.0.4</npmVersion>
+                            <nodeVersion>v10.15.1</nodeVersion>
+                            <npmVersion>6.4.1</npmVersion>
                         </configuration>
                     </execution>
                     <execution>
