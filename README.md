@@ -63,7 +63,7 @@ Append `-P include-mapapps-deps` to any maven execution or declare the profile a
 Start the integrated jetty server with:
 
 ```sh
-mvn jetty:run -P watch-all
+mvn clean jetty:run -P watch-all
 ```
 
 Make sure that the `watch-all` maven profile is activated.
