@@ -3,6 +3,12 @@
 This is project demonstrates how to build maintainable UI elements or widgets in your map.apps bundles.
 You may use this project as a blueprint for starting your own map.apps project.
 
+* [Contents](https://github.com/conterra/mapapps-4-developers#contents)
+* [Requirements](https://github.com/conterra/mapapps-4-developers#requirements)
+* [Usage](https://github.com/conterra/mapapps-4-developers#usage)
+* [Updating from older versions](https://github.com/conterra/mapapps-4-developers#updating-from-older-versions)
+* [References](https://github.com/conterra/mapapps-4-developers#references)
+
 ## Contents
 
 This Maven project includes some of the core concepts for developing UI driven bundles in map.apps. Use this readme as a guide for what to discover in this project. After studying this project, you should be able to answer the following questions:
