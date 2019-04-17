@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.mapapps</groupId>
@@ -368,7 +368,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
         <!-- JS lib versions -->
-        <mapapps.version>4.6.0</mapapps.version>
+        <mapapps.version>4.6.1</mapapps.version>
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
         <ct.jsregistry.version>1.2.6</ct.jsregistry.version>

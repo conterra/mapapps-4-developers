@@ -184,8 +184,11 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 
 ## Updating from older versions
 
+### from 4.6.0 to 4.6.1
+1. adjust the `mapapps.version` property in `./pom.xml`  to `4.6.1` 
+
 ### from 4.5.0 or below to 4.6.0
-1. adjust the map.apps version in `./pom.xml`
+1. adjust the `mapapps.version` property in `./pom.xml`  to `4.6.0`
 2. adjust versions of devDependencies in `./package.json` according to the list below:
     * "ct-mapapps-gulp-js": "~0.1.3"
     * "vue-template-compiler": "2.5.17"
