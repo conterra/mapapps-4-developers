@@ -54,7 +54,7 @@ mapapps.remote.base=http://yourserver/mapapps
 ```
 
 and enabling the "env-dev" maven profile.
-Append `-P env-dev` to any maven execution or declare the profile as activated by default in your maven settings.xml.
+Append `-P env-dev` or `-Denv=dev` to any maven execution or declare the profile as activated by default in your maven settings.xml.
 
 ### Use 'standalone project' mode
 
@@ -76,6 +76,23 @@ Make sure that the `watch-all` maven profile is activated.
 The profile will start a gulp task that watches for changes in your source code.
 
 After a successfull start, the jetty server ist available at [http://localhost:9090](http://localhost:9090).
+
+### Skip node and npm install during maven execution
+
+By appending `-Denv=dev -Dlocal.configfile=./build.properties` to any maven execution the development mode is activated.
+This means:
+
+* node and npm are not installed
+* watch-all profile is activated
+* the build.properties file is loaded
+
+To enforce a node/npm installation execute:
+
+```
+mvn initialize
+```
+
+This triggers the node/npm installation and nothing else.
 
 ### Developing map.apps line 3 bundles
 
