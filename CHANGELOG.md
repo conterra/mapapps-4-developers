@@ -19,7 +19,7 @@ All notable changes to this project will be documented in this file.
 - Use maven.home not M2_HOME.
 - Update node, npm and dependencies.
 
-###Removed
+### Removed
 - Property `trustedServers` has been removed with property `corsEnabledServers`.
 
 [Unreleased]: https://github.com/conterra/mapapps-4-developers/compare/4.6.0...HEAD
