@@ -1,6 +1,6 @@
 # mapapps-4-developers
 
-This is project demonstrates how to build maintainable UI elements or widgets in your map.apps bundles.
+This project demonstrates how to build maintainable UI elements or widgets in your map.apps bundles.
 You may use this project as a blueprint for starting your own map.apps project.
 
 * [Contents](https://github.com/conterra/mapapps-4-developers#contents)
@@ -11,20 +11,20 @@ You may use this project as a blueprint for starting your own map.apps project.
 
 ## Contents
 
-This Maven project includes some of the core concepts for developing UI driven bundles in map.apps. Use this readme as a guide for what to discover in this project. After studying this project, you should be able to answer the following questions:
+This Maven project includes some of the core concepts for developing UI-driven bundles in map.apps. Use this readme as a guide for what to discover in this project. After studying this project, you should be able to answer the following questions:
 
 * How can I use **Vue.js** to build widgets following the **MVVM** pattern?
 * How does the **MVVM** pattern help to make UI components and models **testable**?
 * How do I build widgets with ready-to-use UI components from Vuetify.js?
 * How do I build a custom theme (theme-custom)?
-* How can the view-model interact via **bindings** with (Accessor) models from the **ESRI ArcGIS API for JavaScript**?
+* How can the view model interact via **bindings** with (Accessor) models from the **Esri ArcGIS API for JavaScript**?
 * How is my **layout** integrated into **map.apps templates**?
 * How do **gulp** processes modify my source code?
 
 ## Requirements
 
 * map.apps 4.6.1
-* all resources from `CD-Contents/sdk/m2-repository` need to be copied manually to your local maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
+* all resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
 
@@ -35,7 +35,9 @@ The project supports a 'remote project' and 'standalone project' mode.
 In this mode a map.apps installation is available elsewhere and most JavaScript resources are fetched from this installation.
 This mode is recommended.
 
-The URL of the mapapps server can be declared in the pom.xml. Replace:
+The URL of the map.apps server can be declared in the pom.xml. 
+
+Replace
 
 ```xml
  <mapapps.remote.base>.</mapapps.remote.base>
@@ -47,64 +49,64 @@ with
  <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
 ```
 
-As alternative the URL can be declared in a file called `build.properties` with the content
+As an alternative the URL can be declared in a file called `build.properties` with the content
 
 ```properties
 mapapps.remote.base=http://yourserver/mapapps
 ```
 
-and enabling the "env-dev" maven profile.
-Append `-P env-dev` or `-Denv=dev` to any maven execution or declare the profile as activated by default in your maven settings.xml.
+and enabling the "env-dev" Maven profile.
+Append `-P env-dev` or `-Denv=dev` to any Maven execution or declare the profile as activated by default in your Maven settings.xml.
 
 ### Use 'standalone project' mode
 
-In this mode all JavaScript sources are included to this project during development.
+In this mode all JavaScript sources are added to this project during development.
 The drawback of this mode is that you can not test authentication and that the default settings are not read from the remote instance.
 
 This mode requires that the profile `include-mapapps-deps` is activated.
-Append `-P include-mapapps-deps` to any maven execution or declare the profile as activated by default in your maven settings.xml.
+Append `-P include-mapapps-deps` to any Maven execution or declare the profile as activated by default in your Maven settings.xml.
 
-### Start a local http server
+### Start a local HTTP server
 
-Start the integrated jetty server with:
+Start the integrated Jetty server with:
 
 ```sh
 mvn clean jetty:run -P watch-all
 ```
 
-Make sure that the `watch-all` maven profile is activated.
+Make sure that the `watch-all` Maven profile is activated.
 The profile will start a gulp task that watches for changes in your source code.
 
-After a successfull start, the jetty server ist available at [http://localhost:9090](http://localhost:9090).
+After a successfull start the Jetty server ist available at [http://localhost:9090](http://localhost:9090).
 
-### Skip node and npm install during maven execution
+### Skip intallation of Node.js and npm during Maven execution
 
-By appending `-Denv=dev -Dlocal.configfile=./build.properties` to any maven execution the development mode is activated.
+By appending `-Denv=dev -Dlocal.configfile=./build.properties` to any Maven execution the development mode is activated.
 This means:
 
-* node and npm are not installed
+* Node.js and npm are not installed
 * watch-all profile is activated
 * the build.properties file is loaded
 
-To enforce a node/npm installation execute:
+To enforce the installation of Node.js and npm execute:
 
 ```
 mvn initialize
 ```
 
-This triggers the node/npm installation and nothing else.
+This triggers the installation of Node.js and npm exclusively.
 
-### Developing map.apps line 3 bundles
+### Developing bundles for map.apps line 3
 
-To develop line 3 bundles with mapapps-4-developers, some changes are required. This will only be possible in the `'remote project'` mode.
-The map.apps remote base mentioned above should point to a map.apps 4 installation, which also includes the line 3 bundles as well.
-This should be the default case after map.apps 4 was installed.
+To develop line 3 bundles with mapapps-4-developers, some adaptations are required. This will only work with the `'remote project'` mode.
+The map.apps remote base mentioned above should point to a map.apps 4 installation, which always includes the bundles of line 3 as well.
+This should be the default after map.apps 4 was installed.
 
 ```xml
  <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
 ```
 
-To force mapapps-4-developers project to use the correct `apprt.version` for line 3 developement, the `index.html` file in 
+To force project based on mapapps-4-developers to use the correct `apprt.version` for line 3 developement, the `index.html` file in 
 `src/main/webapp` has to be changed the following way:
 
 ``` 
@@ -120,7 +122,7 @@ should be replaced by
             }});
 ```
 
-where the targeted map.apps 3.x version should be used.
+Make sure to use the intended target map.apps 3.x version.
 
 To ensure that the correct bundle versions are loaded, the `app.json` for a line 3 app needs to be configured with the correct versions:
 
@@ -150,8 +152,8 @@ with the following content.
 }
 ```
 
-With all these changes, the Jetty Server can be started.
-Note, that this will only cover JS bundle development capabilities. To develop themes and templates, the old
+With all these changes, the Jetty server can be started.
+Note that this will only cover JS bundle development capabilities. To develop themes and templates, the old
 `sampleRemoteProj` should be used. To get a copy, contact [support@conterra.de](support@conterra.de)  
 
 ### Start coding
@@ -189,7 +191,7 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 
 * Sample of minimum fileset needed to create a custom theme.
 * Make sure bundle is loaded instead of theme-everlasting in sample app
-* When renaming/copying the theme-custom bundle to e.g.  theme-[projectname] make sure the adjustments (theme-name) have refelected to the following files.
+* When renaming/copying the theme-custom bundle to e.g. theme-[projectname] make sure the adjustments (theme-name) have refelected to the following files.
   * gulpfile.js
   * theme-name/manifest.json
   * theme-name/styles/styles.less
