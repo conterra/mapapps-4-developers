@@ -1,13 +1,8 @@
-import CameraControls from "./CameraControls.vue";
+import Binding from "apprt-binding/Binding";
+import { debounceOrCancel, ifDefined } from "apprt-binding/Transformers";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
-import Binding from "apprt-binding/Binding";
-import {ifDefined, debounce, debounceOrCancel} from "apprt-binding/Transformers";
-
-function equalsAlmost(a, b, eps) {
-    eps = eps || 1e-8;
-    return Math.abs(a - b) < eps;
-}
+import CameraControls from "./CameraControls.vue";
 
 class CameraWidgetFactory {
 
@@ -16,19 +11,38 @@ class CameraWidgetFactory {
         let vm = new Vue(CameraControls);
         let model = this._mapWidgetModel;
         let widget = VueDijit(vm);
-        modelToViewBinding.bindTo(model, vm).syncToRightNow();
-        // register for clean up
-        widget.own(modelToViewBinding);
+
+        // bind model and view model
+        modelToViewBinding.bindTo(model, vm);
+
+        // register methods to enable/disable binding
+        widget.enableBinding = function () {
+            modelToViewBinding.enable().syncToRightNow();
+        }
+        widget.disableBinding = function () {
+            modelToViewBinding.disable();
+        }
+
+        // clean up binding and attached functions
+        widget.own({
+            remove() {
+                modelToViewBinding.unbind();
+                modelToViewBinding = undefined;
+                widget.enableBinding = widget.disableBinding = undefined;
+            }
+        });
+
         return widget;
     }
 
     declareModelToVueBinding() {
         return Binding.create()
-                .syncAll("viewmode", "zoom", "rotation", ifDefined(), ifDefined(debounce()))
-                .syncToRight("center", ["latitude", "longitude"], ifDefined(center => [center.latitude, center.longitude]))
-                .sync("camera", ["heading", "tilt"], ifDefined(({heading, tilt}) => [heading, tilt]),
-                        debounceOrCancel(15,(values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue())))
-                .enable();
+            .sync("viewmode", ifDefined(), ifDefined())
+            .sync("zoom", log("left", ignoreNonIntegerNumbers), log("right", ifDefined(debounceOrCancel(10))))
+            .sync("rotation", log("left", ifDefined()), log("right", ifDefined(debounceOrCancel(10))))
+            .syncToRight("center", ["latitude", "longitude"], ifDefined(center => [center.latitude, center.longitude]))
+            .sync("camera", ["heading", "tilt"], ifDefined(({ heading, tilt }) => [heading, tilt]),
+                debounceOrCancel(15, (values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue())));
     }
 
     _putHeadingTiltIntoCamera([heading, tilt], camera) {
@@ -36,7 +50,7 @@ class CameraWidgetFactory {
             return camera;
         }
         if (equalsAlmost(camera.heading, heading)
-                && equalsAlmost(camera.tilt, tilt)) {
+            && equalsAlmost(camera.tilt, tilt)) {
             return camera;
         }
         let newCamera = camera.clone();
@@ -46,4 +60,23 @@ class CameraWidgetFactory {
     }
 }
 
-module.exports = CameraWidgetFactory;
+function equalsAlmost(a, b, eps) {
+    eps = eps || 1e-8;
+    return Math.abs(a - b) < eps;
+}
+
+function ignoreNonIntegerNumbers(v, { ignore }) {
+    if (v && Number.isInteger(v)) {
+        return v;
+    }
+    return ignore();
+}
+
+function log(prefix, cb) {
+    return (v, ctx) => {
+        console.debug(`${prefix}: ${ctx.sourceName} -> ${ctx.targetName} : ${v}`);
+        return cb && cb(v, ctx);
+    }
+}
+
+export default CameraWidgetFactory;

@@ -27,7 +27,7 @@
     "components": [
         {
             "name": "CameraControlFactory",
-            "provides": "dijit.Widget",
+            "provides": ["dijit.Widget","sample_camera.Widget"],
             "instanceFactory": true,
             "properties": {
                 "widgetRole": "camera"
@@ -55,8 +55,14 @@
                 "togglable": true,
                 "rules": {
                     "noGroup": true
-                }
-            }
+                },
+                "activateHandler": "enableBinding",
+                "deactivateHandler": "disableBinding"
+            },
+            "references":[{
+                "name": "handlerScope",
+                "providing": "sample_camera.Widget"
+            }]
         }
     ]
 }
