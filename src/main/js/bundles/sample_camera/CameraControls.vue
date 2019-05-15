@@ -5,14 +5,14 @@
             <view-mode-switcher v-model="viewmode" />
         </v-flex>
         <v-flex xs12>
-            <v-slider label="Zoom" v-bind:min="2" v-bind:max="25" v-model="zoom" prepend-icon="zoom_out" append-icon="zoom_in"></v-slider>
+            <v-slider label="Zoom" min="2" max="25" v-model="zoom" prepend-icon="zoom_out" append-icon="zoom_in"></v-slider>
         </v-flex>
         <v-flex xs12 v-if="viewmode === '2D'">
-            <v-slider label="Rotation" v-bind:min="0" v-bind:max="360" v-model="rotation" thumb-label></v-slider>
+            <v-slider label="Rotation" min="0" max="360" v-model="rotation" step="0.0001" thumb-label></v-slider>
         </v-flex>
         <v-flex xs12 v-if="viewmode === '3D'">
-            <v-slider label="Heading" v-bind:min="0" v-bind:max="360" v-model="heading" thumb-label></v-slider>
-            <v-slider label="Tilt" v-bind:min="0" v-bind:max="90" v-model="tilt" thumb-label></v-slider>
+            <v-slider label="Heading" min="0" max="360" v-model="heading" thumb-label></v-slider>
+            <v-slider label="Tilt" min="0" max="90" v-model="tilt" thumb-label></v-slider>
         </v-flex>
     </v-layout>
 </template>
