@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Changed
+- sample_camera sample for sync logging added
+- sample_camera small enhancements
+
 
 ## [4.6.1] - 2019-04-24
 ### Added
