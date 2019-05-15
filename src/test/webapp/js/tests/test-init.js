@@ -18,7 +18,7 @@ testConfig({
             ]
         }
     ],
-    // ensure bable polyfill is loaded during test execution
+    // ensure babel polyfill is loaded during test execution
     deps: [
         "babel-polyfill"
     ]
