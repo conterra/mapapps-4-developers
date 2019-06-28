@@ -203,6 +203,13 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 
 ## Updating from older versions
 
+### from 4.6.1 to 4.7.0
+1. adjust the `mapapps.version` property in `./pom.xml`  to `4.7.0` 
+2. adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.0` 
+3. adjust versions of devDependencies in `./package.json` according to the list below:
+    * "eslint-config-ct-prodeng": "^1.0.5"
+    * "vue-template-compiler": "2.6.6"
+
 ### from 4.6.0 to 4.6.1
 1. adjust the `mapapps.version` property in `./pom.xml`  to `4.6.1` 
 
