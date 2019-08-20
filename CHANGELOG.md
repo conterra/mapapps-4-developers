@@ -6,6 +6,17 @@ All notable changes to this project will be documented in this file.
 - sample_camera sample for sync logging added
 - sample_camera small enhancements
 
+## [4.7.1] - 2019-08-16
+### Changed
+- Support for map.apps 4.7.1.
+- Update ct.jsregistry.version version.
+
+## [4.7.0] - 2019-06-28
+### Changed
+- Support for map.apps 4.7.0.
+- Update ct.jsregistry.version version.
+- Update vue-template-compiler version.
+- Update eslint-config-ct-prodeng version.
 
 ## [4.6.1] - 2019-04-24
 ### Added
