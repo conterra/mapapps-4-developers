@@ -1,5 +1,4 @@
 const gulp = require("gulp");
-const run_sequence = require('run-sequence');
 const mapapps = require('ct-mapapps-gulp-js');
 
 mapapps.registerTasks({
@@ -11,16 +10,15 @@ mapapps.registerTasks({
     /* state that we want to support vuetify components and therefore need the the vuetify core styles*/
     hasVuetify: true,
     themeChangeTargets: {
-       "vuetify": [
-           "theme-custom"
-       ]
-   }
+        "vuetify": [
+            "theme-custom"
+        ]
+    }
 });
 
-gulp.task("default", function(callback) {
-    run_sequence(
-            "copy-resources",
-            "themes-copy",
-            ["js-transpile", "themes-compile"],
-            callback);
-});
+gulp.task("default",
+    gulp.series(
+        "copy-resources",
+        "themes-copy",
+        gulp.parallel("js-transpile", "themes-compile")
+    ));
