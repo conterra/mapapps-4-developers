@@ -5,6 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - sample_camera sample for sync logging added
 - sample_camera small enhancements
+- Update ct-mapapps-gulp-js version (requires additional changes, see this [commit](https://github.com/conterra/mapapps-4-developers/commit/c974a74a08a70316204d5c09aee22f8d39c70446))
 
 ## [4.7.1] - 2019-08-16
 ### Changed
