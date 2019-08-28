@@ -47,26 +47,22 @@
             <groupId>org.vuejs</groupId>
             <artifactId>vue</artifactId>
             <classifier>dev</classifier>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.vuetifyjs</groupId>
             <artifactId>vuetify</artifactId>
             <classifier>dev</classifier>
-            <scope>test</scope>
         </dependency>
 
         <!-- test support libs -->
         <dependency>
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-intern</artifactId>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-uitest</artifactId>
-            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -391,37 +387,30 @@
                 <dependency>
                     <groupId>de.conterra.mapapps</groupId>
                     <artifactId>ct-mapapps-js-api</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.dojotoolkit</groupId>
                     <artifactId>dojo-release</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.dojotoolkit</groupId>
                     <artifactId>dgrid</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>org.dojotoolkit</groupId>
                     <artifactId>dstore</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>com.esri.js</groupId>
                     <artifactId>ags-js-api4</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>moment-js</groupId>
                     <artifactId>moment-js</artifactId>
-                    <scope>test</scope>
                 </dependency>
                 <dependency>
                     <groupId>de.conterra.js</groupId>
                     <artifactId>babel-polyfill</artifactId>
-                    <scope>test</scope>
                 </dependency>
             </dependencies>
         </profile>
