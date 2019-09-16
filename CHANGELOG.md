@@ -1,8 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [4.7.2] - unreleased
 ### Changed
+- Support for map.apps 4.7.2.
+- Update ct.jsregistry.version version.
 - sample_camera sample for sync logging added
 - sample_camera small enhancements
 - Update ct-mapapps-gulp-js version (requires additional changes, see this [commit](https://github.com/conterra/mapapps-4-developers/commit/c974a74a08a70316204d5c09aee22f8d39c70446))
