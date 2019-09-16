@@ -59,10 +59,12 @@
         <dependency>
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-intern</artifactId>
+            <version>${ct.jsrt-test.version}</version>
         </dependency>
         <dependency>
             <groupId>de.conterra.jsrt</groupId>
             <artifactId>ct-jsrt-test-uitest</artifactId>
+            <version>${ct.jsrt-test.version}</version>
         </dependency>
 
     </dependencies>
