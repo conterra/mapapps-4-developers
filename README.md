@@ -203,6 +203,13 @@ To execute the unit tests inside the project, run [http://localhost:9090/js/test
 
 ## Updating from older versions
 
+### from 4.7.1 to 4.7.2
+1. adjust the `mapapps.version` property in `./pom.xml`  to `4.7.2` 
+2. adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.2` 
+3. add version hint `<version>${ct.jsrt-test.version}</version>` for dependencies `ct-jsrt-test-intern` and `ct-jsrt-test-uitest` in `pom.xml`
+4. Update Gulpfile and remove dev dependencies from `gulpfile.js`. For details see [commit](https://github.com/conterra/mapapps-4-developers/commit/c974a74a08a70316204d5c09aee22f8d39c70446)
+5. remove `<scope>test</scope>` from the following dependencies in `pom.xml`: ct-mapapps-js-api, dojo-release, dgrid, dstore, ags-js-api4, moment-js and babel-polyfill
+
 ### from 4.7.0 to 4.7.1
 1. adjust the `mapapps.version` property in `./pom.xml`  to `4.7.1` 
 2. adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.1` 
