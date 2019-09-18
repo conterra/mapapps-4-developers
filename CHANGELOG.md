@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [4.7.2] - TODO: update with release date
+## [4.7.2] - 2019-09-18
 ### Changed
 - Support for map.apps 4.7.2.
 - Update ct.jsregistry.version version.
