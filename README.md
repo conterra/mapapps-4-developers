@@ -23,7 +23,7 @@ This Maven project includes some of the core concepts for developing UI-driven b
 
 ## Requirements
 
-* map.apps 4.7.1
+* map.apps 4.7.2
 * all resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
