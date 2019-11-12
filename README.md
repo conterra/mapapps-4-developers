@@ -66,6 +66,8 @@ The drawback of this mode is that you can not test authentication and that the d
 This mode requires that the profile `include-mapapps-deps` is activated.
 Append `-P include-mapapps-deps` to any Maven execution or declare the profile as activated by default in your Maven settings.xml.
 
+When developing live-configuration widgets in chrome, this mode is compelling.
+
 ### Start a local HTTP server
 
 Start the integrated Jetty server with:
