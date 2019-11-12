@@ -58,15 +58,14 @@ mapapps.remote.base=http://yourserver/mapapps
 and enabling the "env-dev" Maven profile.
 Append `-P env-dev` or `-Denv=dev` to any Maven execution or declare the profile as activated by default in your Maven settings.xml.
 
-### Use 'standalone project' mode
+### Use 'stand-alone project' mode
 
 In this mode all JavaScript sources are added to this project during development.
 The drawback of this mode is that you can not test authentication and that the default settings are not read from the remote instance.
 
-This mode requires that the profile `include-mapapps-deps` is activated.
-Append `-P include-mapapps-deps` to any Maven execution or declare the profile as activated by default in your Maven settings.xml.
+To use the 'stand-alone project' mode, activate the Maven profile `include-mapapps-deps`: Append `-P include-mapapps-deps` to any Maven execution command or declare the profile as activated by default in your Maven `settings.xml`.
 
-When developing live-configuration widgets in chrome, this mode is compelling.
+When developing live-configuration widgets in Chrome, this mode is compelling.
 
 ### Start a local HTTP server
 
