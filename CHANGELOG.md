@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [4.8.0] - 2020-01-06
+### Changed
+- Support for map.apps 4.8.0.
+- Update ct.jsregistry.version version.
+- Update ct-mapapps-gulp-js version.
+
 ## [4.7.2] - 2019-09-18
 ### Changed
 - Support for map.apps 4.7.2.
