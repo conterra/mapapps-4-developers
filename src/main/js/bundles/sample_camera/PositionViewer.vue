@@ -1,18 +1,8 @@
 <template>
-  <v-layout
-    row
-    wrap
-  >
-    <v-flex
-      xs12
-      class="mb-1"
-    >
-      <span>Lat: {{ latitude }}</span>
-    </v-flex>
-    <v-flex xs12>
-      <span>Lon: {{ longitude }}</span>
-    </v-flex>
-  </v-layout>
+    <v-layout column>
+        <p>Lat: {{ latitude }}</p>
+        <p>Lon: {{ longitude }}</p>
+    </v-layout>
 </template>
 <script>
     export default {
