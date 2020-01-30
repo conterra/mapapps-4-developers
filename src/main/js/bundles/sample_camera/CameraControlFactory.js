@@ -8,9 +8,9 @@ class CameraWidgetFactory {
 
     createInstance() {
         let modelToViewBinding = this._modelToViewBinding = this.declareModelToVueBinding();
-        let vm = new Vue(CameraControls);
-        let model = this._mapWidgetModel;
-        let widget = VueDijit(vm);
+        const vm = new Vue(CameraControls);
+        const model = this._mapWidgetModel;
+        const widget = VueDijit(vm);
 
         // bind model and view model
         modelToViewBinding.bindTo(model, vm);
@@ -53,7 +53,7 @@ class CameraWidgetFactory {
             && equalsAlmost(camera.tilt, tilt)) {
             return camera;
         }
-        let newCamera = camera.clone();
+        const newCamera = camera.clone();
         newCamera.heading = heading;
         newCamera.tilt = tilt;
         return newCamera;

@@ -3,7 +3,7 @@ module.exports = {
         bundleName: "camera",
         bundleDescription: "",
         ui: {
-            windowTitle: "Camera",
+            windowTitle: "Camera"
         },
         tool: {
             title: "Camera",
