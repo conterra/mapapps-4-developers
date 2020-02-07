@@ -1,9 +1,18 @@
 const gulp = require("gulp");
 const mapapps = require('ct-mapapps-gulp-js');
+const mapappsBrowserSync = require("ct-mapapps-browser-sync");
+
 const isProduction = process.env.NODE_ENV === "production";
 console.info(`Configuring gulp build for ${isProduction ? "production" : "development"}`);
 
+// used to transport test urls in "run-browser-tests-local" task
+const runBrowserTests = [];
+
 mapapps.registerTasks({
+    /** enable linting */
+    lintOnWatch: true,
+    /** enable es6 by default */
+    forceTranspile: true,
     /* A detailed description of available setting is available at https://www.npmjs.com/package/ct-mapapps-gulp-js */
     /* a list of themes inside this project */
     compress: isProduction,
@@ -16,10 +25,15 @@ mapapps.registerTasks({
         "vuetify": [
             "theme-custom"
         ]
-    }
+    },
+    runBrowserTests
 });
 
-gulp.task("default",
+mapappsBrowserSync.registerTask({
+    port: 8080
+}, gulp);
+
+gulp.task("build",
     gulp.series(
         "copy-resources",
         "themes-copy",
@@ -38,3 +52,44 @@ gulp.task("compress",
         "themes-compress"
     )
 );
+
+gulp.task("lint",
+    gulp.parallel(
+        "js-lint",
+        "style-lint"
+    ));
+
+gulp.task("preview",
+    gulp.series(
+        "build",
+        gulp.parallel(
+            "watch",
+            "browser-sync"
+        )
+    ));
+
+gulp.task("run-tests",
+    gulp.series(
+        "browser-sync-start",
+        function transportTestUrls() {
+            // transport test url to run-browser-tests
+            const testsAt = mapappsBrowserSync.state.url + "/js/tests/runTests.html";
+            runBrowserTests.push(testsAt);
+            return Promise.resolve();
+        },
+        "run-browser-tests",
+        "browser-sync-stop"
+    ));
+
+gulp.task("test",
+    gulp.series(
+        "build",
+        "lint",
+        "run-tests"
+    ));
+
+gulp.task("default",
+    gulp.series(
+        "build",
+        "lint"
+    ));
