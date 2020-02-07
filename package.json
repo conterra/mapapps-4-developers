@@ -3,7 +3,8 @@
     "description": "test build",
     "version": "0.0.1",
     "devDependencies": {
-        "ct-mapapps-gulp-js": "^0.2.5",
-        "vue-template-compiler": "2.6.6"
+        "ct-mapapps-gulp-js": "^0.2.7",
+        "vue-template-compiler": "2.6.6",
+        "@types/arcgis-js-api": "4.13.0"
     }
 }
