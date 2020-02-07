@@ -728,5 +728,16 @@
                 <mvn.cmd>mvn.cmd</mvn.cmd>
             </properties>
         </profile>
+        <profile>
+            <id>unix</id>
+            <activation>
+                <os>
+                    <family>unix</family>
+                </os>
+            </activation>
+            <properties>
+                <mvn.cmd>mvn</mvn.cmd>
+            </properties>
+        </profile>
     </profiles>
 </project>
