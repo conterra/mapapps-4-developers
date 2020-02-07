@@ -31,16 +31,6 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-        <dependency>
-            <groupId>de.conterra.jsregistry</groupId>
-            <artifactId>ct-jsregistry-embedded</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>de.conterra.ct-proxy</groupId>
-            <artifactId>ct-proxy-servlet</artifactId>
-            <scope>test</scope>
-        </dependency>
         <!-- include for vue-devtools support -->
         <dependency>
             <groupId>org.vuejs</groupId>
@@ -114,21 +104,6 @@
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
                     <version>3.2.3</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>1.6.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-maven-plugin</artifactId>
-                    <version>10.0.8</version>
-                    <configuration>
-                        <supportedPackagings>
-                            <supportedPackaging>jar</supportedPackaging>
-                        </supportedPackagings>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -246,11 +221,30 @@
                             </artifactItems>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>copy js-libs into 'bundle-imports'</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/bundle-imports</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <!-- ensure test resources are copied together with normal resources -->
+                        <goals>
+                            <goal>testResources</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                    </execution>
+                </executions>
                 <configuration>
                     <encoding>UTF-8</encoding>
                 </configuration>
@@ -273,34 +267,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <configuration>
-                    <httpConnector>
-                        <port>${jetty.port}</port>
-                    </httpConnector>
-                    <stopPort>9966</stopPort>
-                    <stopKey>jetty-stop</stopKey>
-                    <stopWait>60000</stopWait>
-                    <scan>0</scan>
-                    <webXml>${basedir}/src/test/webapp/WEB-INF/web.xml</webXml>
-                    <useTestScope>true</useTestScope>
-                    <webApp>
-                        <contextPath>/</contextPath>
-                        <resourceBases>
-                            <resourceBase>${root.build.outputPath}</resourceBase>
-                            <resourceBase>${basedir}/src/test/webapp</resourceBase>
-                        </resourceBases>
-                        <!-- include ct-jsregistry-embedded-<version>.jar as web-fragment provider -->
-                        <webInfIncludeJarPattern>.*/ct-jsregistry-embedded-[^/]*\.jar$</webInfIncludeJarPattern>
-                    </webApp>
-                    <systemProperties>
-                        <!-- set catalina base, so that log files are created in the target directory-->
-                        <catalina.base>${project.build.directory}</catalina.base>
-                    </systemProperties>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
@@ -310,22 +276,12 @@
                         <goals>
                             <goal>gulp</goal>
                         </goals>
+                        <phase>process-resources</phase>
                         <configuration>
                             <arguments>${gulp.task}</arguments>
                             <environmentVariables>
                                 <NODE_ENV>${gulp.node.env}</NODE_ENV>
                             </environmentVariables>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <!-- trigger manual: com.github.eirslett:frontend-maven-plugin:gulp@watch-changes -->
-                        <id>watch-changes</id>
-                        <goals>
-                            <goal>gulp</goal>
-                        </goals>
-                        <phase>none</phase>
-                        <configuration>
-                            <arguments>watch</arguments>
                         </configuration>
                     </execution>
                 </executions>
@@ -502,8 +458,8 @@
         <profile>
             <id>env-dev</id>
             <!-- This is the development profile, per default it points to a build.properties
-        file in the user home, but this can be changed localy by specifiying the
-        property local.configfile with its own string.
+                file in the user home, but this can be changed localy by specifiying the
+                property local.configfile with its own string.
             -->
             <activation>
                 <property>
@@ -513,9 +469,8 @@
             </activation>
             <properties>
                 <local.configfile>${basedir}/build.properties</local.configfile>
-                <!-- change if you have a dev task in your gulpfile.js defined
-                <gulp.task>dev</gulp.task>
-                -->
+                <!-- -Denv=dev enables preview mode -->
+                <gulp.task>preview</gulp.task>
             </properties>
             <build>
                 <plugins>
@@ -541,105 +496,10 @@
             </build>
         </profile>
         <profile>
-            <id>watch-all</id>
-            <activation>
-                <property>
-                    <name>env</name>
-                    <value>dev</value>
-                </property>
-            </activation>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>exec-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>trigger-watch-changes</id>
-                                <phase>test-compile</phase>
-                                <goals>
-                                    <goal>exec</goal>
-                                </goals>
-                                <configuration>
-                                    <async>true</async>
-                                    <executable>${maven.home}/bin/${mvn.cmd}</executable>
-                                    <arguments>
-                                        <argument>com.github.eirslett:frontend-maven-plugin:gulp@watch-changes</argument>
-                                    </arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-        <profile>
             <id>run-js-tests</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>build-helper-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>reserve-jetty-port</id>
-                                <goals>
-                                    <goal>reserve-network-port</goal>
-                                </goals>
-                                <phase>process-test-resources</phase>
-                                <configuration>
-                                    <portNames>
-                                        <portName>jetty.server.port</portName>
-                                    </portNames>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.eclipse.jetty</groupId>
-                        <artifactId>jetty-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>jetty-start</id>
-                                <phase>process-test-classes</phase>
-                                <goals>
-                                    <goal>start</goal>
-                                </goals>
-                                <configuration>
-                                    <httpConnector>
-                                        <port>${jetty.server.port}</port>
-                                    </httpConnector>
-                                    <scanIntervalSeconds>0</scanIntervalSeconds>
-                                    <daemon>true</daemon>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>jetty-stop</id>
-                                <phase>prepare-package</phase>
-                                <goals>
-                                    <goal>stop</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>run gulp js tests</id>
-                                <phase>test</phase>
-                                <goals>
-                                    <goal>gulp</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
+            <properties>
+                <gulp.task>test</gulp.task>
+            </properties>
         </profile>
         <profile>
             <id>compress</id>
@@ -715,26 +575,54 @@
             </build>
         </profile>
         <profile>
-            <id>windows</id>
-            <activation>
-                <os>
-                    <family>Windows</family>
-                </os>
-            </activation>
+            <id>write-release-versions</id>
             <properties>
-                <mvn.cmd>mvn.cmd</mvn.cmd>
+                <replace.source.version>${project.version}</replace.source.version>
+                <replace.target.version>${project.version}</replace.target.version>
             </properties>
-        </profile>
-        <profile>
-            <id>unix</id>
-            <activation>
-                <os>
-                    <family>unix</family>
-                </os>
-            </activation>
-            <properties>
-                <mvn.cmd>mvn</mvn.cmd>
-            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- ensure correct version in the manifest.json files-->
+                        <groupId>com.google.code.maven-replacer-plugin</groupId>
+                        <artifactId>replacer</artifactId>
+                        <executions>
+                            <!-- set release version -->
+                            <execution>
+                                <id>Set Versions from ${replace.source.version} to ${replace.target.version}</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>replace</goal>
+                                </goals>
+                                <configuration>
+                                    <basedir>${basedir}</basedir>
+                                    <includes>
+                                        <include>src/main/js/**/manifest.json</include>
+                                    </includes>
+                                    <excludes>
+                                        <exclude>src/main/js/**/tests/**</exclude>
+                                    </excludes>
+                                    <regex>false</regex>
+                                    <replacements>
+                                        <replacement>
+                                            <token>"${replace.source.version}"</token>
+                                            <value>"${replace.target.version}"</value>
+                                        </replacement>
+                                        <replacement>
+                                            <token>"~${replace.source.version}"</token>
+                                            <value>"~${replace.target.version}"</value>
+                                        </replacement>
+                                        <replacement>
+                                            <token>^${replace.source.version}</token>
+                                            <value>^${replace.target.version}</value>
+                                        </replacement>
+                                    </replacements>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
