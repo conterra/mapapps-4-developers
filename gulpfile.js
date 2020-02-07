@@ -89,7 +89,7 @@ gulp.task("test",
         "lint",
         "run-tests"
     ));
-    
+
 gulp.task("compress",
     gulp.series(
         "build",
