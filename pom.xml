@@ -403,7 +403,7 @@
         <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
-        
+
         <mapapps.user>admin</mapapps.user>
         <mapapps.pw>admin</mapapps.pw>
         <!-- disable this if "upload" profile should only deploy bundles -->
@@ -445,7 +445,7 @@
                 </dependency>
                 <dependency>
                     <groupId>de.conterra.js</groupId>
-                    <artifactId>babel-polyfill</artifactId>
+                    <artifactId>apprt-polyfill</artifactId>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
@@ -453,7 +453,7 @@
         <profile>
             <id>node-install</id>
             <activation>
-               <property>
+                <property>
                     <name>env</name>
                     <value>!dev</value>
                 </property>
@@ -466,14 +466,14 @@
                         <executions>
                             <execution>
                                 <id>install node and npm</id>
-								<phase>initialize</phase>
+                                <phase>initialize</phase>
                                 <goals>
                                     <goal>install-node-and-npm</goal>
                                 </goals>
                             </execution>
                             <execution>
                                 <id>npm install</id>
-								<phase>initialize</phase>
+                                <phase>initialize</phase>
                                 <goals>
                                     <goal>npm</goal>
                                 </goals>
@@ -530,7 +530,7 @@
         <profile>
             <id>watch-all</id>
             <activation>
-               <property>
+                <property>
                     <name>env</name>
                     <value>dev</value>
                 </property>
