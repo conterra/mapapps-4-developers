@@ -358,6 +358,25 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>de.conterra.mapapps</groupId>
+                <artifactId>mapapps-maven-plugin</artifactId>
+                <configuration>
+                    <!-- only build zip files -->
+                    <skipDeploy>true</skipDeploy>
+                    <sourceDirectory>${js.build.outputPath}/apps</sourceDirectory>
+                    <outputDirectory>${project.build.directory}</outputDirectory>
+                </configuration>
+                <executions>
+                    <execution>
+                        <!-- used to create .zip files containing the apps during the build -->
+                        <id>create-app-zips</id>
+                        <goals>
+                            <goal>deployApps</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <properties>
@@ -384,6 +403,11 @@
         <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
+        
+        <mapapps.user>admin</mapapps.user>
+        <mapapps.pw>admin</mapapps.pw>
+        <!-- disable this if "upload" profile should only deploy bundles -->
+        <upload.apps>true</upload.apps>
     </properties>
     <profiles>
         <profile>
@@ -664,24 +688,14 @@
                     <plugin>
                         <groupId>de.conterra.mapapps</groupId>
                         <artifactId>mapapps-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>deploy-apps</id>
-                                <goals>
-                                    <goal>deployApps</goal>
-                                </goals>
-                                <configuration>
-                                    <sourceDirectory>${js.build.outputPath}/apps</sourceDirectory>
-                                    <outputDirectory>${js.build.outputPath}/apps</outputDirectory>
-                                    <skipDeploy>false</skipDeploy>
-                                    <deployAsApp>true</deployAsApp>
-                                    <appEditorState>PUBLISHED</appEditorState>
-                                    <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
-                                    <username>admin</username>
-                                    <password>admin</password>
-                                </configuration>
-                            </execution>
-                        </executions>
+                        <configuration>
+                            <skipDeploy>${upload.apps}</skipDeploy>
+                            <deployAsApp>true</deployAsApp>
+                            <appEditorState>PUBLISHED</appEditorState>
+                            <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
+                            <username>${mapapps.user}</username>
+                            <password>${mapapps.pw}</password>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>de.conterra.jsregistry</groupId>
@@ -694,8 +708,8 @@
                                 </goals>
                                 <configuration>
                                     <registryEndpoint>${mapapps.remote.base}/resources/jsregistry</registryEndpoint>
-                                    <username>admin</username>
-                                    <password>admin</password>
+                                    <username>${mapapps.user}</username>
+                                    <password>${mapapps.pw}</password>
                                 </configuration>
                             </execution>
                         </executions>
