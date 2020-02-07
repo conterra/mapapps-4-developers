@@ -9,6 +9,7 @@
         "vue-template-compiler": "2.6.6",
         "puppeteer": "^5.5.0",
         "eslint-config-ct-prodeng": "^1.1.16",
-        "stylelint-config-ct-prodeng": "1.0.3"
+        "stylelint-config-ct-prodeng": "1.0.3",
+        "ct-mapapps-browser-sync": "^0.0.15"
     }
 }
