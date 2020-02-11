@@ -23,7 +23,7 @@ This Maven project implements some of the core concepts for developing bundles i
 
 ## Requirements
 
-* map.apps 4.8.1
+* map.apps 4.8.2
 * All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
@@ -35,7 +35,7 @@ The project supports a 'remote project' and 'standalone project' mode.
 In this mode a running map.apps installation must be available on a different machine or server and the map.apps core JavaScript resources are fetched from there.
 This mode is the recommended one.
 
-The URL to the existing map.apps installation can be configured inside the `pom.xml` file of this project: 
+The URL to the existing map.apps installation can be configured inside the `pom.xml` file of this project:
 
 Replace
 
@@ -90,7 +90,7 @@ This means:
 
 To enforce the installation of Node.js and NPM execute:
 
-```
+```sh
 mvn initialize
 ```
 
@@ -107,14 +107,15 @@ The `mapapps.remote.base` URL mentioned above should point to a map.apps 4 insta
 
 To force custom projects based on the mapapps-4-developers project to use the correct `apprt.version` for line 3 development, the `index.html` file in `src/main/webapp` has to be changed the following way:
 
-``` 
+```js
   $apprt.changeConfig({ct: {
                 amdPackages: ["apprt@^@@apprt.version@@"]
             }});
 ```
-should be replaced by 
 
-```
+should be replaced by
+
+```js
   $apprt.changeConfig({ct: {
                 amdPackages: ["apprt@^3.10.0"]
             }});
@@ -124,7 +125,7 @@ Replace the version ('3.10.0' in the example above) with the actual map.apps 3 v
 
 To ensure the correct bundle versions are loaded, inside the app's `app.json` file the `amdPackages` property and the versions of the bundles need to be configured with the correct versions:
 
-```
+```json
 {
     "properties": {
         "amdPackages": "apprt@^3.10.0"
@@ -135,10 +136,10 @@ To ensure the correct bundle versions are loaded, inside the app's `app.json` fi
             "system@^3.10.0",
             "splashscreen@^3.10.0",
             "map@^3.10.0",
-            
-    [...]       
 
-```  
+    [...]
+
+```
 
 Since line 3 bundles are often coded in the old Dojo AMD style and not transpiled from ES6, it is necessary to exclude them from the transpilation process. To achieve this, any line 3 app folder and any line 3 bundle folder has to contain a `.babelrc` file in the directory root with the following content:
 
@@ -202,41 +203,54 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 
 ## Updating from older versions
 
+### from 4.8.1 to 4.8.2
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.2`
+2. Change the requirement `babel-polyfill` to  `apprt-polyfill` in the `./pom.xml` and `src/test/webapp/js/tests/test-init.js`.
+3. Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp` in the `src/test/webapp/index.html`
+
 ### from 4.8.0 to 4.8.1
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.1` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.1`
 
 ### from 4.7.2 to 4.8.0
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.0` 
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.4` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.0`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.4`
 3. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
     * "ct-mapapps-gulp-js": "^0.2.5"
 
 ### from 4.7.1 to 4.7.2
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.2` 
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.2` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.2`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.2`
 3. Add the version hint `<version>${ct.jsrt-test.version}</version>` for dependencies `ct-jsrt-test-intern` and `ct-jsrt-test-uitest` in `pom.xml`
 4. Update the Gulpfile and remove the dev dependencies from `gulpfile.js`. For details see [commit](https://github.com/conterra/mapapps-4-developers/commit/c974a74a08a70316204d5c09aee22f8d39c70446)
 
 ### from 4.7.0 to 4.7.1
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.1` 
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.1` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.1`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.1`
 
 ### from 4.6.1 to 4.7.0
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.0` 
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.0` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.0`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.0`
 3. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
     * "eslint-config-ct-prodeng": "^1.0.5"
     * "vue-template-compiler": "2.6.6"
 
 ### from 4.6.0 to 4.6.1
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.6.1` 
+
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.6.1`
 
 ### from 4.5.0 or below to 4.6.0
+
 1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.6.0`
 2. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
     * "ct-mapapps-gulp-js": "~0.1.3"
     * "vue-template-compiler": "2.5.17"
-3.  Go to `./src/test/webapp/index.html` and replace the `corsEnabledServers: ["@@mapapps.remote.base@@"]` with `trustedServers: ["@@mapapps.remote.base@@"]` inside the apprt request configuration object.
+3. Go to `./src/test/webapp/index.html` and replace the `corsEnabledServers: ["@@mapapps.remote.base@@"]` with `trustedServers: ["@@mapapps.remote.base@@"]` inside the apprt request configuration object.
 
 ## References
 

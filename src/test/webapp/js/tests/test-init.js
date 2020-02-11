@@ -10,7 +10,7 @@ testConfig({
         ,{
             root: "@@mapapps.remote.base@@/resources/jsregistry/root",
             packages: [
-                "babel-polyfill",
+                "apprt-polyfill",
                 "apprt@4.x",
                 "apprt-vue@4.x",
                 "vuetify@~0.14.7",
@@ -20,6 +20,6 @@ testConfig({
     ],
     // ensure babel polyfill is loaded during test execution
     deps: [
-        "babel-polyfill"
+        "apprt-polyfill"
     ]
 });

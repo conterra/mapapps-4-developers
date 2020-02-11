@@ -66,11 +66,10 @@
                 { name: "localbundles", location: "@@jsregistry.root.url@@" }
             ]
         });
-        $apprt.load(function (Launcher) {
-            new Launcher({ configLocation: "localapps" }).launchAppFromParam({
-                param: "app",
-                defaultApp: "@@default.app.name@@"
-            });
+        $apprt.startApp({
+            configLocation: "localapps",
+            param: "app",
+            defaultApp: "@@default.app.name@@"
         });
     </script>
 </head>
