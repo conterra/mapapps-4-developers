@@ -9,6 +9,8 @@ All notable changes to this project will be documented in this file.
 - Support for map.apps 4.8.2.
 - Replace `babel-polyfill` by `apprt-polyfill`.
 - Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp`
+- Introduce property `skip.apps.upload` to decide if apps should be uploaded
+- Apps located in `/src/main/js/apps/[app]` are by default zipped into the folder `/target/[app].zip`.
 
 ## [4.8.1] - 2020-01-10
 

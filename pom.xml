@@ -406,8 +406,8 @@
 
         <mapapps.user>admin</mapapps.user>
         <mapapps.pw>admin</mapapps.pw>
-        <!-- disable this if "upload" profile should only deploy bundles -->
-        <upload.apps>true</upload.apps>
+        <!-- enable this if "upload" profile should only deploy bundles -->
+        <skip.apps.upload>false</skip.apps.upload>
     </properties>
     <profiles>
         <profile>
@@ -689,7 +689,7 @@
                         <groupId>de.conterra.mapapps</groupId>
                         <artifactId>mapapps-maven-plugin</artifactId>
                         <configuration>
-                            <skipDeploy>${upload.apps}</skipDeploy>
+                            <skipDeploy>${skip.apps.upload}</skipDeploy>
                             <deployAsApp>true</deployAsApp>
                             <appEditorState>PUBLISHED</appEditorState>
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
