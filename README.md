@@ -203,6 +203,11 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 
 ## Updating from older versions
 
+### from 4.8.1 to 4.8.3
+1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.2`
+2. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
+    * "ct-mapapps-gulp-js": "^0.3.3"
+    
 ### from 4.8.1 to 4.8.2
 
 1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.2`

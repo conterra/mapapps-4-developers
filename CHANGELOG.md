@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.8.3] - 2020-02-11
+
+### Changed
+
+- Support for map.apps 4.8.3.
+
 ## [4.8.2] - 2020-02-11
 
 ### Changed
