@@ -6,8 +6,7 @@
          "type": "shell",
          "command": "mvn jetty:run -Pwatch-all",
          "group": {
-            "kind": "build",
-            "isDefault": true
+            "kind": "build"
          }
      }
  ]
