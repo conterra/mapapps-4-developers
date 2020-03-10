@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 - Support for map.apps 4.8.3.
-- Update ct-mapapps-gulp-js to 0.3.5 (package.json)
+- Update ct-mapapps-gulp-js to 0.3.6 (package.json)
 
 ## [4.8.2] - 2020-02-11
 
