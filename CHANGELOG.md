@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.8.4] - 2020-05-20
+
+### Changed
+
+- Upgrade some Maven-Plugin versions in `./pom.xml`.
+- Change `mapapps.version` property in `./pom.xml`  to `4.8.4`
+- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.7`
+- Update `ct-mapapps-gulp-js` to `^0.4.4` (`package.json`) this change requires to list additional `peerDependencies`:
+
+```js
+    // for .vue file support:
+    "vue-template-compiler": "2.6.6",
+    // for test execution (optional):
+    "puppeteer": "^3.1.0",
+    // for js linting (optional):
+    "eslint-config-ct-prodeng": "^1.1.10",
+    // for css/less linting (optional):
+    "stylelint-config-ct-prodeng": "1.0.2"
+```
+
+- Change dependency `ct-mapapps-proxy` to `ct-proxy-servlet` in `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>de.conterra.ct-proxy</groupId>
+    <artifactId>ct-proxy-servlet</artifactId>
+    <scope>test</scope>
+</dependency>
+```
+
+- Change class name of Proxy Servlet in `src/test/webapp/WEB-INF/web.xml` (optional):
+
+```xml
+    <servlet>
+        <description>ProxyServlet</description>
+        <servlet-name>ProxyServlet</servlet-name>
+        <servlet-class>de.conterra.proxy.servlet.ProxyServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+```
+
+
 ## [4.8.3] - 2020-03-06
 
 ### Changed
