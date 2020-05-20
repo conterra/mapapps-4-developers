@@ -11,7 +11,7 @@
     <servlet>
         <description>ProxyServlet</description>
         <servlet-name>ProxyServlet</servlet-name>
-        <servlet-class>de.conterra.mapapps.proxy.ProxyServlet</servlet-class>
+        <servlet-class>de.conterra.proxy.servlet.ProxyServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
