@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.9.0] - 2020-08-18
+
+### Changed
+
+- Support for map.apps 4.9.0
+
+- Change `mapapps.version` property in `./pom.xml`  to `4.9.0`
+- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.8`
+- Update `ct-mapapps-gulp-js` to `^0.4.5` (`package.json`)
+- Update `@types/arcgis-js-api` to `4.16.0` (`package.json`)
+- Update `puppeteer` to `^3.3.0` (`package.json`)
+- Update `eslint-config-ct-prodeng` to `^1.1.11` (`package.json`)
+
+- Added several omnisearch properties in `src/main/js/bundles/theme-custom/styles/themeSettings.less`:
+
+```less
+    // Omni Search Colors
+    @ct-omnisearch-input-background-color: #fff;
+    @ct-omnisearch-input-text-color: #000;
+    @ct-omnisearch-result-list-hover-color: @minor-selected-color;
+    @ct-omnisearch-drawer-button-background-color: @ct-omnisearch-input-background-color;
+    @ct-omnisearch-drawer-button-icon-color: darken(@disabled-text-color, 30);
+```
+
 ## [4.8.4] - 2020-05-20
 
 ### Changed
