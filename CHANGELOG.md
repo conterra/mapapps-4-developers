@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [4.9.1] - 2020-09-04
 
-- Support for map.apps 4.9.0
+- Support for map.apps 4.9.1
 
 - Change `mapapps.version` property in `./pom.xml`  to `4.9.1`
 
