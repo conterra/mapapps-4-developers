@@ -1,6 +1,7 @@
 # Migration Guide
 
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
+The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
 ## 4.8 to 4.9 (ArcGIS API for Javascript 4.13 to 4.16)
 
@@ -11,7 +12,11 @@ This file contains notes for the migration of bundles to new minor versions of m
     ```
   - To use now:
     ```javascript
+    // import all functions
     import * as geometryEngine from "esri/geometry/geometryEngine";
+    ```
+    ```javascript
+    // import specific functions
     import {buffer, union, intersect, difference} from "esri/geometry/geometryEngine";
     ```
 
