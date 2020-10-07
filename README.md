@@ -203,6 +203,10 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 
 ## Updating from older versions
 
+### from 4.9.1 to 4.9.2
+
+See [Changelog](./CHANGELOG.md#492---2020-10-06)
+
 ### from 4.9.0 to 4.9.1
 
 See [Changelog](./CHANGELOG.md#491---2020-09-04)
