@@ -93,7 +93,23 @@ All notable changes to this project will be documented in this file.
 
 - Support for map.apps 4.8.2.
 - Replace `babel-polyfill` by `apprt-polyfill`.
-- Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp`
+- Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp` 
+    note that the function signature also changed
+    instead of:
+    ```js
+    $apprt.load(function(Launcher) {
+        new Launcher({
+            configLocation: "builderapps"
+        }).launchApp("@@appId@@");
+    ```
+    it will be: 
+    ```js
+     $apprt.startApp({
+        configLocation: "builderapps",
+        param: "app",
+        defaultApp: "@@appId@@"
+    });
+    ```
 - Introduce property `skip.apps.upload` to decide if apps should be uploaded
 - Apps located in `/src/main/js/apps/[app]` are by default zipped into the folder `/target/[app].zip`.
 
