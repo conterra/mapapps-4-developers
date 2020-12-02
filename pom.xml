@@ -659,23 +659,6 @@
                                     </jsFiles>
                                 </configuration>
                             </execution>
-                            <execution>
-                                <id>optimize CSS</id>
-                                <goals>
-                                    <goal>optimizeCSS</goal>
-                                </goals>
-                                <phase>compile</phase>
-                                <configuration>
-                                    <cssFiles>
-                                        <includes>
-                                            <include>bundles/*/*/*.css</include>
-                                        </includes>
-                                        <excludes>
-                                            <exclude>**/themeSettings.css</exclude>
-                                        </excludes>
-                                    </cssFiles>
-                                </configuration>
-                            </execution>
                         </executions>
                     </plugin>
                 </plugins>
