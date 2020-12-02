@@ -3,11 +3,11 @@
     "description": "test build",
     "version": "0.0.1",
     "devDependencies": {
-        "@types/arcgis-js-api": "4.16.0",
-        "ct-mapapps-gulp-js": "^0.4.5",
+        "@types/arcgis-js-api": "4.17.0",
+        "ct-mapapps-gulp-js": "^0.5.5",
         "vue-template-compiler": "2.6.6",
-        "puppeteer": "^3.3.0",
-        "eslint-config-ct-prodeng": "^1.1.11",
-        "stylelint-config-ct-prodeng": "1.0.2"
+        "puppeteer": "^5.5.0",
+        "eslint-config-ct-prodeng": "^1.1.16",
+        "stylelint-config-ct-prodeng": "1.0.3"
     }
 }
