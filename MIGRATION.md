@@ -3,6 +3,58 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.9 to 4.10 (ArcGIS API for Javascript 4.16 to 4.17)
+
+Breaking Changes in the API that may have an influence on map.apps development:
+
+- For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
+
+```javascript
+  // destroy the view and all attached resources
+  view.destroy();
+
+  // unset map from the view so that it is not destroyed
+  // then destroy the view and all attached resources
+  const map = view.map;
+  view.map = null;
+  view.destroy();
+```
+
+- Performance improvements were made to Popups. Prior to this release, it was possible to access the popup feature's geometry without having to specify outFields on the FeatureLayer or the PopupTemplate.
+
+This is important, if own PopupDefinitions are provided that interact with the features's geometry, e.g.
+
+```javascript
+
+resolvePopupTemplate(layer) {
+        return {
+            title: "County of {NAME}",
+            content({graphic}) {
+                const geom = graphic.geometry;
+
+                [...]
+            }
+        };
+    }
+
+```
+
+will only work, if `outFields` are specified like
+
+```json
+
+      {
+          "id": "counties",
+          "type": "AGS_FEATURE",
+          "url": "https://services.arcgis.com/P3ePLMYs2RVChkJx/ArcGIS/rest/services/USA_Counties/FeatureServer/0",
+          "definitionExpression": "POP2010 > 500000",
+          "outFields": ["NAME"],
+          "popupTemplate": {
+              "popupType": "fuel-stations"
+          }
+      }
+```
+
 ## 4.8 to 4.9 (ArcGIS API for Javascript 4.13 to 4.16)
 
 - Import of the *esri/geometry/geometryEngine*
