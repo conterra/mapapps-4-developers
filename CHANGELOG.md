@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 - Support for map.apps 4.10.0
 
 - Change `mapapps.version` property in `./pom.xml`  to `4.10.0`
-- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.9`
+- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.10`
 - Change `nodeVersion` property in `./pom.xml`  to `v14.15.1`
 - Change `npmVersion` property in `./pom.xml`  to `6.14.9`
 - Update `@types/arcgis-js-api` to `4.17.0` (`package.json`)
