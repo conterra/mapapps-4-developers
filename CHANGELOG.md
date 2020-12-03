@@ -41,10 +41,22 @@ All notable changes to this project will be documented in this file.
 </execution>
 ```
 
-- add `themes-compress` task to `./gulpfile.js`
+- add execution of `gulp compress` task to `compress` profile in `pom.xml`
+
+```xml
+<profile>
+    <id>compress</id>
+    <properties>
+        <gulp.task>compress</gulp.task>
+    </properties>
+    ...
+</profile>    
+```
+
+- add `compress` task to `./gulpfile.js`  
 
 ```js
-gulp.task("default",
+gulp.task("compress",
     gulp.series(
         "copy-resources",
         "themes-copy",

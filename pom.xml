@@ -630,6 +630,9 @@
         </profile>
         <profile>
             <id>compress</id>
+            <properties>
+                <gulp.task>compress</gulp.task>
+            </properties>
             <build>
                 <plugins>
                     <plugin>

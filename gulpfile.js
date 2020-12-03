@@ -21,9 +21,20 @@ gulp.task("default",
         "copy-resources",
         "themes-copy",
         gulp.parallel(
-            "js-transpile", 
+            "js-transpile",
+            "themes-compile"
+        )
+    )
+);
+
+gulp.task("compress",
+    gulp.series(
+        "copy-resources",
+        "themes-copy",
+        gulp.parallel(
+            "js-transpile",
             gulp.series(
-                "themes-compile", 
+                "themes-compile",
                 "themes-compress"
             )
         )
