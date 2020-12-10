@@ -1,6 +1,11 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [4.10.1] - 2020-12-09
+
+### Changed
+
+- Support for map.apps 4.10.1
 
 ## [4.10.0] - 2020-12-08
 
