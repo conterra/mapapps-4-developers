@@ -23,7 +23,7 @@ This Maven project implements some of the core concepts for developing bundles i
 
 ## Requirements
 
-* map.apps 4.10.1
+* map.apps 4.11.0
 * All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
@@ -209,6 +209,11 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 * The `/package.json` file contains the version numbers for the required dependencies for the gulp build process.
 
 ## Updating from older versions
+
+### from 4.10.1 to 4.11.0
+
+See [Changelog](./CHANGELOG.md#4110)
+
 ### from 4.10.0 to 4.10.1
 
 See [Changelog](./CHANGELOG.md#4100---2020-12-09)

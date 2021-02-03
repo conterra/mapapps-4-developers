@@ -1,6 +1,16 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [4.11.0] - [tbd]
+
+### Changed
+
+- Support for map.apps 4.11.0
+
+- Change `mapapps.version` property in `./pom.xml`  to `4.11.0`
+- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.4.0`
+- Update `ct-mapapps-gulp-js` to `^0.5.13` (`package.json`)
+
 ## [4.10.1] - 2020-12-09
 
 ### Changed
