@@ -38,6 +38,12 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>de.conterra.common</groupId>
+            <artifactId>ct-jcache-eh</artifactId>
+            <version>2.0.11</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
             <groupId>de.conterra.ct-proxy</groupId>
             <artifactId>ct-proxy-servlet</artifactId>
             <scope>test</scope>
@@ -384,7 +390,7 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.11.0</mapapps.version>
+        <mapapps.version>4.10.2-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
