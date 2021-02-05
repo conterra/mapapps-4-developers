@@ -1,47 +1,97 @@
 /* Styles for progress on startup function */
 @import url("login.css");
 
-.start .splashScreen .anim_bg .progress {
-    background-color: #3C3C3C;  /*<<--- put here ur main color.*/
-}
-.start {
-    background: #fff!important;
-}
-
-.started {
-    background-color: white;
-    background-image: none
-}
-
-.started .splashScreen {
-    /*hide splashscreen as soon as application is started*/
-    display: none!important;
-}
-
 html,
-body,
-.splashScreen {
+body {
     margin: 0;
     padding: 0;
     height: 100%;
 }
-.splashScreen {
-    color: #fff;
-    background: #2c2d2e;
+
+.ct-splashscreen {
+    /* splashscreen colors*/
+    --light-bg-color: #f3f5f8;
+    --light-secondary-bg-color: #f3f3f3;
+    --light-normal-text-color: #3c3c3c;
+    --dark-bg-color: #29292b;
+    --dark-secondary-bg-color: #48484b;
+    --dark-normal-text-color: #fff;
+    --header-expanded-height: 42px;
+    --footer-expanded-height: var(--header-expanded-height);
+
+    position: absolute;
+    top: 0; left: 0; right:0; bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--light-bg-color);
+    font-size: 15px; /*Set base font-size to prevent jiggling when theme comes in*/
+    font-family: sans-serif;
+}
+.ct-splashscreen,
+.ct-splashscreen-header,
+.ct-splashscreen-footer {
+    transition: background-color .8s ease-in-out;
+}
+
+/* in and out of loader */
+.ct-splashscreen {
+    z-index: 1; /*ensure Splash is above app and can fade in and out properly*/
+    animation: splashscreen-appear ease .3s 1 forwards;
+}
+
+.started .ct-splashscreen,
+.ct-splashscreen--disappearing {
+    animation: splashscreen-disappear .8s linear 1 forwards;
+}
+/* ensure splashscreen is hidden when app is started even without splashscreen bundle*/
+.started .ct-splashscreen:not(.ct-splashscreen--disappearing){
+    display: none;
+}
+
+.ct-splashscreen-header,
+.ct-splashscreen-footer {
+    flex: 0 0 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-secondary-bg-color);
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
+    animation: .5s ease-in-out 2s forwards;
+}
+.ct-splashscreen-header {
+    animation-name: header-appear;
+}
+.ct-splashscreen-footer {
+    animation-name: footer-appear;
+    border-bottom: 3px solid #2980b9;
+}
+
+.ct-splashscreen-main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    animation: splashscreen-appear .5s ease-in-out 1 forwards;
+}
+
+.ct-splashscreen-stage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    font-size: 15px; /*Set base font-size to prevent jiggling when theme comes in*/
+    padding-top: 15px;
+    color: var(--light-normal-text-color);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
 }
-.splashScreen {
-    font-family: sans-serif;
-}
-.splashScreen .splashHeader{
-   font-size: 1.2em;
-    margin-top: 1em;
-    font-weight: 100;
+
+.ct-splashscreen-stage .splashHeader {
     font-weight: normal;
     font-size: 1.07rem;
     min-height: 1em;
@@ -50,24 +100,24 @@ body,
 }
 
 /*.splashHeader,*/
-.splashScreen .launchLog{    
+.ct-splashscreen-stage .launchLog{
     transition: opacity .5s ease-in-out;
 }
 
-.splashScreen .launchLog--error{
+.ct-splashscreen-stage .launchLog--error{
     color: #e74c3c;
 }
 
-.splashScreen .launch__bundles{
+.ct-splashscreen-stage .launch__bundles{
     font-size: .8rem;
     padding-left: .8rem;
-    color: rgba(94,94,94,.7);
+    color: rgba(94,94,94,.6);
     position: absolute;
-    bottom: 0;
-    left: 0;
-
+    bottom: 55px;
+    left: 3px;
 }
-.splashScreen .launch__animation {
+
+.ct-splashscreen-stage .launch__animation {
     position: relative;
     width: 600px;
     height: 60px;
@@ -75,11 +125,38 @@ body,
     animation-duration: 6s;
 }
 
-.splashScreen .dot-outer {
+.everlasting .ct-splashscreen,
+    /* --dark Fuzzy-Selector for dark themes other than everlasting*/
+.ctAppRoot[class*=" --dark"] .ct-splashscreen,
+.ct-splashscreen--dark{
+    background: var(--dark-bg-color);
+}
+.everlasting .ct-splashscreen-header,
+.everlasting .ct-splashscreen-footer,
+.ctAppRoot[class*=" --dark"] .ct-splashscreen-header,
+.ctAppRoot[class*=" --dark"] .ct-splashscreen-footer,
+.ct-splashscreen--dark .ct-splashscreen-header,
+.ct-splashscreen--dark .ct-splashscreen-footer {
+    background: var(--dark-secondary-bg-color);
+}
+
+.everlasting .ct-splashscreen-stage,
+.ctAppRoot[class*=" --dark"] .ct-splashscreen-stage,
+.ct-splashscreen--dark .ct-splashscreen-stage {
+    color: #fff
+}
+
+.everlasting .ct-splashscreen-footer,
+.ctAppRoot[class*=" --dark"] .ct-splashscreen-footer,
+.ct-splashscreen--dark .ct-splashscreen-footer {
+    border-bottom: 3px solid #2a2a2a;
+}
+/* Animated Dots */
+.ct-splashscreen-stage .dot-outer {
     display: inline-block;
 }
 
-.splashScreen .dot {
+.ct-splashscreen-stage .dot {
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -94,34 +171,29 @@ body,
 .splashScreen--error .dot{
     animation-play-state: paused;
 }
-.splashScreen .dot-outer:first-child .dot {
+.ct-splashscreen-stage .dot-outer:first-child .dot {
     animation-name: bring-in-and-scale-first-dot;
 }
-.splashScreen .dot-outer:last-child .dot {
+.ct-splashscreen-stage.dot-outer:last-child .dot {
     animation-name: bring-in-and-scale-last-dot;
 }
-.splashScreen .dot-1 {
+.ct-splashscreen-stage .dot-1 {
     animation-delay: 0s;
 }
-.splashScreen .dot-2 {
+.ct-splashscreen-stage .dot-2 {
     animation-delay: 0.21s;
 }
-.splashScreen .dot-3 {
+.ct-splashscreen-stage .dot-3 {
     animation-delay: 0.42s;
 }
-.splashScreen .dot-4 {
+.ct-splashscreen-stage .dot-4 {
     animation-delay: 0.63s;
 }
-.splashScreen .dot-5 {
+.ct-splashscreen-stage .dot-5 {
     animation-delay: 0.84s;
 }
-.splashScreen .dot-6 {
+.ct-splashscreen-stage .dot-6 {
     animation-delay: 1.05s;
-}
-@keyframes splashscreen-fadeout {
-    from { opacity: 1;}
-    99%{ opacity: 0;}
-    to { display: none; }
 }
 @keyframes bring-in-small-dots {
     from {
@@ -194,5 +266,46 @@ body,
     to {
         opacity: 0;
         transform: translateX(585px);
+    }
+}
+
+@keyframes splashscreen-appear {
+    0% { opacity: 0 }
+    100% { opacity: 1 }
+}
+@keyframes splashscreen-disappear {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+@keyframes header-appear {
+    from {
+        opacity: 0;
+        flex-basis: 0;
+    }
+    to {
+        opacity: 1;
+        flex-basis: var(--header-expanded-height);
+    }
+}
+@keyframes footer-appear {
+    from {
+        opacity: 0;
+        flex-basis: 0;
+    }
+    to {
+        opacity: 1;
+        flex-basis: var(--footer-expanded-height);
+    }
+}
+
+/* hide mocked header and footer in mobile layouts*/
+@media (max-width: 768px) {
+    .ct-splashscreen-header,
+    .ct-splashscreen-footer{
+        display: none;
+    }
+    .ct-splashscreen-stage .launch__bundles{
+        bottom: 5px;
     }
 }
