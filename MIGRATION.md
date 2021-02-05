@@ -3,6 +3,11 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.10 to 4.11
+
+If you have no customized splashscreen, update the default splashscreen by changing  your `init.css` 
+and `index.html` file according to [this commit](https://github.com/conterra/mapapps-4-developers/commit/bef4b4d8669045a33fe8b40eef171f9194e291f7)
+
 ## 4.9 to 4.10 (ArcGIS API for Javascript 4.16 to 4.17)
 
 Breaking Changes in the API that may have an influence on map.apps development:
