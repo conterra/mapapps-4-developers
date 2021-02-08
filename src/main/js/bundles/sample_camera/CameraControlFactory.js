@@ -42,7 +42,11 @@ class CameraWidgetFactory {
             .sync("rotation", log("left", ifDefined()), log("right", ifDefined(debounceOrCancel(10))))
             .syncToRight("center", ["latitude", "longitude"], ifDefined(center => [center.latitude, center.longitude]))
             .sync("camera", ["heading", "tilt"], ifDefined(({ heading, tilt }) => [heading, tilt]),
-                debounceOrCancel(15, (values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue())));
+                debounceOrCancel(
+                    15,
+                    (values, context) => this._putHeadingTiltIntoCamera(values, context.targetValue())
+                )
+            );
     }
 
     _putHeadingTiltIntoCamera([heading, tilt], camera) {
