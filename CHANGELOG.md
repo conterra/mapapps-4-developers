@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 
 - Change `mapapps.version` property in `./pom.xml`  to `4.11.0`
 - Change `ct.jsregistry.version` property in `./pom.xml`  to `1.4.0`
+- Change `ct.jsrt-test.version` property in `./pom.xml`  to `2.0.0`
 - Update `ct-mapapps-gulp-js` to `^0.5.13` (`package.json`)
 - Update splashscreen styles (see [MIGRATION.md](./MIGRATION.md)) for details. Relevant for non-customized splashscreens.
 
