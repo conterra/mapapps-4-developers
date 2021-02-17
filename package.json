@@ -3,6 +3,7 @@
     "description": "test build",
     "version": "0.0.1",
     "devDependencies": {
+        "@conterra/ct-mapapps-typings": "~4.11.0",
         "@types/arcgis-js-api": "4.17.0",
         "ct-mapapps-gulp-js": "^0.5.13",
         "vue-template-compiler": "2.6.6",
