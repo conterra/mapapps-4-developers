@@ -21,7 +21,10 @@
     export default {
         props: {
             // external property is named "value" so v-model can be used
-            value: String
+            value: {
+                type: String,
+                default: "2D"
+            }
         },
         data: function () {
             // radio v-model uses "selected" state

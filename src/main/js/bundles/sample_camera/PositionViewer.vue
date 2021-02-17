@@ -7,8 +7,14 @@
 <script>
     export default {
         props: {
-            latitude: Number,
-            longitude: Number
+            latitude: {
+                type: Number,
+                default: 0
+            },
+            longitude: {
+                type: Number,
+                default: 0
+            }
         }
     };
 </script>
