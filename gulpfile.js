@@ -38,25 +38,16 @@ gulp.task("build",
         "copy-resources",
         "themes-copy",
         gulp.parallel(
-            "js-lint",
-            //"style-lint",
             "js-transpile",
             "themes-compile"
         )
     )
 );
 
-gulp.task("compress",
-    gulp.series(
-        "default",
-        "themes-compress"
-    )
-);
-
 gulp.task("lint",
     gulp.parallel(
-        "js-lint",
-        "style-lint"
+        "js-lint"
+        //,"style-lint"
     ));
 
 gulp.task("preview",
@@ -87,6 +78,14 @@ gulp.task("test",
         "lint",
         "run-tests"
     ));
+    
+gulp.task("compress",
+    gulp.series(
+        "build",
+        "themes-compress",
+        "lint"
+    )
+);
 
 gulp.task("default",
     gulp.series(
