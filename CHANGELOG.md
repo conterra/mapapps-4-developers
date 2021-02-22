@@ -1,32 +1,34 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
-## [4.11.0] - [tbd]
 
-### Changed
+## [4.11.1] - 2021-02-22
+
+- Support for map.apps 4.11.1
+- Change `mapapps.version` property in `./pom.xml`  to `4.11.1`
+- Change `ct.jsregistry.version` property in `./pom.xml`  to `1.4.1`
+- Update `ct-mapapps-gulp-js` to `^0.5.14` (`package.json`)
+- Update `@types/arcgis-js-api` to `4.18.0` (`package.json`)
+
+## [4.11.0] - 2021-02-17
 
 - Support for map.apps 4.11.0
-
 - Change `mapapps.version` property in `./pom.xml`  to `4.11.0`
 - Change `ct.jsregistry.version` property in `./pom.xml`  to `1.4.0`
 - Change `ct.jsrt-test.version` property in `./pom.xml`  to `2.0.0`
 - Update `ct-mapapps-gulp-js` to `^0.5.13` (`package.json`)
 - Add `@conterra/ct-mapapps-typings` with version `~4.11.0` (`package.json`)
+- Update `@types/arcgis-js-api` to `4.18.0` (`package.json`)
 - Use `tsconfig.json` file from mapapps-4-developers 4.11.0 release.
 - Update splashscreen styles (see [MIGRATION.md](./MIGRATION.md)) for details. Relevant for non-customized splashscreens.
 
 ## [4.10.1] - 2020-12-09
 
-### Changed
-
 - Support for map.apps 4.10.1
 
 ## [4.10.0] - 2020-12-08
 
-### Changed
-
 - Support for map.apps 4.10.0
-
 - Change `mapapps.version` property in `./pom.xml`  to `4.10.0`
 - Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.10`
 - Change `nodeVersion` property in `./pom.xml`  to `v14.15.1`
@@ -69,10 +71,10 @@ All notable changes to this project will be documented in this file.
         <gulp.task>compress</gulp.task>
     </properties>
     ...
-</profile>    
+</profile>
 ```
 
-- add `compress` task to `./gulpfile.js`  
+- add `compress` task to `./gulpfile.js`
 
 ```js
 gulp.task("compress",
@@ -92,26 +94,17 @@ gulp.task("compress",
 
 ## [4.9.2] - 2020-10-06
 
-### Changed
-
 - Support for map.apps 4.9.2
-
 - Change `mapapps.version` property in `./pom.xml`  to `4.9.2`
 
 ## [4.9.1] - 2020-09-04
 
-### Changed
-
 - Support for map.apps 4.9.1
-
 - Change `mapapps.version` property in `./pom.xml`  to `4.9.1`
 
 ## [4.9.0] - 2020-08-18
 
-### Changed
-
 - Support for map.apps 4.9.0
-
 - Change `mapapps.version` property in `./pom.xml`  to `4.9.0`
 - Change `ct.jsregistry.version` property in `./pom.xml`  to `1.3.8`
 - Update `ct-mapapps-gulp-js` to `^0.4.5` (`package.json`)
@@ -131,8 +124,6 @@ gulp.task("compress",
 ```
 
 ## [4.8.4] - 2020-05-20
-
-### Changed
 
 - Upgrade some Maven-Plugin versions in `./pom.xml`.
 - Change `mapapps.version` property in `./pom.xml`  to `4.8.4`
@@ -174,18 +165,14 @@ gulp.task("compress",
 
 ## [4.8.3] - 2020-03-06
 
-### Changed
-
 - Support for map.apps 4.8.3.
 - Update ct-mapapps-gulp-js to 0.3.6 (package.json)
 
 ## [4.8.2] - 2020-02-11
 
-### Changed
-
 - Support for map.apps 4.8.2.
 - Replace `babel-polyfill` by `apprt-polyfill`.
-- Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp` 
+- Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp`
     note that the function signature also changed
     instead of:
     ```js
@@ -194,7 +181,7 @@ gulp.task("compress",
             configLocation: "builderapps"
         }).launchApp("@@appId@@");
     ```
-    it will be: 
+    it will be:
     ```js
      $apprt.startApp({
         configLocation: "builderapps",
@@ -207,21 +194,15 @@ gulp.task("compress",
 
 ## [4.8.1] - 2020-01-10
 
-### Changed
-
 - Support for map.apps 4.8.1.
 
 ## [4.8.0] - 2020-01-06
-
-### Changed
 
 - Support for map.apps 4.8.0.
 - Update ct.jsregistry.version version.
 - Update ct-mapapps-gulp-js version.
 
 ## [4.7.2] - 2019-09-18
-
-### Changed
 
 - Support for map.apps 4.7.2.
 - Update ct.jsregistry.version version.
@@ -231,14 +212,10 @@ gulp.task("compress",
 
 ## [4.7.1] - 2019-08-16
 
-### Changed
-
 - Support for map.apps 4.7.1.
 - Update ct.jsregistry.version version.
 
 ## [4.7.0] - 2019-06-28
-
-### Changed
 
 - Support for map.apps 4.7.0.
 - Update ct.jsregistry.version version.
@@ -247,27 +224,17 @@ gulp.task("compress",
 
 ## [4.6.1] - 2019-04-24
 
-### Added
-
 - Explain `-Denv=dev`.
 - Add support for local configuration of `proxy.use.rules`.
-
-### Changed
-
 - Support for map.apps 4.6.1.
 - Update node/npm versions, add profile for dedicated npm install, use newer jetty version.
 
 ## [4.6.0] - 2019-03-01
 
-### Changed
-
 - Support for map.apps 4.6.0.
 - Update ct-mapapps-gulp-js version.
 - Use maven.home not M2_HOME.
 - Update node, npm and dependencies.
-
-### Removed
-
 - Property `trustedServers` has been removed with property `corsEnabledServers`.
 
 [Unreleased]: https://github.com/conterra/mapapps-4-developers/compare/4.6.0...HEAD

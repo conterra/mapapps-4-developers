@@ -210,6 +210,10 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 
 ## Updating from older versions
 
+### from 4.11.0 to 4.11.1
+
+See [Changelog](./CHANGELOG.md#4111)
+
 ### from 4.10.1 to 4.11.0
 
 See [Changelog](./CHANGELOG.md#4110)

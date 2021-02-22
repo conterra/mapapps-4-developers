@@ -3,9 +3,9 @@
     "description": "test build",
     "version": "0.0.1",
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "~4.11.0",
-        "@types/arcgis-js-api": "4.17.0",
-        "ct-mapapps-gulp-js": "^0.5.13",
+        "@conterra/ct-mapapps-typings": "~4.11.1",
+        "@types/arcgis-js-api": "4.18.0",
+        "ct-mapapps-gulp-js": "^0.5.14",
         "vue-template-compiler": "2.6.6",
         "puppeteer": "^5.5.0",
         "eslint-config-ct-prodeng": "^1.1.16",
