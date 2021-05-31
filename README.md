@@ -169,8 +169,11 @@ mvn clean install -P compress
 To upload your apps and bundles after compression to an existing map.apps installation activate the `upload` profile:
 
 ```sh
-mvn clean install -P compress,upload
+mvn clean install -P compress,upload -Dmapapps.user=xyz -Dmapapps.pw=abc
 ```
+
+If map.apps is running behind an IIS with integrated windows authentication then do not configure `-Dmapapps.user` and `-Dmapapps.pw`.
+Instead configure `-Dmapapps.useChunkedRequestEncoding=true` and `-Djdk.http.ntlm.transparentAuth=trustedHosts` (or `-Djdk.http.ntlm.transparentAuth=allHosts`) to ensure the users windows credentials are used.
 
 ### Running the tests
 

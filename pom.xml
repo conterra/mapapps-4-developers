@@ -405,6 +405,8 @@
 
         <mapapps.user><!-- set correct username for map.apps remote installation--></mapapps.user>
         <mapapps.pw><!-- set correct password for map.apps remote installation--></mapapps.pw>
+        <!-- set to false if map.apps is configured behind integrated windows authentication is required -->
+        <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
         <!-- enable this if "upload" profile should only deploy bundles -->
         <skip.apps.upload>false</skip.apps.upload>
     </properties>
@@ -680,6 +682,7 @@
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
                             <username>${mapapps.user}</username>
                             <password>${mapapps.pw}</password>
+                            <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -695,6 +698,7 @@
                                     <registryEndpoint>${mapapps.remote.base}/resources/jsregistry</registryEndpoint>
                                     <username>${mapapps.user}</username>
                                     <password>${mapapps.pw}</password>
+                                    <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                                 </configuration>
                             </execution>
                         </executions>
