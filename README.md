@@ -96,62 +96,6 @@ mvn initialize
 
 This triggers the installation of Node.js and NPM exclusively.
 
-### Developing bundles for map.apps line 3
-
-To develop bundles for map.apps line 3 with mapapps-4-developers, some adaptations are required. This will only work with the 'remote project' mode.
-The `mapapps.remote.base` URL mentioned above should point to a map.apps 4 installation, which always includes the bundles of line 3 as well.
-
-```xml
- <mapapps.remote.base>http://yourserver/mapapps</mapapps.remote.base>
-```
-
-To force custom projects based on the mapapps-4-developers project to use the correct `apprt.version` for line 3 development, the `index.html` file in `src/main/webapp` has to be changed the following way:
-
-```js
-  $apprt.changeConfig({ct: {
-                amdPackages: ["apprt@^@@apprt.version@@"]
-            }});
-```
-
-should be replaced by
-
-```js
-  $apprt.changeConfig({ct: {
-                amdPackages: ["apprt@^3.10.0"]
-            }});
-```
-
-Replace the version ('3.10.0' in the example above) with the actual map.apps 3 version that you are using.
-
-To ensure the correct bundle versions are loaded, inside the app's `app.json` file the `amdPackages` property and the versions of the bundles need to be configured with the correct versions:
-
-```json
-{
-    "properties": {
-        "amdPackages": "apprt@^3.10.0"
-    },
-    "load": {
-        "bundleLocations" : ["localbundles","bundles"],
-        "allowedBundles" : [
-            "system@^3.10.0",
-            "splashscreen@^3.10.0",
-            "map@^3.10.0",
-
-    [...]
-
-```
-
-Since line 3 bundles are often coded in the old Dojo AMD style and not transpiled from ES6, it is necessary to exclude them from the transpilation process. To achieve this, any line 3 app folder and any line 3 bundle folder has to contain a `.babelrc` file in the directory root with the following content:
-
-```json
-{
-    "ignore":["**/*"]
-}
-```
-
-After these changes were made, the Jetty server can be started.
-Note that this only covers the required steps for developing bundles. To develop themes and templates for map.apps line 3, the stand-alone project `sampleRemoteProj` should be used. To get a copy, contact [support@conterra.de](support@conterra.de).
-
 ### Start coding
 
 For detailed documentation on how to develop for map.apps go to the [conterra Developer Network](https://developernetwork.conterra.de/de/documentation/mapapps/development-guide) (registration required).
@@ -180,13 +124,12 @@ Instead configure `-Dmapapps.useChunkedRequestEncoding=true` and `-Djdk.http.ntl
 To execute the unit tests inside the project, run [http://localhost:9090/js/tests/runTests.html](http://localhost:9090/js/tests/runTests.html).
 
 Or use the test lifecycle:
+
 ```sh
 mvn clean test -P run-js-tests,include-mapapps-deps
 ```
 
 > If you run the project in 'remote project' mode, you will have to edit the `test-init.js` file located in the `/src/test/webapp/js/tests/` folder.
-
-
 
 ### The 'sample_camera' bundle
 
