@@ -383,11 +383,11 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.11.1</mapapps.version>
+        <mapapps.version>4.11.2-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.4.1</ct.jsregistry.version>
+        <ct.jsregistry.version>1.4.2</ct.jsregistry.version>
         <ct.jsrt-test.version>2.0.0</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
