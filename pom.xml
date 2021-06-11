@@ -678,6 +678,7 @@
                         <configuration>
                             <skipDeploy>${skip.apps.upload}</skipDeploy>
                             <deployAsApp>true</deployAsApp>
+                            <triggerPreOptimization>false</triggerPreOptimization>
                             <appEditorState>PUBLISHED</appEditorState>
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
                             <username>${mapapps.user}</username>
