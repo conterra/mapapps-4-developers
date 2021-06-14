@@ -409,6 +409,8 @@
         <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
         <!-- enable this if "upload" profile should only deploy bundles -->
         <skip.apps.upload>false</skip.apps.upload>
+        <!-- enable this if "upload" profile should pre-optimize apps -->
+        <triggerPreOptimization>false</triggerPreOptimization>
     </properties>
     <profiles>
         <profile>
@@ -678,12 +680,12 @@
                         <configuration>
                             <skipDeploy>${skip.apps.upload}</skipDeploy>
                             <deployAsApp>true</deployAsApp>
-                            <triggerPreOptimization>false</triggerPreOptimization>
                             <appEditorState>PUBLISHED</appEditorState>
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
                             <username>${mapapps.user}</username>
                             <password>${mapapps.pw}</password>
                             <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
+                            <triggerPreOptimization>${triggerPreOptimization}</triggerPreOptimization>
                         </configuration>
                     </plugin>
                     <plugin>
