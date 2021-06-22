@@ -10,13 +10,13 @@
         {
             "label": "Run HTTP Server",
             "type": "shell",
-            "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties'",
+            "command": "mvn compile -Denv=dev '-Dlocal.configfile=./build.properties'",
             "group": "build"
         },
         {
             "label": "Run stand-alone HTTP Server",
             "type": "shell",
-            "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties' -Pinclude-mapapps-deps",
+            "command": "mvn compile -Denv=dev '-Dlocal.configfile=./build.properties' -Pinclude-mapapps-deps",
             "group": "build"
         },
         {
