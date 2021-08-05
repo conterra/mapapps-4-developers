@@ -3,11 +3,11 @@
     "description": "test build",
     "version": "0.0.1",
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "~4.11.1",
-        "@types/arcgis-js-api": "4.18.0",
-        "ct-mapapps-gulp-js": "^0.5.14",
-        "vue-template-compiler": "2.6.6",
-        "puppeteer": "^5.5.0",
+        "@conterra/ct-mapapps-typings": "~4.12.0",
+        "@types/arcgis-js-api": "4.20.0",
+        "ct-mapapps-gulp-js": "^0.5.24",
+        "vue-template-compiler": "2.6.14",
+        "puppeteer": "^10.0.0",
         "eslint-config-ct-prodeng": "^1.1.16",
         "stylelint-config-ct-prodeng": "1.0.3"
     }
