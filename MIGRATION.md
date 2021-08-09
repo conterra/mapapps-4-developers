@@ -3,6 +3,86 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.11 to 4.12
+
+### Migrating javascript test-runner from intern to mocha (optional) 
+
+Although we highly recommend to change unit tests to mocha, this step is not mandatory. The support for intern test-runner will be dropped in a future version.
+
+#### Setup for mocha test-runner
+* Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
+* Steps 2: Make the mocha-test-runner available through jsrregistry by adding the following lines to `src/main/test/resources/application.properties` file
+```
+jsregistry.directoryscanner.npmfolder=${basedir}/node_modules
+jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra-dev,@conterra-dev/mapapps-mocha-runner 
+```
+* Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
+```xml
+<configuration>
+    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/js/tests/runTests.html</arguments>
+</configuration>
+```
+to
+```xml
+<configuration>
+    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
+</configuration>
+```
+
+* Step 4: Create a file with name `init-packs.js` inside `src/main/test/webapp/js/tests` and paste the following content:
+````js 
+/*
+ * Copyright (C) con terra GmbH
+ */
+if (require.packs["@vue/test-utils"]) {
+    require.packs["@vue/test-utils"].main = "dist/vue-test-utils.umd";
+}
+if (require.packs["chai"]) {
+    require.packs["chai"].main = "chai";
+}
+````
+* Step 5: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
+
+* Step 6: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`. 
+
+At this stage the setup is ready to run existing mocha unit tests. For migration of existing intern tests to mocha head on to the next section of this guide.
+
+#### Migration of unit tests from intern to mocha
+
+The migration will be explained based on the sample bundle `sample_camera` that is delivered with this project. It can be found at `src/main/js/bundles/sample_camera`.
+
+* Step 1: Rename the file `all-it.js` to `all.js`.
+* Step 2: Change the content of file
+from
+````js
+import registerSuite from "intern!object";
+import assert from "intern/chai!assert";
+import module from "module";
+import Vue from "apprt-vue/Vue";
+import CameraControls from "../CameraControls.vue"
+
+registerSuite({
+    name: module.id,
+    "Camera Control Component": function () {
+        assert.ok(new Vue(CameraControls));
+    }
+});
+
+````
+to
+````js
+import { assert } from "chai";
+import module from "module";
+import Vue from "apprt-vue/Vue";
+import CameraControls from "../CameraControls.vue"
+
+describe(module.id, function(){
+    it("Camera Control Component", function () {
+        assert.ok(new Vue(CameraControls));
+    });
+});
+````
+
 ## 4.10 to 4.11
 
 - If you have no customized splashscreen, update the default splashscreen by changing your `init.css` 
