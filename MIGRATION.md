@@ -41,11 +41,62 @@ if (require.packs["chai"]) {
     require.packs["chai"].main = "chai";
 }
 ````
-* Step 5: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
+* Step 5: Create a file with name `test-init.js` inside `src/main/js/bundles/sample_tests/` and paste the following content:
+````js
+/*
+ * Copyright (C) con terra GmbH
+ */
+// eslint-disable-next-line no-undef
+testConfig({
+    jsregistry: [
+        {
+            //root: "url to registry..",
+            packages: [
+                // register all self hosted packages
+                "app-uitest-support",
+                "test-utils",
+                "uitest",
+                "dojo",
+                "@conterra-dev/mapapps-mocha-runner",
+                "mocha",
+                "chai",
+                "apprt",
+                "apprt-core"
+            ]
+        }
+    ],
+    deps: [
+        "apprt-polyfill",
+        // Needed for import { assert } from "chai"
+        "/js/tests/test-base/init-packs.js"
+    ],
+    packages: [
+        {
+            name: "test-apps",
+            location: "@@application.base.url@@/js/tests/test-apps"
+        },
+        {
+            // register a package to access the base url
+            name: "appContext",
+            location: "@@application.base.url@@"
+        }
+    ]
+});
 
-* Step 6: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`. 
+````
+Inside the same folder, rename the file `all-it.js` to `all.js`.
+
+* Step 6: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
+
+* Step 7: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`. 
 
 At this stage the setup is ready to run existing mocha unit tests. For migration of existing intern tests to mocha head on to the next section of this guide.
+
+To run the tests execute the command ` mvn test -Prun-js-tests -Pinclude-mapapps-deps`
+
+### How to run deprecated intern-tests
+
+After successful migration it is still possible to run old unmigrated tests by  **TBD**
 
 #### Migration of unit tests from intern to mocha
 
