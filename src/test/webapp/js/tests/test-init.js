@@ -20,6 +20,8 @@ testConfig({
     ],
     // ensure babel polyfill is loaded during test execution
     deps: [
-        "apprt-polyfill"
+        "apprt-polyfill",
+        // Needed for import { assert } from "chai"
+        "/js/tests/init-packs.js"
     ]
 });

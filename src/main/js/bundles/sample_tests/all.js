@@ -1,1 +1,1 @@
-import "sample_camera/tests/intern-all";
+import "sample_camera/tests/all";
