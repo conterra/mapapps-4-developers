@@ -1,0 +1,17 @@
+{
+    "extends": "eslint-config-ct-prodeng",
+    "overrides": [
+        {
+            "files": ["*.js"],
+            "globals": {
+                // For javascript based unit tests (typescript has typings for this)
+                "describe": "readonly",
+                "it": "readonly",
+                "before": "readonly",
+                "beforeEach": "readonly",
+                "after": "readonly",
+                "afterEach": "readonly"
+            }
+        }
+    ]
+}
