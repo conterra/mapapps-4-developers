@@ -9,6 +9,9 @@ The changes described here were not made to map.apps interfaces but concern chan
 
 Although we highly recommend to change unit tests to mocha, this step is not mandatory. The support for intern test-runner will be dropped in a future version.
 
+#### How to run deprecated intern-tests
+Even after migration, it is still possible to run old unmigrated tests by [http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
+
 #### Setup for mocha test-runner
 * Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
 * Steps 2: Make the mocha-test-runner available through jsrregistry by adding the following lines to `src/main/test/resources/application.properties` file
@@ -93,10 +96,6 @@ Inside the same folder, rename the file `all-it.js` to `all.js`.
 At this stage the setup is ready to run existing mocha unit tests. For migration of existing intern tests to mocha head on to the next section of this guide.
 
 To run the tests execute the command ` mvn test -Prun-js-tests -Pinclude-mapapps-deps`
-
-### How to run deprecated intern-tests
-
-After successful migration it is still possible to run old unmigrated tests by  **TBD**
 
 #### Migration of unit tests from intern to mocha
 
