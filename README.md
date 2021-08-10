@@ -172,8 +172,8 @@ To upload your apps and bundles after compression to an existing map.apps instal
 mvn clean install -P compress,upload -Dmapapps.user=xyz -Dmapapps.pw=abc
 ```
 
-If map.apps is running behind an IIS with integrated windows authentication then do not configure `-Dmapapps.user` and `-Dmapapps.pw`.
-Instead configure `-Dmapapps.useChunkedRequestEncoding=true` and `-Djdk.http.ntlm.transparentAuth=trustedHosts` (or `-Djdk.http.ntlm.transparentAuth=allHosts`) to ensure the users windows credentials are used.
+If map.apps is running behind an IIS with Integrated Windows authentication then do not configure `-Dmapapps.user` and `-Dmapapps.pw`.
+Instead configure `-Dmapapps.useChunkedRequestEncoding=true` and `-Djdk.http.ntlm.transparentAuth=trustedHosts` (or `-Djdk.http.ntlm.transparentAuth=allHosts`) to ensure the user's Windows credentials are used.
 
 ### Running the tests
 
