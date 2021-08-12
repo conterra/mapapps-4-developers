@@ -183,7 +183,7 @@
             <plugin>
                 <groupId>de.conterra.maven</groupId>
                 <artifactId>setproperties-maven-plugin</artifactId>
-                <version>1.0.2</version>
+                <version>1.0.3</version>
                 <executions>
                     <execution>
                         <goals>
@@ -388,7 +388,7 @@
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
         <ct.jsregistry.version>1.4.3</ct.jsregistry.version>
-        <ct.jsrt-test.version>2.0.1</ct.jsrt-test.version>
+        <ct.jsrt-test.version>2.0.2</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>sample</default.app.name>
