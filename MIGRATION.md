@@ -11,16 +11,16 @@ Although we highly recommend to change unit tests to mocha, this step is not man
 
 #### How to run deprecated intern-tests
 
-Even after migration, it is still possible to run old unmigrated tests by [http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
+Even after migration, it is still possible to run old unmigrated tests by [http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
 
 #### Setup for mocha test-runner
 
 -   Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
--   Steps 2: Make the mocha-test-runner available through jsrregistry by adding the following lines to `src/main/test/resources/application.properties` file
+-   Steps 2: Make the mocha-test-runner available through jsregistry by adding the following lines to `src/main/test/resources/application.properties` file:
 
 ```
 jsregistry.directoryscanner.npmfolder=${basedir}/node_modules
-jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra-dev,@conterra-dev/mapapps-mocha-runner
+jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra,@conterra/mapapps-mocha-runner
 ```
 
 -   Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
@@ -35,7 +35,7 @@ to
 
 ```xml
 <configuration>
-    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
+    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
 </configuration>
 ```
 
@@ -93,7 +93,7 @@ testConfig({
                 "test-utils",
                 "uitest",
                 "dojo",
-                "@conterra-dev/mapapps-mocha-runner",
+                "@conterra/mapapps-mocha-runner",
                 "mocha",
                 "chai",
                 "apprt",
@@ -120,7 +120,7 @@ testConfig({
 });
 ```
 
--   Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
+-   Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
 
 -   Step 8: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`.
 
