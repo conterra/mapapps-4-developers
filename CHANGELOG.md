@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 -   Support for map.apps 4.12.0
 -   Update `mapapps.version` property in `./pom.xml` to `4.12.0`
 -   Update `ct.jsregistry.version` property in `./pom.xml` to `1.4.3`
--   Update `ct.jsrt-test.version` property in `./pom.xml` to `2.0.1`
+-   Update `ct.jsrt-test.version` property in `./pom.xml` to `2.0.2`
 -   Update `@conterra/ct-mapapps-typings` to `~4.12.0` (`package.json`)
 -   Update `@types/arcgis-js-api` to `4.20.0` (`package.json`)
 -   Update `ct-mapapps-gulp-js` to `^0.5.24` (`package.json`)
