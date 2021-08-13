@@ -3,28 +3,28 @@
 This project is a starting point for programming custom map.apps bundles and themes. It contains examples for common tasks such as building widgets with Vue.js or creating your own custom themes.
 You may use this project as a blueprint for starting your own map.apps project.
 
-* [Contents](https://github.com/conterra/mapapps-4-developers#contents)
-* [Requirements](https://github.com/conterra/mapapps-4-developers#requirements)
-* [Usage](https://github.com/conterra/mapapps-4-developers#usage)
-* [Updating from older versions](https://github.com/conterra/mapapps-4-developers#updating-from-older-versions)
-* [References](https://github.com/conterra/mapapps-4-developers#references)
+-   [Contents](https://github.com/conterra/mapapps-4-developers#contents)
+-   [Requirements](https://github.com/conterra/mapapps-4-developers#requirements)
+-   [Usage](https://github.com/conterra/mapapps-4-developers#usage)
+-   [Updating from older versions](https://github.com/conterra/mapapps-4-developers#updating-from-older-versions)
+-   [References](https://github.com/conterra/mapapps-4-developers#references)
 
 ## Contents
 
 This Maven project implements some of the core concepts for developing bundles in map.apps. Use this README as a guide for how to use and what to learn from this project. After studying this document and the provided example bundles and configurations, you should be able to answer the following questions:
 
-* How can I use **Vue.js** to build widgets following the **MVVM** pattern?
-* How does the **MVVM** pattern help to make UI components and models **testable**?
-* How do I build widgets with ready-to-use UI components from Vuetify.js?
-* How do I build a custom theme (theme-custom)?
-* How can the view model interact via **bindings** with (Accessor) models from the **Esri ArcGIS API for JavaScript**?
-* How is my **layout** integrated into **map.apps templates**?
-* How do **gulp** processes modify my source code?
+-   How can I use **Vue.js** to build widgets following the **MVVM** pattern?
+-   How does the **MVVM** pattern help to make UI components and models **testable**?
+-   How do I build widgets with ready-to-use UI components from Vuetify.js?
+-   How do I build a custom theme (theme-custom)?
+-   How can the view model interact via **bindings** with (Accessor) models from the **Esri ArcGIS API for JavaScript**?
+-   How is my **layout** integrated into **map.apps templates**?
+-   How do **gulp** processes modify my source code?
 
 ## Requirements
 
-* map.apps 4.12.0
-* All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
+-   map.apps 4.12.0
+-   All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
 
@@ -84,9 +84,9 @@ The Jetty server is then available at [http://localhost:9090](http://localhost:9
 By appending `-Denv=dev -Dlocal.configfile=./build.properties` to any Maven execution the development mode is activated.
 This means:
 
-* Node.js and NPM are not installed
-* the `watch-all` profile is activated
-* the `build.properties` file is loaded
+-   Node.js and NPM are not installed
+-   the `watch-all` profile is activated
+-   the `build.properties` file is loaded
 
 To enforce the installation of Node.js and NPM execute:
 
@@ -135,24 +135,24 @@ mvn clean test -P run-js-tests,include-mapapps-deps
 
 There is a sample bundle in this project called "sample_camera" which demonstrates the following aspects of developing for map.apps 4:
 
-* Interaction with ESRI map
-* Use of Binding (e.g. with Accessor)
-* Building widgets with Vue.js and Vuetify.js
+-   Interaction with ESRI map
+-   Use of Binding (e.g. with Accessor)
+-   Building widgets with Vue.js and Vuetify.js
 
 ### The 'theme-custom' bundle
 
-* Sample of minimum fileset needed to create a custom theme.
-* Make sure bundle is loaded instead of theme-everlasting in sample app
-* When renaming/copying the 'theme-custom' bundle to e.g. `theme-[projectname]` make sure to also make the corresponding changes to the following files:
+-   Sample of minimum fileset needed to create a custom theme.
+-   Make sure bundle is loaded instead of theme-everlasting in sample app
+-   When renaming/copying the 'theme-custom' bundle to e.g. `theme-[projectname]` make sure to also make the corresponding changes to the following files:
 
-  * `gulpfile.js`
-  * `theme-name/manifest.json`
-  * `theme-name/styles/styles.less`
+    -   `gulpfile.js`
+    -   `theme-name/manifest.json`
+    -   `theme-name/styles/styles.less`
 
 ### Build Process
 
-* The gulpfile that describes the build process for map.apps themes can be found in the root directory: `/gulpfile.js`
-* The `/package.json` file contains the version numbers for the required dependencies for the gulp build process.
+-   The gulpfile that describes the build process for map.apps themes can be found in the root directory: `/gulpfile.js`
+-   The `/package.json` file contains the version numbers for the required dependencies for the gulp build process.
 
 ## Updating from older versions
 
@@ -190,61 +190,61 @@ See [Changelog](./CHANGELOG.md#484---2020-05-20)
 
 ### from 4.8.2 to 4.8.3
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.3`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.8.3`
 2. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
-    * "ct-mapapps-gulp-js": "^0.3.6"
+    - "ct-mapapps-gulp-js": "^0.3.6"
 
 ### from 4.8.1 to 4.8.2
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.2`
-2. Change the requirement `babel-polyfill` to  `apprt-polyfill` in the `./pom.xml` and `src/test/webapp/js/tests/test-init.js`.
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.8.2`
+2. Change the requirement `babel-polyfill` to `apprt-polyfill` in the `./pom.xml` and `src/test/webapp/js/tests/test-init.js`.
 3. Replace `$apprt.load` and `$apprt.lauchAppFromParam` by `$apprt.startApp` in the `src/test/webapp/index.html`
 
 ### from 4.8.0 to 4.8.1
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.1`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.8.1`
 
 ### from 4.7.2 to 4.8.0
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.8.0`
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.4`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.8.0`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml` to `1.3.4`
 3. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
-    * "ct-mapapps-gulp-js": "^0.2.5"
+    - "ct-mapapps-gulp-js": "^0.2.5"
 
 ### from 4.7.1 to 4.7.2
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.2`
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.2`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.7.2`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml` to `1.3.2`
 3. Add the version hint `<version>${ct.jsrt-test.version}</version>` for dependencies `ct-jsrt-test-intern` and `ct-jsrt-test-uitest` in `pom.xml`
 4. Update the Gulpfile and remove the dev dependencies from `gulpfile.js`. For details see [commit](https://github.com/conterra/mapapps-4-developers/commit/c974a74a08a70316204d5c09aee22f8d39c70446)
 
 ### from 4.7.0 to 4.7.1
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.1`
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.1`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.7.1`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml` to `1.3.1`
 
 ### from 4.6.1 to 4.7.0
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.7.0`
-2. Adjust the `ct.jsregistry.version` property in `./pom.xml`  to `1.3.0`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.7.0`
+2. Adjust the `ct.jsregistry.version` property in `./pom.xml` to `1.3.0`
 3. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
-    * "eslint-config-ct-prodeng": "^1.0.5"
-    * "vue-template-compiler": "2.6.6"
+    - "eslint-config-ct-prodeng": "^1.0.5"
+    - "vue-template-compiler": "2.6.6"
 
 ### from 4.6.0 to 4.6.1
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.6.1`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.6.1`
 
 ### from 4.5.0 or below to 4.6.0
 
-1. Adjust the `mapapps.version` property in `./pom.xml`  to `4.6.0`
+1. Adjust the `mapapps.version` property in `./pom.xml` to `4.6.0`
 2. Adjust the versions in `devDependencies` in `./package.json` according to the list below:
-    * "ct-mapapps-gulp-js": "~0.1.3"
-    * "vue-template-compiler": "2.5.17"
+    - "ct-mapapps-gulp-js": "~0.1.3"
+    - "vue-template-compiler": "2.5.17"
 3. Go to `./src/test/webapp/index.html` and replace the `corsEnabledServers: ["@@mapapps.remote.base@@"]` with `trustedServers: ["@@mapapps.remote.base@@"]` inside the apprt request configuration object.
 
 ## References
 
-* [Vue.js](https://vuejs.org)
-* [Vuetify.js](https://vuetifyjs.com)
-* [Gulp](http://gulpjs.com)
+-   [Vue.js](https://vuejs.org)
+-   [Vuetify.js](https://vuetifyjs.com)
+-   [Gulp](http://gulpjs.com)
