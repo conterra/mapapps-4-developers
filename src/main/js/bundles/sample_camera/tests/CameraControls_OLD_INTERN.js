@@ -1,7 +1,7 @@
 /*
 * ----------------------------------------------------------------------------
 * |                                                                          |
-* |   IMPORTANT NOTE: This is a sample file for an deprecated intern test.   |
+* |   IMPORTANT NOTE: This is a sample file for a deprecated intern test.    |
 * |                                                                          |
 * ----------------------------------------------------------------------------
 * */

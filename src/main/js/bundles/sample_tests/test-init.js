@@ -12,7 +12,7 @@ testConfig({
                 "test-utils",
                 "uitest",
                 "dojo",
-                "@conterra-dev/mapapps-mocha-runner",
+                "@conterra/mapapps-mocha-runner",
                 "mocha",
                 "chai",
                 "apprt",

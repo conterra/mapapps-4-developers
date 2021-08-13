@@ -11,7 +11,8 @@ Although we highly recommend to change unit tests to mocha, this step is not man
 
 #### How to run deprecated intern-tests
 
-Even after migration, it is still possible to run old unmigrated tests by [http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
+Even after migration, it is still possible to run old unmigrated tests by apppending the URL parameter `registerInternAdapter=true`:
+[http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra-dev/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
 
 #### Setup for mocha test-runner
 
@@ -286,6 +287,7 @@ will only work, if `outFields` are specified like
         ```
 
 -   _esri/moment_ no longer importable
+
     -   No longer possible:
         ```javascript
         import moment from "esri/moment";
@@ -295,4 +297,5 @@ will only work, if `outFields` are specified like
         ```javascript
         import moment from "moment";
         ```
+
 -   _map-widget/ViewWatcher_ was renamed to _map-widget/ViewReadyWatcher_

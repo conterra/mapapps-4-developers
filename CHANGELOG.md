@@ -13,7 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Update `ct-mapapps-gulp-js` to `^0.5.24` (`package.json`)
 -   Update `vue-template-compiler` to `2.6.14` (`package.json`)
 -   Update `puppeteer` to `^10.0.0` (`package.json`)
--   Add `"@conterra-dev/mapapps-mocha-runner": "^1.0.0"` (`package.json`)
+-   Add `"@conterra/mapapps-mocha-runner": "^1.0.0"` (`package.json`)
 -   Add `"chai": "^4.3.4"` (`package.json`)
 -   Add `"mocha": "^9.0.0"` (`package.json`)
 -   Changed default test-runner from intern-js to mocha. (see [MIGRATION.md](./MIGRATION.md)) for details.
