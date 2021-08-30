@@ -31,7 +31,12 @@ mapapps.registerTasks({
 
 mapappsBrowserSync.registerTask({
     port: 8080,
+
+    // activate https protocol, generates a self signed certificate for "localhost"
+    https: true,
+
     jsreg: {
+        //npmDir : __dirname + "/node_modules/",
         npmModules: [
             "mocha",
             "chai",
