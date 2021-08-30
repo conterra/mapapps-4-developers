@@ -46,7 +46,7 @@ mapappsBrowserSync.registerTask({
         npmModules: [
             "mocha",
             "chai",
-            "@conterra-dev/mapapps-mocha-runner"
+            "@conterra/mapapps-mocha-runner"
         ]
     }
 }, gulp);
