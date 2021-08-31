@@ -38,7 +38,7 @@ mapapps.registerTasks({
         safari: 15
     },
     runBrowserTests
-});
+}, gulp);
 
 mapappsBrowserSync.registerTask({
     port: 8080,
@@ -87,7 +87,8 @@ gulp.task("run-tests",
         "browser-sync-start",
         function transportTestUrls() {
             // transport test url to run-browser-tests
-            const testsAt = mapappsBrowserSync.state.url + "/js/tests/runTests.html";
+            // eslint-disable-next-line max-len
+            const testsAt = mapappsBrowserSync.state.url + "/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all&reporter=tap";
             runBrowserTests.push(testsAt);
             return Promise.resolve();
         },
