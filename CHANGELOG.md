@@ -10,7 +10,7 @@ All notable changes to this project will be documented in this file.
 -   Update `ct.jsrt-test.version` property in `./pom.xml` to `2.0.2`
 -   Update `@conterra/ct-mapapps-typings` to `~4.12.0` (`package.json`)
 -   Update `@types/arcgis-js-api` to `4.20.0` (`package.json`)
--   Update `ct-mapapps-gulp-js` to `^0.5.26` (`package.json`)
+-   Update `ct-mapapps-gulp-js` to `^0.5.27` (`package.json`)
 -   Update `vue-template-compiler` to `2.6.14` (`package.json`)
 -   Update `puppeteer` to `^10.0.0` (`package.json`)
 -   Add `"@conterra/mapapps-mocha-runner": "^1.0.0"` (`package.json`)
