@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.12.0] - 2021-08-TBD
+## [4.12.0] - 2021-08-31
 
 -   Support for map.apps 4.12.0
 -   Update `mapapps.version` property in `./pom.xml` to `4.12.0`
