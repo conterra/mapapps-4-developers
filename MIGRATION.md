@@ -16,114 +16,108 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
 
 #### Setup for mocha test-runner
 
--   Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
+- Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
 -   Steps 2: Make the mocha-test-runner available through jsregistry by adding the following lines to `src/main/test/resources/application.properties` file:
 
-```
-jsregistry.directoryscanner.npmfolder=${basedir}/node_modules
-jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra,@conterra/mapapps-mocha-runner
-```
+    ```
+    jsregistry.directoryscanner.npmfolder=${basedir}/node_modules
+    jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra,@conterra/mapapps-mocha-runner
+    ```
 
--   Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
+- Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
 
-```xml
-<configuration>
-    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/js/tests/runTests.html</arguments>
-</configuration>
-```
+    ```xml
+    <configuration>
+        <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/js/tests/runTests.html</arguments>
+    </configuration>
+    ```
+    to
+    ```xml
+    <configuration>
+        <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
+    </configuration>
+    ```
 
-to
-
-```xml
-<configuration>
-    <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
-</configuration>
-```
-
--   Step 4: Create a file with name `.eslintrc` inside the root folder of the project and paste the following content:
-
-```js
-{
-    "extends": "eslint-config-ct-prodeng",
-    "overrides": [
-        {
-            "files": ["*.js"],
-            "globals": {
-                // For javascript based unit tests (typescript has typings for this)
-                "describe": "readonly",
-                "it": "readonly",
-                "before": "readonly",
-                "beforeEach": "readonly",
-                "after": "readonly",
-                "afterEach": "readonly"
+- Step 4: Create a file with name `.eslintrc` inside the root folder of the project and paste the following content:
+    ```js
+    {
+        "extends": "eslint-config-ct-prodeng",
+        "overrides": [
+            {
+                "files": ["*.js"],
+                "globals": {
+                    // For javascript based unit tests (typescript has typings for this)
+                    "describe": "readonly",
+                    "it": "readonly",
+                    "before": "readonly",
+                    "beforeEach": "readonly",
+                    "after": "readonly",
+                    "afterEach": "readonly"
+                }
             }
-        }
-    ]
-}
+        ]
+    }
+    ```
 
-```
+- Step 5: Create a file with name `init-packs.js` inside `src/main/test/webapp/js/tests` and paste the following content:
+    ```js
+    /*
+    * Copyright (C) con terra GmbH
+    */
+    if (require.packs["@vue/test-utils"]) {
+        require.packs["@vue/test-utils"].main = "dist/vue-test-utils.umd";
+    }
+    if (require.packs["chai"]) {
+        require.packs["chai"].main = "chai";
+    }
+    ```
 
--   Step 5: Create a file with name `init-packs.js` inside `src/main/test/webapp/js/tests` and paste the following content:
+- Step 6: Create a file with name `test-init.js` inside `src/main/js/bundles/sample_tests/` and paste the following content:
+    ```js
+    /*
+    * Copyright (C) con terra GmbH
+    */
+    // eslint-disable-next-line no-undef
+    testConfig({
+        jsregistry: [
+            {
+                //root: "url to registry..",
+                packages: [
+                    // register all self hosted packages
+                    "app-uitest-support",
+                    "test-utils",
+                    "uitest",
+                    "dojo",
+                    "@conterra/mapapps-mocha-runner",
+                    "mocha",
+                    "chai",
+                    "apprt",
+                    "apprt-core"
+                ]
+            }
+        ],
+        deps: [
+            "apprt-polyfill",
+            // Needed for import { assert } from "chai"
+            "/js/tests/test-base/init-packs.js"
+        ],
+        packages: [
+            {
+                name: "test-apps",
+                location: "@@application.base.url@@/js/tests/test-apps"
+            },
+            {
+                // register a package to access the base url
+                name: "appContext",
+                location: "@@application.base.url@@"
+            }
+        ]
+    });
+    ```
 
-```js
-/*
- * Copyright (C) con terra GmbH
- */
-if (require.packs["@vue/test-utils"]) {
-    require.packs["@vue/test-utils"].main = "dist/vue-test-utils.umd";
-}
-if (require.packs["chai"]) {
-    require.packs["chai"].main = "chai";
-}
-```
+- Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
 
--   Step 6: Create a file with name `test-init.js` inside `src/main/js/bundles/sample_tests/` and paste the following content:
-
-```js
-/*
- * Copyright (C) con terra GmbH
- */
-// eslint-disable-next-line no-undef
-testConfig({
-    jsregistry: [
-        {
-            //root: "url to registry..",
-            packages: [
-                // register all self hosted packages
-                "app-uitest-support",
-                "test-utils",
-                "uitest",
-                "dojo",
-                "@conterra/mapapps-mocha-runner",
-                "mocha",
-                "chai",
-                "apprt",
-                "apprt-core"
-            ]
-        }
-    ],
-    deps: [
-        "apprt-polyfill",
-        // Needed for import { assert } from "chai"
-        "/js/tests/test-base/init-packs.js"
-    ],
-    packages: [
-        {
-            name: "test-apps",
-            location: "@@application.base.url@@/js/tests/test-apps"
-        },
-        {
-            // register a package to access the base url
-            name: "appContext",
-            location: "@@application.base.url@@"
-        }
-    ]
-});
-```
-
--   Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
-
--   Step 8: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`.
+- Step 8: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`.
 
 At this stage the setup is ready to run existing mocha unit tests. For migration of existing intern tests to mocha head on to the next section of this guide.
 
@@ -137,35 +131,34 @@ The migration will be explained based on the sample bundle `sample_camera` that 
 -   Step 2: Change the content of file `CameraControls.js`
     from
 
-```js
-import registerSuite from "intern!object";
-import assert from "intern/chai!assert";
-import module from "module";
-import Vue from "apprt-vue/Vue";
-import CameraControls from "../CameraControls.vue";
+    ```js
+    import registerSuite from "intern!object";
+    import assert from "intern/chai!assert";
+    import module from "module";
+    import Vue from "apprt-vue/Vue";
+    import CameraControls from "../CameraControls.vue";
 
-registerSuite({
-    name: module.id,
-    "Camera Control Component": function() {
-        assert.ok(new Vue(CameraControls));
-    }
-});
-```
-
-to
-
-```js
-import { assert } from "chai";
-import module from "module";
-import Vue from "apprt-vue/Vue";
-import CameraControls from "../CameraControls.vue";
-
-describe(module.id, function() {
-    it("Camera Control Component", function() {
-        assert.ok(new Vue(CameraControls));
+    registerSuite({
+        name: module.id,
+        "Camera Control Component": function() {
+            assert.ok(new Vue(CameraControls));
+        }
     });
-});
-```
+    ```
+    to
+
+    ```js
+    import { assert } from "chai";
+    import module from "module";
+    import Vue from "apprt-vue/Vue";
+    import CameraControls from "../CameraControls.vue";
+
+    describe(module.id, function() {
+        it("Camera Control Component", function() {
+            assert.ok(new Vue(CameraControls));
+        });
+    });
+    ```
 
 ## 4.10 to 4.11
 
@@ -184,20 +177,20 @@ import "windowmanager/WindowDockingBar";
 
 Breaking Changes in the API that may have an influence on map.apps development:
 
--   For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
+- For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
 
-```javascript
-// destroy the view and all attached resources
-view.destroy();
+    ```javascript
+    // destroy the view and all attached resources
+    view.destroy();
 
-// unset map from the view so that it is not destroyed
-// then destroy the view and all attached resources
-const map = view.map;
-view.map = null;
-view.destroy();
-```
+    // unset map from the view so that it is not destroyed
+    // then destroy the view and all attached resources
+    const map = view.map;
+    view.map = null;
+    view.destroy();
+    ```
 
--   Performance improvements were made to Popups. Prior to this release, it was possible to access the popup feature's geometry without having to specify outFields on the FeatureLayer or the PopupTemplate.
+- Performance improvements were made to Popups. Prior to this release, it was possible to access the popup feature's geometry without having to specify outFields on the FeatureLayer or the PopupTemplate.
 
 This is important, if own PopupDefinitions are provided that interact with the features's geometry, e.g.
 
