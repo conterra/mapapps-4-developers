@@ -25,7 +25,6 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
     ```
 
 - Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
-
     ```xml
     <configuration>
         <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/js/tests/runTests.html</arguments>
@@ -162,16 +161,16 @@ The migration will be explained based on the sample bundle `sample_camera` that 
 
 ## 4.10 to 4.11
 
--   If you have no customized splashscreen, update the default splashscreen by changing your `init.css`
+- If you have no customized splashscreen, update the default splashscreen by changing your `init.css`
     and `index.html` file according to [this commit](https://github.com/conterra/mapapps-4-developers/commit/bef4b4d8669045a33fe8b40eef171f9194e291f7)
--   If you have a customized template-bundle, you need to add these imports to the %template-name%.js-file of the bundle:
+- If you have a customized template-bundle, you need to add these imports to the %template-name%.js-file of the bundle:
 
-```
-import "dijit/layout/BorderContainer";
-import "dijit/layout/ContentPane";
-import "ct/ui/template/OverlayContainer";
-import "windowmanager/WindowDockingBar";
-```
+    ```js
+    import "dijit/layout/BorderContainer";
+    import "dijit/layout/ContentPane";
+    import "ct/ui/template/OverlayContainer";
+    import "windowmanager/WindowDockingBar";
+    ```
 
 ## 4.9 to 4.10 (ArcGIS API for Javascript 4.16 to 4.17)
 
@@ -195,7 +194,6 @@ Breaking Changes in the API that may have an influence on map.apps development:
 This is important, if own PopupDefinitions are provided that interact with the features's geometry, e.g.
 
 ```javascript
-
 resolvePopupTemplate(layer) {
         return {
             title: "County of {NAME}",
