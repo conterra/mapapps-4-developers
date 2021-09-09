@@ -98,7 +98,7 @@ This triggers the installation of Node.js and NPM exclusively.
 
 ### Start coding
 
-For detailed documentation on how to develop for map.apps go to the [conterra Developer Network](https://developernetwork.conterra.de/de/documentation/mapapps/development-guide) (registration required).
+For detailed documentation on how to develop for map.apps see the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started.html).
 
 ### Make your code production ready
 
