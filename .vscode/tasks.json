@@ -5,9 +5,7 @@
          "label": "Run Jetty Server",
          "type": "shell",
          "command": "mvn jetty:run -Pwatch-all",
-         "group": {
-            "kind": "build"
-         }
+         "group": "build"
      }
  ]
 }
