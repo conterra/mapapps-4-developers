@@ -8,14 +8,14 @@
             "group": "build"
         },
         {
-            "label": "Run HTTP Server",
+            "label": "Run Dev Server (Remote project mode)",
             "type": "shell",
             "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties'",
             "group": "build",
             "isBackground": true
         },
         {
-            "label": "Run stand-alone HTTP Server",
+            "label": "Run Dev Server (Standalone mode)",
             "type": "shell",
             "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties' -Pinclude-mapapps-deps",
             "group": "build",
