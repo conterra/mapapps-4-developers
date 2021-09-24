@@ -1,8 +1,8 @@
 <template>
-    <v-layout column>
+    <div>
         <p>Lat: {{ latitude }}</p>
         <p>Lon: {{ longitude }}</p>
-    </v-layout>
+    </div>
 </template>
 <script>
     export default {

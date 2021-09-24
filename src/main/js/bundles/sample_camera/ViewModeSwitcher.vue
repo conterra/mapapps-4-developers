@@ -1,5 +1,5 @@
 <template>
-    <v-layout>
+    <div>
         <v-radio-group
             v-model="selected"
             :mandatory="false"
@@ -15,7 +15,7 @@
                 color="success"
             />
         </v-radio-group>
-    </v-layout>
+    </div>
 </template>
 <script>
     export default {
