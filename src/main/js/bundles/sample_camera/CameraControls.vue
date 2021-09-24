@@ -2,9 +2,10 @@
     <v-container
         fluid
         fill-height
-        class="camera-widget pa-0"
+        class="camera-widget pa-2"
     >
         <v-layout column>
+            <!-- fixed widget header section -->
             <v-flex
                 shrink
                 class="camera-widget__header"
@@ -16,7 +17,8 @@
                 />
                 <view-mode-switcher v-model="viewmode" />
             </v-flex>
-            <v-flex class="camera-widget__center overflow--auto">
+            <!-- scrollable widget main section -->
+            <v-flex class="camera-widget__center scroll-y">
                 <v-slider
                     v-model="zoom"
                     label="Zoom"
@@ -24,6 +26,7 @@
                     max="25"
                     prepend-icon="zoom_out"
                     append-icon="zoom_in"
+                    hide-details
                 />
                 <template v-if="viewmode === '2D'">
                     <v-slider
@@ -33,6 +36,9 @@
                         max="360"
                         step="0.0001"
                         thumb-label
+                        hide-details
+                        append-icon=" "
+                        prepend-icon=" "
                     />
                 </template>
                 <template v-if="viewmode === '3D'">
@@ -42,6 +48,9 @@
                         min="0"
                         max="360"
                         thumb-label
+                        hide-details
+                        append-icon=" "
+                        prepend-icon=" "
                     />
                     <v-slider
                         v-model="tilt"
@@ -49,6 +58,9 @@
                         min="0"
                         max="90"
                         thumb-label
+                        hide-details
+                        append-icon=" "
+                        prepend-icon=" "
                     />
                 </template>
             </v-flex>
