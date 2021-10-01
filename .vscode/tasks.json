@@ -8,16 +8,22 @@
             "group": "build"
         },
         {
-            "label": "Run Dev Server (Remote project mode)",
+            "label": "Run mapapps-4-developers",
             "type": "shell",
-            "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties'",
-            "group": "build",
-            "isBackground": true
+            "command": "mvn",
+            "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "isBackground": true,
+            
         },
         {
-            "label": "Run Dev Server (Standalone mode)",
+            "label": "Run mapapps-4-developers (Remote project mode)",
             "type": "shell",
-            "command": "mvn jetty:run -Denv=dev '-Dlocal.configfile=./build.properties' -Pinclude-mapapps-deps",
+            "command": "mvn",
+            "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'"],
             "group": "build",
             "isBackground": true
         },
