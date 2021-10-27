@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.12.0] - TBD
+
+- Support for map.apps 4.12.1
+- Update `mapapps.version` property in `./pom.xml` to `4.12.1`
+- Update `@types/arcgis-js-api` to `4.20.1` (`package.json`)
+- Update `eslint-config-ct-prodeng` to `1.2.3` (`package.json`)`
+
+NOTE: since `eslint-config-ct-prodeng@1.2.0` linting for basic a11y rules is activated for custom vue components.
+The occurring warnings should be easily be fixable. More infos can be found at the [eslint-plugin-vuejs-accessibility](https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility) page.
+
 ## [4.12.0] - 2021-08-31
 
 -   Support for map.apps 4.12.0
