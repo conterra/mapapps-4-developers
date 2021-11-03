@@ -2,10 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.12.0] - TBD
+## [4.12.1] - TBD
 
 - Support for map.apps 4.12.1
 - Update `mapapps.version` property in `./pom.xml` to `4.12.1`
+- Update `ct.jsregistry.version` property in `./pom.xml` to `1.4.4`
 - Update `@types/arcgis-js-api` to `4.20.1` (`package.json`)
 - Update `eslint-config-ct-prodeng` to `1.2.3` (`package.json`)`
 
