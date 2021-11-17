@@ -18,10 +18,10 @@ class CameraWidgetFactory {
         // register methods to enable/disable binding
         widget.enableBinding = function () {
             modelToViewBinding.enable().syncToRightNow();
-        }
+        };
         widget.disableBinding = function () {
             modelToViewBinding.disable();
-        }
+        };
 
         // clean up binding and attached functions
         widget.own({
@@ -80,7 +80,7 @@ function log(prefix, cb) {
     return (v, ctx) => {
         console.debug(`${prefix}: ${ctx.sourceName} -> ${ctx.targetName} : ${v}`);
         return cb && cb(v, ctx);
-    }
+    };
 }
 
 export default CameraWidgetFactory;

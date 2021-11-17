@@ -10,7 +10,7 @@ import registerSuite from "intern!object";
 import assert from "intern/chai!assert";
 import module from "module";
 import Vue from "apprt-vue/Vue";
-import CameraControls from "../CameraControls.vue"
+import CameraControls from "../CameraControls.vue";
 
 registerSuite({
     name: module.id,

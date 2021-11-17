@@ -9,7 +9,7 @@
         "ct-mapapps-gulp-js": "^0.5.27",
         "vue-template-compiler": "2.6.14",
         "puppeteer": "^10.0.0",
-        "eslint-config-ct-prodeng": "^1.2.3",
+        "eslint-config-ct-prodeng": "^1.2.4",
         "stylelint-config-ct-prodeng": "1.0.3",
         "chai": "^4.3.4",
         "mocha": "^9.0.0"
