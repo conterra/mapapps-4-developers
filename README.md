@@ -162,7 +162,7 @@ See [Changelog](./CHANGELOG.md)
 
 ### from 4.12.0 to 4.12.1
 
-See [Changelog](./CHANGELOG.md#4121---2021-11-10)
+See [Changelog](./CHANGELOG.md#4121---10112021)
 
 ### from 4.11.1 to 4.12.0
 
