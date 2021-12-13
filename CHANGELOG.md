@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.12.2] - 13.12.2021
+
+- Support for map.apps 4.12.2 that includes a critical security fix
+
 ## [4.12.1] - 10.11.2021
 
 - Support for map.apps 4.12.1
