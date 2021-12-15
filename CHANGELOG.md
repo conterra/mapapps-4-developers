@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.12.3] - 15.12.2021
+
+- Support for map.apps 4.12.3 that includes a critical security fix
+- Update `mapapps.version` property in `./pom.xml` to `4.12.3`
+ 
 ## [4.12.2] - 13.12.2021
 
 - Support for map.apps 4.12.2 that includes a critical security fix
