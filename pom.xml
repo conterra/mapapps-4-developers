@@ -657,6 +657,8 @@
                                     <goal>optimizeJS</goal>
                                 </goals>
                                 <configuration>
+                                    <sourceLanguageLevel>ESNEXT</sourceLanguageLevel>
+                                    <targetLanguageLevel>ESNEXT</targetLanguageLevel>
                                     <hasFeatures>
                                         <ct-debug>false</ct-debug>
                                     </hasFeatures>
