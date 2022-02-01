@@ -13,7 +13,9 @@
             "toolset@^4.6.0",
             "map-init@^4.6.0",
             "agssearch@^4.6.0",
-            "sample_camera@^0.0.1"
+            "sample_camera@^0.0.1",
+            "console",
+            "custom-theme-extension"
         ]
     },
     "bundles": {

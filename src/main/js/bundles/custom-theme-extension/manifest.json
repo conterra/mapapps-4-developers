@@ -1,0 +1,15 @@
+{
+  "name": "custom-theme-extension",
+  "version": "1.0.0",
+  "description": "This bundle provides additional styling rules, applied when active theme is everlasting",
+  "i18n": [],
+  "layer": "",
+  "main": "",
+  "startLevel": 1,
+  "CSS-Themes-Extension": [
+    {
+      "name": "everlasting",
+      "version": "^4.11.1"
+    }
+  ]
+}

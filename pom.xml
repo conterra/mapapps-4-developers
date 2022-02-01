@@ -158,6 +158,26 @@
             </plugins>
         </pluginManagement>
         <sourceDirectory>src/main/js</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>${project.build.directory}/unpacked/layout/theme-common/styles</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+                <targetPath>${js.build.outputPath}/bundles/custom-theme-extension/theme-common/styles/</targetPath>
+                <filtering>false</filtering>
+            </resource>
+
+            <!-- Copy Theme Resources -->
+            <resource>
+                <directory>${project.build.directory}/unpacked/layout/theme-everlasting/styles</directory>
+                <includes>
+                    <include>themeSettings.less</include>
+                </includes>
+                <targetPath>${js.build.outputPath}/bundles/custom-theme-extension/everlasting/styles</targetPath>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
         <testResources>
             <testResource>
                 <directory>src/test/resources</directory>
@@ -316,6 +336,7 @@
                         <configuration>
                             <arguments>${gulp.task}</arguments>
                         </configuration>
+                        <phase>process-resources</phase>
                     </execution>
                     <execution>
                         <!-- trigger manual: com.github.eirslett:frontend-maven-plugin:gulp@watch-changes -->
