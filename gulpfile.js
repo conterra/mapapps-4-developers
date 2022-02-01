@@ -5,10 +5,14 @@ mapapps.registerTasks({
     /* A detailed description of available setting is available at https://www.npmjs.com/package/ct-mapapps-gulp-js */
 
     /* a list of themes inside this project */
-    themes: ['everlasting'],
+    themes: ['everlasting', 'autumn'],
 
     themesSrcLocation: "./src/main/js/bundles/custom-theme-extension",
-    themesDestLocation: "./target/webapp/js/bundles/custom-theme-extension"
+    themesDestLocation: "./target/webapp/js/bundles/custom-theme-extension",
+
+    themeChangeTargets: {
+        "everlasting": ["autumn"]
+    }
 });
 
 gulp.task("default",

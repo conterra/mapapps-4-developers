@@ -1,7 +1,7 @@
 {
   "name": "custom-theme-extension",
   "version": "1.0.0",
-  "description": "This bundle provides additional styling rules, applied when active theme is everlasting",
+  "description": "This bundle provides additional styling rules, applied when active theme is everlasting or autumn",
   "i18n": [],
   "layer": "",
   "main": "",
@@ -9,6 +9,9 @@
   "CSS-Themes-Extension": [
     {
       "name": "everlasting",
+      "version": "^4.11.1"
+    }, {
+      "name": "autumn",
       "version": "^4.11.1"
     }
   ]

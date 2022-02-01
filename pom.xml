@@ -177,6 +177,14 @@
                 <targetPath>${js.build.outputPath}/bundles/custom-theme-extension/everlasting/styles</targetPath>
                 <filtering>false</filtering>
             </resource>
+            <resource>
+                <directory>${project.build.directory}/unpacked/layout/theme-autumn/styles</directory>
+                <includes>
+                    <include>themeSettings.less</include>
+                </includes>
+                <targetPath>${js.build.outputPath}/bundles/custom-theme-extension/autumn/styles</targetPath>
+                <filtering>false</filtering>
+            </resource>
         </resources>
         <testResources>
             <testResource>
@@ -252,7 +260,7 @@
                                     <version>${mapapps.version}</version>
                                     <classifier>src</classifier>
                                     <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
-                                    <includes>layout/theme-everlasting/**,layout/theme-common/**</includes>
+                                    <includes>layout/theme-everlasting/**,layout/theme-autumn/**,layout/theme-common/**</includes>
                                     <excludes>layout/theme-everlasting/styles/vuetify/**</excludes>
                                 </artifactItem>
                                 <artifactItem>
