@@ -382,11 +382,11 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.12.3</mapapps.version>
+        <mapapps.version>4.13.0-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.4.4</ct.jsregistry.version>
+        <ct.jsregistry.version>1.5.0-SNAPSHOT</ct.jsregistry.version>
         <ct.jsrt-test.version>2.0.2</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
@@ -408,6 +408,9 @@
         <mapapps.pw>
             <!-- set correct password for map.apps remote installation-->
         </mapapps.pw>
+        <mapapps.token>
+            <!-- set correct token for map.apps remote installation-->
+        </mapapps.token>
         <!-- set to false if map.apps is configured behind integrated windows authentication is required -->
         <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
         <!-- enable this if "upload" profile should only deploy bundles -->
@@ -689,6 +692,7 @@
                             <serverResourcesEndpoint>${mapapps.remote.base}/resources</serverResourcesEndpoint>
                             <username>${mapapps.user}</username>
                             <password>${mapapps.pw}</password>
+                            <token>${mapapps.token}</token>
                             <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                             <triggerPreOptimization>${triggerPreOptimization}</triggerPreOptimization>
                         </configuration>
@@ -698,7 +702,7 @@
                         <artifactId>ct-jsregistry-maven-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>deploy bundles</id>
+                                <id>deploy-bundles</id>
                                 <goals>
                                     <goal>deployJSPackage</goal>
                                 </goals>
@@ -706,6 +710,7 @@
                                     <registryEndpoint>${mapapps.remote.base}/resources/jsregistry</registryEndpoint>
                                     <username>${mapapps.user}</username>
                                     <password>${mapapps.pw}</password>
+                                    <token>${mapapps.token}</token>
                                     <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
                                 </configuration>
                             </execution>
