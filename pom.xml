@@ -123,7 +123,7 @@
                 <plugin>
                     <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
-                    <version>9.4.44.v20210927</version>
+                    <version>10.0.8</version>
                     <configuration>
                         <supportedPackagings>
                             <supportedPackaging>jar</supportedPackaging>
@@ -282,18 +282,18 @@
                     <stopPort>9966</stopPort>
                     <stopKey>jetty-stop</stopKey>
                     <stopWait>60000</stopWait>
-                    <scanIntervalSeconds>0</scanIntervalSeconds>
-                    <reload>manual</reload>
+                    <scan>0</scan>
                     <webXml>${basedir}/src/test/webapp/WEB-INF/web.xml</webXml>
                     <useTestScope>true</useTestScope>
-                    <webAppConfig>
+                    <webApp>
                         <contextPath>/</contextPath>
-                        <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                            <resourcesAsCSV>${root.build.outputPath},${basedir}/src/test/webapp</resourcesAsCSV>
-                        </baseResource>
+                        <resourceBases>
+                            <resourceBase>${root.build.outputPath}</resourceBase>
+                            <resourceBase>${basedir}/src/test/webapp</resourceBase>
+                        </resourceBases>
                         <!-- include ct-jsregistry-embedded-<version>.jar as web-fragment provider -->
                         <webInfIncludeJarPattern>.*/ct-jsregistry-embedded-[^/]*\.jar$</webInfIncludeJarPattern>
-                    </webAppConfig>
+                    </webApp>
                     <systemProperties>
                         <systemProperty>
                             <!-- set catalina base, so that log files are created in the target directory-->
