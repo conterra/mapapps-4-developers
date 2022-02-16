@@ -295,11 +295,8 @@
                         <webInfIncludeJarPattern>.*/ct-jsregistry-embedded-[^/]*\.jar$</webInfIncludeJarPattern>
                     </webApp>
                     <systemProperties>
-                        <systemProperty>
-                            <!-- set catalina base, so that log files are created in the target directory-->
-                            <name>catalina.base</name>
-                            <value>${project.build.directory}</value>
-                        </systemProperty>
+                        <!-- set catalina base, so that log files are created in the target directory-->
+                        <catalina.base>${project.build.directory}</catalina.base>
                     </systemProperties>
                 </configuration>
             </plugin>
