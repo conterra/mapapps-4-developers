@@ -2,23 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.13.0] - TBD
+
+-   Support for map.apps 4.13.0
+-   Update `mapapps.version` proprety in `./pom.xml` to `4.13.0`
+-   Update babel defaults to target modern browsers by default
+-   Add support for oauth tokens in automatic deployments by updating to latest `ct-jsregistry-maven-plugin`
+-   Use basemap `streets-vector` by default
+-   Update jetty to version `10.0.8`
+
 ## [4.12.3] - 15.12.2021
 
-- Support for map.apps 4.12.3 that includes a critical security fix
-- Update `mapapps.version` property in `./pom.xml` to `4.12.3`
- 
+-   Support for map.apps 4.12.3 that includes a critical security fix
+-   Update `mapapps.version` property in `./pom.xml` to `4.12.3`
+
 ## [4.12.2] - 13.12.2021
 
-- Support for map.apps 4.12.2 that includes a critical security fix
-- Update `mapapps.version` property in `./pom.xml` to `4.12.2`
+-   Support for map.apps 4.12.2 that includes a critical security fix
+-   Update `mapapps.version` property in `./pom.xml` to `4.12.2`
 
 ## [4.12.1] - 10.11.2021
 
-- Support for map.apps 4.12.1
-- Update `mapapps.version` property in `./pom.xml` to `4.12.1`
-- Update `ct.jsregistry.version` property in `./pom.xml` to `1.4.4`
-- Update `@types/arcgis-js-api` to `4.20.1` (`package.json`)
-- Update `eslint-config-ct-prodeng` to `1.2.3` (`package.json`)`
+-   Support for map.apps 4.12.1
+-   Update `mapapps.version` property in `./pom.xml` to `4.12.1`
+-   Update `ct.jsregistry.version` property in `./pom.xml` to `1.4.4`
+-   Update `@types/arcgis-js-api` to `4.20.1` (`package.json`)
+-   Update `eslint-config-ct-prodeng` to `1.2.3` (`package.json`)`
 
 NOTE: since `eslint-config-ct-prodeng@1.2.0` linting for basic a11y rules is activated for custom vue components.
 The occurring warnings should be easily be fixable. More infos can be found at the [eslint-plugin-vuejs-accessibility](https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility) page.
@@ -119,10 +128,7 @@ gulp.task(
     gulp.series(
         "copy-resources",
         "themes-copy",
-        gulp.parallel(
-            "js-transpile",
-            gulp.series("themes-compile", "themes-compress")
-        )
+        gulp.parallel("js-transpile", gulp.series("themes-compile", "themes-compress"))
     )
 );
 ```
