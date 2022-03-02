@@ -119,6 +119,13 @@ mvn clean install -P compress,upload -Dmapapps.user=xyz -Dmapapps.pw=abc
 If map.apps is running behind an IIS with Integrated Windows authentication then do not configure `-Dmapapps.user` and `-Dmapapps.pw`.
 Instead configure `-Dmapapps.useChunkedRequestEncoding=true` and `-Djdk.http.ntlm.transparentAuth=trustedHosts` (or `-Djdk.http.ntlm.transparentAuth=allHosts`) to ensure the user's Windows credentials are used.
 
+If map.apps is configured to use security.mode=OAUTH, a token is required for authentication.
+You will have to generate that token from an administrative account by yourself at the OAUTH provider and set it with `-Dmapapps.token` like this:
+
+```sh
+mvn clean install -P compress,upload -Dmapapps.token=8tb22ttfg46L_hOo7U-yq58_kpaKT4w2kP_3n2JzkEsbu7CWmqMzSKmDJvQUBZFtAtRPzMwtA...
+```
+
 ### Running the tests
 
 To execute the unit tests inside the project, run [http://localhost:9090/js/tests/runTests.html](http://localhost:9090/js/tests/runTests.html).
