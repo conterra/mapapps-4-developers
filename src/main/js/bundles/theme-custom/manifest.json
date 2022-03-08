@@ -17,6 +17,7 @@
     "CSS-Themes": [{
             "comment": "Ensure required layout dependencies are loaded",
             "name": "theme-custom",
+            "title": "A custom theme"
             "files": ["font-mapapps:/fonts/fonts.css", "styles/styles.css"]
         }]
 }
