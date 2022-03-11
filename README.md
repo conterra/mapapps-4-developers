@@ -66,20 +66,29 @@ To use the 'stand-alone project' mode, activate the Maven profile `include-mapap
 
 When developing live-configuration widgets in Chrome, this mode is compelling.
 
+### Prepare Node and node_modules
+
+To prepare node and install all required build dependencies execute:
+
+```sh
+mvn initialize
+```
+
+This triggers the installation of Node.js and NPM exclusively.
+
 ### Start a local HTTP server
 
 Start the integrated Jetty server with:
 
 ```sh
-mvn clean jetty:run -P watch-all
+mvn jetty:run -Denv=dev
 ```
 
-Make sure that the `watch-all` Maven profile is activated.
-The profile will start a gulp task that watches for changes in your source code.
+The profile will starts a HTTP server and watches for changes in your source code.
 
-The Jetty server is then available at [http://localhost:9090](http://localhost:9090).
+The HTTP server is then available at [http://localhost:9090](http://localhost:9090).
 
-### Skip installation of Node.js and NPM during Maven execution
+### Use a build.properties file
 
 By appending `-Denv=dev -Dlocal.configfile=./build.properties` to any Maven execution the development mode is activated.
 This means:
@@ -88,13 +97,7 @@ This means:
 -   the `watch-all` profile is activated
 -   the `build.properties` file is loaded
 
-To enforce the installation of Node.js and NPM execute:
-
-```sh
-mvn initialize
-```
-
-This triggers the installation of Node.js and NPM exclusively.
+This allows customization of some of the properties in the pom.xml in via the `build.properties`.
 
 ### Start coding
 

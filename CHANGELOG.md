@@ -5,11 +5,18 @@ All notable changes to this project will be documented in this file.
 ## [4.13.0] - TBD
 
 -   Support for map.apps 4.13.0
--   Update `mapapps.version` proprety in `./pom.xml` to `4.13.0`
+-   Update `mapapps.version` property in `./pom.xml` to `4.13.0`
+-   Update `nodeVersion`  in `./pom.xml` to `v16.14.0`
+-   Update `npmVersion`  in `./pom.xml` to `8.3.1`
+-   Update `@types/arcgis-js-api` in `package.json` to `4.22.0`
+-   Update `ct-mapapps-gulp-js` in `package.json` to `^0.6.18`
+-   Update `eslint-config-ct-prodeng` in `package.json` to `^1.2.5`
+-   Update `puppeteer` in `package.json` to `^13.3.2`
 -   Update babel defaults to target modern browsers by default
 -   Add support for oauth tokens in automatic deployments by updating to latest `ct-jsregistry-maven-plugin`
 -   Use basemap `streets-vector` by default
 -   Update jetty to version `10.0.8`
+-   Add new tasks to `.vscode/tasks.json` and prefer `-Denv=dev` over `-Pwatch-all`
 
 ## [4.12.3] - 15.12.2021
 

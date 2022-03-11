@@ -5,11 +5,11 @@
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "~4.12.0",
         "@conterra/mapapps-mocha-runner": "^1.0.0",
-        "@types/arcgis-js-api": "4.20.1",
-        "ct-mapapps-gulp-js": "^0.6.16",
+        "@types/arcgis-js-api": "4.22.0",
+        "ct-mapapps-gulp-js": "^0.6.18",
         "vue-template-compiler": "2.6.14",
         "puppeteer": "^13.3.2",
-        "eslint-config-ct-prodeng": "^1.2.4",
+        "eslint-config-ct-prodeng": "^1.2.5",
         "stylelint-config-ct-prodeng": "1.0.3",
         "chai": "^4.3.4",
         "mocha": "^9.0.0"
