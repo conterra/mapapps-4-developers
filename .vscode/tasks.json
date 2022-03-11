@@ -1,11 +1,29 @@
 {
- "version": "2.0.0",
- "tasks": [
-     {
-         "label": "Run Jetty Server",
-         "type": "shell",
-         "command": "mvn jetty:run -Pwatch-all",
-         "group": "build"
-     }
- ]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Jetty Server",
+            "type": "shell",
+            "command": "mvn jetty:run -Pwatch-all",
+            "group": "build"
+        },
+        {
+            "label": "Run stand-alone Jetty Server",
+            "type": "shell",
+            "command": "mvn jetty:run -P watch-all,include-mapapps-deps",
+            "group": "build"
+        },
+        {
+            "label": "Install compress",
+            "type": "shell",
+            "command": "mvn install -P compress",
+            "group": "build"
+        },
+        {
+            "label": "Clean",
+            "type": "shell",
+            "command": "mvn clean",
+            "group": "build"
+        }
+    ]
 }
