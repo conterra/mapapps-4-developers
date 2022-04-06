@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.13.1] - 06.04.2022
+
+-   Support for map.apps 4.13.1
+-   Update `mapapps.version` property in `./pom.xml` to `4.13.1`
+-   Update `@conterra/ct-mapapps-typings` in `package.json` to `4.13.1`
+
 ## [4.13.0] - 29.03.2022
 
 -   Support for map.apps 4.13.0
