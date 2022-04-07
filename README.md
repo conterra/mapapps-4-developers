@@ -166,9 +166,13 @@ There is a sample bundle in this project called "sample_camera" which demonstrat
 
 ## Updating from older versions
 
-### from 4.12.3 to 4.13.0 (Not yet released)
+### from 4.13.0 to 4.13.1
 
-TODO
+See [Changelog](./CHANGELOG.md#4131---06042022)
+
+### from 4.12.3 to 4.13.0
+
+See [Changelog](./CHANGELOG.md#4130---29032022)
 
 ### from 4.12.2 to 4.12.3
 
