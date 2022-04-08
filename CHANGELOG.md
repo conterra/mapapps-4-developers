@@ -23,8 +23,9 @@ All notable changes to this project will be documented in this file.
 -   Add support for oauth tokens in automatic deployments by updating to latest `ct-jsregistry-maven-plugin`
 -   Use basemap `streets-vector` by default
 -   Update jetty to version `10.0.8`
-    
-    :warning: There are breaking configuration changes if custom properties are set for the jetty maven plugin in the `pom.xml` (for example, the `scanIntervalSeconds` property is now called `scan`).
+
+    :warning: There are breaking configuration changes for the jetty maven plugin in the `pom.xml`. Please compare the plugin configuration in the `pom.xml` with your existing configuration to find all changes.
+    For example, the `scanIntervalSeconds` property is now called `scan` and the `webAppConfig` is now called `webApp`.
     See the documentation of the [jetty maven plugin](https://www.eclipse.org/jetty/documentation/jetty-10/programming-guide/index.html#jetty-maven-plugin).
 -   Add new tasks to `.vscode/tasks.json` and prefer `-Denv=dev` over `-Pwatch-all`
 
