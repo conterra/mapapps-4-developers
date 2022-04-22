@@ -311,6 +311,9 @@
                         </goals>
                         <configuration>
                             <arguments>${gulp.task}</arguments>
+                            <environmentVariables>
+                                <NODE_ENV>${gulp.node.env}</NODE_ENV>
+                            </environmentVariables>
                         </configuration>
                     </execution>
                     <execution>
@@ -398,6 +401,7 @@
         <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
+        <gulp.node.env>development</gulp.node.env>
 
         <mapapps.user>
             <!-- set correct username for map.apps remote installation-->
@@ -638,6 +642,7 @@
             <id>compress</id>
             <properties>
                 <gulp.task>compress</gulp.task>
+                <gulp.node.env>production</gulp.node.env>
             </properties>
             <build>
                 <plugins>
@@ -657,17 +662,7 @@
                                     <goal>optimizeJS</goal>
                                 </goals>
                                 <configuration>
-                                    <sourceLanguageLevel>ESNEXT</sourceLanguageLevel>
-                                    <targetLanguageLevel>ESNEXT</targetLanguageLevel>
-                                    <hasFeatures>
-                                        <ct-debug>false</ct-debug>
-                                    </hasFeatures>
-                                    <jsFiles>
-                                        <excludes>
-                                            <exclude>apps/**</exclude>
-                                            <exclude>**/tests/**</exclude>
-                                        </excludes>
-                                    </jsFiles>
+                                    <compress>false</compress>
                                 </configuration>
                             </execution>
                         </executions>

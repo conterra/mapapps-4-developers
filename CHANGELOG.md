@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## 22.04.2022
+
+-   The `compress` profile was modified to remove usage of the google closure compiler.
+    [Terser](https://github.com/terser/terser) is now used to optimize JavaScript files.
+    This solves an issue with the old configuration where too modern JavaScript syntax could
+    be introduced by accident.
+-   Update `ct-mapapps-gulp-js` in `package.json` to `0.6.20`
+-   Update the `optimize js` plugin execution in `pom.xml`
+-   Introduce internal `gulp.node.env` property that configures the environment variable `NODE_ENV`
+-   Update `gulpfile.js` to enable JavaScript compression if `NODE_ENV` is `production`
+
 ## [4.13.1] - 06.04.2022
 
 -   Support for map.apps 4.13.1
@@ -12,8 +23,8 @@ All notable changes to this project will be documented in this file.
 
 -   Support for map.apps 4.13.0
 -   Update `mapapps.version` property in `./pom.xml` to `4.13.0`
--   Update `nodeVersion`  in `./pom.xml` to `v16.14.0`
--   Update `npmVersion`  in `./pom.xml` to `8.3.1`
+-   Update `nodeVersion` in `./pom.xml` to `v16.14.0`
+-   Update `npmVersion` in `./pom.xml` to `8.3.1`
 -   Update `@types/arcgis-js-api` in `package.json` to `4.22.0`
 -   Update `@conterra/ct-mapapps-typings` in `package.json` to `4.13.0`
 -   Update `ct-mapapps-gulp-js` in `package.json` to `^0.6.18`
