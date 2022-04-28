@@ -398,6 +398,8 @@
         </proxy.allowedServerUrls>
         <proxy.allowedSSLDNs>*</proxy.allowedSSLDNs>
         <proxy.use.rules></proxy.use.rules>
+        <proxy.cors.trustedServers>$\{mapapps.remote.base\}</proxy.cors.trustedServers>
+
         <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
