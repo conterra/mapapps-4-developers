@@ -14,7 +14,7 @@
     "dependencies": {
         "font-mapapps": "^4.6.0"
     },
-    "CSS-Themes": [{
+    "cssThemes": [{
             "comment": "Ensure required layout dependencies are loaded",
             "name": "theme-custom",
             "title": "A custom theme",
