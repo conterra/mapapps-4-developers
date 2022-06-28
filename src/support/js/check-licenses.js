@@ -38,7 +38,6 @@ const ACCEPTED_LICENSES = [
 const SKIP_PACKAGES = [
     "event-stream@3.0.20", // MIT License not recognized
     "taffydb@2.6.2", // BSD-1-Clause License in source code
-    "mapapps-4-developers@0.0.1" // TODO remove once license has been added
 ];
 
 checker.init(
