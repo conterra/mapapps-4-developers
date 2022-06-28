@@ -1,17 +1,22 @@
 {
-    "name": "test",
+    "name": "mapapps-4-developers",
     "description": "test build",
     "version": "0.0.1",
+    "license": "CC0-1.0",
+    "scripts": {
+        "check-licenses": "node ./src/support/js/check-licenses.js"
+    },
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "4.13.1",
         "@conterra/mapapps-mocha-runner": "^1.0.0",
         "@types/arcgis-js-api": "4.22.0",
-        "ct-mapapps-gulp-js": "^0.6.20",
-        "vue-template-compiler": "2.6.14",
-        "puppeteer": "^13.3.2",
-        "eslint-config-ct-prodeng": "^1.2.5",
-        "stylelint-config-ct-prodeng": "1.0.3",
         "chai": "^4.3.4",
-        "mocha": "^9.0.0"
+        "ct-mapapps-gulp-js": "^0.6.20",
+        "eslint-config-ct-prodeng": "^1.2.5",
+        "license-checker": "^25.0.1",
+        "mocha": "^9.0.0",
+        "puppeteer": "^13.3.2",
+        "stylelint-config-ct-prodeng": "1.0.3",
+        "vue-template-compiler": "2.6.14"
     }
 }
