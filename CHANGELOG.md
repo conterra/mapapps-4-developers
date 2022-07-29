@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.14.0] - TBD
+
+- Replace `module.exports` in nls files with `export default`.
+  Support for `module.exports` will be removed soon and should be replaced
+  with an appropriate `export` or `export default` directive.
+
 ## 28.04.2022
 
 - Make `proxy.cors.trustedServers` configurable, via application.properties.
