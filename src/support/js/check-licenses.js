@@ -33,11 +33,11 @@ const ACCEPTED_LICENSES = [
     "Unlicense" // Note: not unlicenseD (https://opensource.org/licenses/unlicense)
 ];
 
-// Packages which licenses are not recognized properly by license-checker.
+// Packages with licenses that are not recognized properly by license-checker.
 // These must be checked manually.
 const SKIP_PACKAGES = [
     "event-stream@3.0.20", // MIT License not recognized
-    "taffydb@2.6.2", // BSD-1-Clause License in source code
+    "taffydb@2.6.2" // BSD-1-Clause License in source code
 ];
 
 checker.init(
