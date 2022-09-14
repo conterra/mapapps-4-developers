@@ -227,7 +227,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>de.conterra.mapapps</groupId>
-                                    <artifactId>ct-mapapps-js-api</artifactId>
+                                    <artifactId>ct-mapapps-js</artifactId>
                                     <version>${mapapps.version}</version>
                                     <classifier>src</classifier>
                                     <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
@@ -428,7 +428,7 @@
             <dependencies>
                 <dependency>
                     <groupId>de.conterra.mapapps</groupId>
-                    <artifactId>ct-mapapps-js-api</artifactId>
+                    <artifactId>ct-mapapps-js</artifactId>
                     <scope>test</scope>
                 </dependency>
                 <dependency>
