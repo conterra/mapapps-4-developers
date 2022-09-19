@@ -12,7 +12,8 @@ All notable changes to this project will be documented in this file.
 - Update `chai` in `package.json` to `^4.3.6`
 - Update `vue-template-compiler` in `package.json` to `2.7.8`
 - Update `ct-mapapps-gulp-js` in `package.json` to `^0.7.4`
-
+- Add `jsregistry.sourcemaps.enabled=true` in `test/resources/application.properties` to ship source maps during developmen
+- Add `sourceMaps: "file"` in `gulpfile.js` to generate `.js.map` files instead of inlined source maps
 - Replace `module.exports` in nls files with `export default`.
   Support for `module.exports` will be removed soon and should be replaced
   with an appropriate `export` or `export default` directive.

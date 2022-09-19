@@ -5,8 +5,12 @@ console.info(`Configuring gulp build for ${isProduction ? "production" : "develo
 
 mapapps.registerTasks({
     /* A detailed description of available setting is available at https://www.npmjs.com/package/ct-mapapps-gulp-js */
-    /* a list of themes inside this project */
     compress: isProduction,
+
+    /* build source maps as e.g. ".js.map" */
+    sourceMaps: "file",
+
+    /* a list of themes inside this project */
     themes: ['theme-custom'],
     /* state that the custom theme will be dependant from map.apps everlasting theme that provides the base styles */
     hasBaseThemes: true,
