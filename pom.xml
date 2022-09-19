@@ -383,7 +383,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
         <!-- TODO: change for 4.14.0 release, set typings in package.json as well -->
-        <mapapps.version>4.13.2-SNAPSHOT</mapapps.version>
+        <mapapps.version>4.13.3-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
