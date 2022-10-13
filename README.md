@@ -103,6 +103,22 @@ This allows customization of some of the properties in the pom.xml in via the `b
 
 For detailed documentation on how to develop for map.apps see the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started.html).
 
+### Source maps and debugging
+
+For development cases it might be useful to be able to debug the map.apps code base when using map.apps-4-developers.
+When running the project in `standalone` mode, source maps should be available without further configuration.
+
+When running the project against a `remote` base, it is necessary to configure the map.apps remote base to deliver 
+the source maps to the client as well. In the `application.properties` of the remote map.apps instance it is necessary to
+set the property `jsregistry.sourcemaps.enabled`
+
+```properties
+jsregistry.sourcemaps.enabled=true
+```
+
+Note, that this should only be configured for stage or development systems for security reasons, as it will reveal the
+map.apps code to the client.
+
 ### Make your code production ready
 
 Execute the following command to ensure that all files are compressed/minified and a `dependencies.json` file is calculated:
