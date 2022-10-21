@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - Support for map.apps 4.14.0
 - #TODO: Currently Snapshot # Update `mapapps.version` property in `./pom.xml` to `4.14.0`
-- Update `ct.jsregistry.version` property in `./pom.xml` to `1.5.5`
+- Update `ct.jsregistry.version` property in `./pom.xml` to `1.5.6`
 - #TODO: Currently Snapshot # Update `@conterra/ct-mapapps-typings` in `package.json` to `4.14.0`
 - Update `@types/arcgis-js-api` in `package.json` to `4.24.0`
 - Update `chai` in `package.json` to `^4.3.6`
