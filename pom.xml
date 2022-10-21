@@ -229,6 +229,7 @@
                                     <groupId>de.conterra.mapapps</groupId>
                                     <artifactId>ct-mapapps-js</artifactId>
                                     <version>${mapapps.version}</version>
+                                    <classifier>src</classifier>
                                     <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
                                     <includes>layout/theme-everlasting/**,layout/theme-common/**</includes>
                                     <excludes>layout/theme-everlasting/styles/vuetify/**</excludes>
