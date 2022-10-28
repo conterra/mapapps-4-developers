@@ -3,6 +3,51 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.13 to 4.14
+
+Internally, map.apps modules have been moved. Therefore, an artifact used in the `pom.xml` file in previous versions won't be found anymore.
+
+The following changes have to be applied:
+`<artifactId>ct-mapapps-js-api</artifactId>` has to be changed for `<artifactId>ct-mapapps-js</artifactId>`
+
+```XML
+        [...]
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-themes-src</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <stripVersion>true</stripVersion>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>de.conterra.mapapps</groupId>
+                                    <!-- PREVIOUSLY: ct-mapapps-js-api -->
+                                    <artifactId>ct-mapapps-js</artifactId>
+                                    <version>${mapapps.version}</version>
+                                    <classifier>src</classifier>
+                                    <outputDirectory>${project.build.directory}/unpacked</outputDirectory>
+                                    <includes>layout/theme-everlasting/**,layout/theme-common/**</includes>
+                                    <excludes>layout/theme-everlasting/styles/vuetify/**</excludes>
+                                </artifactItem>
+        [...]
+        <profile>
+            <id>include-mapapps-deps</id>
+            <dependencies>
+                <dependency>
+                    <groupId>de.conterra.mapapps</groupId>
+                    <!-- PREVIOUSLY: ct-mapapps-js-api -->
+                    <artifactId>ct-mapapps-js</artifactId>
+                    <scope>test</scope>
+                </dependency>
+
+```
+
 ## 4.11 to 4.12
 
 ### Migrating javascript test-runner from intern to mocha (optional)
