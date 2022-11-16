@@ -7,7 +7,7 @@
         "check-licenses": "node ./src/support/js/check-licenses.js"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "4.14.0",
+        "@conterra/ct-mapapps-typings": "4.14.1",
         "@conterra/mapapps-mocha-runner": "^1.0.0",
         "@types/arcgis-js-api": "4.24.0",
         "chai": "^4.3.6",

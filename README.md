@@ -23,7 +23,7 @@ This Maven project implements some of the core concepts for developing bundles i
 
 ## Requirements
 
--   map.apps 4.14.0
+-   map.apps 4.14.1
 -   All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS).
 
 ## Usage
