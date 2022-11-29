@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 - Support for map.apps 4.14.1
 - Update `mapapps.version` property in `./pom.xml` to `4.14.1`
+- Update `ct.jsregistry.version` property in `./pom.xml` to `1.5.7`
 - Update `@conterra/ct-mapapps-typings` in `package.json` to `4.14.1`
 
 ## [4.14.0] - 28.10.2022
