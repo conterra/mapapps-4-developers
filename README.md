@@ -1,4 +1,4 @@
-# mapapps-4-developers
+# map.apps for Developers
 
 This project is a starting point for programming custom map.apps bundles and themes. It contains examples for common tasks such as building widgets with Vue.js or creating your own custom themes.
 You may use this project as a blueprint for starting your own map.apps project.
