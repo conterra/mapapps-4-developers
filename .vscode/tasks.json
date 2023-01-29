@@ -8,7 +8,7 @@
             "group": "build"
         },
         {
-            "label": "Run mapapps-4-developers",
+            "label": "Run map.apps for Developers",
             "type": "shell",
             "command": "mvn",
             "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
@@ -16,11 +16,10 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "problemMatcher": [],
-            "isBackground": true
+           "isBackground": true
         },
         {
-            "label": "Run mapapps-4-developers (Remote project mode)",
+            "label": "Run map.apps for Developers (Remote project mode)",
             "type": "shell",
             "command": "mvn",
             "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'"],
