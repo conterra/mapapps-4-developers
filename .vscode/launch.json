@@ -5,13 +5,11 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:9090",
-            "webRoot": "${workspaceFolder}",
-            "sourceMaps": true,
-            "outFiles": ["${workspaceFolder}/src/main/js/**/*.js"]
+            "webRoot": "${workspaceFolder}/src/main"
         }
     ]
 }
