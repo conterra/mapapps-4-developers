@@ -4,8 +4,8 @@ All notable changes to this project will be documented in this file.
 
 ## [4.15.0] - TBD
 - Support for map.apps 4.15.0
-
-- add `transpileTargets` property to `gulpfile.js` to streamline transpilation with ArcGIS Maps SDK for JS requirements.
+- Update Node.js and npm version in `./pom.xml` to latest LTS Version (18.x)
+- Add `transpileTargets` property to `gulpfile.js` to streamline transpilation with ArcGIS Maps SDK for JS requirements.
 
 ## [4.14.2] - 24.01.2023
 
