@@ -20,6 +20,13 @@ mapapps.registerTasks({
         "vuetify": [
             "theme-custom"
         ]
+    },
+    /* A list oft target browser versions. This should be streamlined with Esri JS API requirements. */
+    transpileTargets: {
+        firefox: 102,
+        edge: 104,
+        chrome: 104,
+        safari: 15
     }
 });
 
