@@ -305,7 +305,7 @@
                 <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <?m2e execute?>
+                        <?m2e ignore?>  <!-- Skip this execution on Java Autobuild -->
                         <id>run gulp ${gulp.task}</id>
                         <goals>
                             <goal>gulp</goal>
