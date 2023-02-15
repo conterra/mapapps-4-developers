@@ -12,11 +12,8 @@
             "type": "shell",
             "command": "mvn",
             "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-           "isBackground": true
+            "group": "build",
+            "isBackground": true
         },
         {
             "label": "Run map.apps for Developers (Remote project mode)",
