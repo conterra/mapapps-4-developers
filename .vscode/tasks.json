@@ -26,8 +26,13 @@
         {
             "label": "Compress",
             "type": "shell",
-            "command": "mvn install -P compress",
-            "group": "build"
+            "command": "mvn",
+            "args": ["install", "-Pcompress"],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"
+            }
         },
         {
             "label": "Clean",
