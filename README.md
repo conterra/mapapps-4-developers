@@ -3,30 +3,8 @@
 This project is a starting point for programming custom map.apps bundles and themes. It contains examples for common tasks such as building widgets with Vue.js or creating your own custom themes.
 You may use this project as a blueprint for starting your own map.apps project.
 
-## Requirements
+For detailed documentation on how to use map.apps for Developers to extend map.apps, see the [map.apps Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
--   map.apps 4.14.3
--   All resources from `map.apps-VERSION/sdk/m2-repository` need to be copied manually to your local Maven repository (e.g. `%UserProfile%/.m2/repository` for Windows, `~/.m2/repository` for MacOS or Linux).
-
-## Usage
-
-### Run map.apps
-
-Start the integrated Jetty server with:
-
-```sh
-mvn jetty:run -Denv=dev
-```
-
-map.apps is then available at [http://localhost:9090](http://localhost:9090).
-
-### Start coding
-
-For detailed documentation on how to develop for map.apps see the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started.html).
-
-### Run the tests
-
-To execute the unit tests inside the project, run [http://localhost:9090/js/tests/runTests.html](http://localhost:9090/js/tests/runTests.html).
 
 ## Updating from older versions
 
