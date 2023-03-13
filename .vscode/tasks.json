@@ -3,12 +3,14 @@
     "tasks": [
         {
             "label": "Initialize",
+            "detail": "Initialize map.apps for Developers project",
             "type": "shell",
             "command": "mvn initialize",
             "group": "build"
         },
         {
-            "label": "Run map.apps for Developers",
+            "label": "Run",
+            "detail": "Run map.apps for Developers development server",
             "type": "shell",
             "command": "mvn",
             "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
@@ -16,7 +18,8 @@
             "isBackground": true
         },
         {
-            "label": "Run map.apps for Developers (Remote project mode)",
+            "label": "Run (Remote project mode)",
+            "detail": "Run map.apps for Developers development server in 'remote project' mode",
             "type": "shell",
             "command": "mvn",
             "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'"],
@@ -25,6 +28,7 @@
         },
         {
             "label": "Compress",
+            "detail": "Prepare bundles and apps for deployment on a map.apps instance",
             "type": "shell",
             "command": "mvn",
             "args": ["install", "-Pcompress"],
