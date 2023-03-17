@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.15.0] - TBD
-- Support for map.apps 4.15.0
-- Update Node.js and npm version in `./pom.xml` to latest LTS Version (18.x)
-- Add `transpileTargets` property to `gulpfile.js` to streamline transpilation with ArcGIS Maps SDK for JS requirements.
+
+## [4.14.3] - 20.03.2023
+
+- Support for map.apps 4.14.3
+- Update `mapapps.version` property in `./pom.xml` to `4.14.3`
+- Update `@conterra/ct-mapapps-typings` in `package.json` to `4.14.3`
+- Update Node.js and npm version in `./pom.xml` to latest LTS Version (18.x) 
+- Add `transpileTargets` property to `gulpfile.js` to streamline transpilation with ArcGIS Maps SDK for JS requirements. 
 
 ## [4.14.2] - 24.01.2023
 
