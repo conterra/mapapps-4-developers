@@ -9,7 +9,7 @@ All notable changes to this project will be documented in this file.
 - Update `mapapps.version` property in `./pom.xml` to `4.15.0`
 - //TODO: change from LATEST to fix version
 - Update `@conterra/ct-mapapps-typings` in `package.json` to `4.15.0`
-
+- Add properties and samples to use Identity Service in dev project in `test/resources/application.properties` 
 
 ## [4.14.3] - 20.03.2023
 
