@@ -399,7 +399,7 @@
         </proxy.allowedServerUrls>
         <proxy.allowedSSLDNs>*</proxy.allowedSSLDNs>
         <proxy.use.rules></proxy.use.rules>
-        <proxy.cors.trustedServers>$\{mapapps.remote.base\}</proxy.cors.trustedServers>
+        <cors.request.trustedServers>$\{mapapps.remote.base\}</cors.request.trustedServers>
 
         <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>

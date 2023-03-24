@@ -42,7 +42,7 @@
                     proxyUrl: url
                 });
             });
-            var trustedServers = "@@proxy.cors.trustedServers@@".split("\s*,\s*")
+            var trustedServers = "@@cors.request.trustedServers@@".split("\s*,\s*")
                     .filter(function(item){ return item && item.match(/^[^@.].*$/)});
             $apprt.changeConfig({
                 isDebug: true,
