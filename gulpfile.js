@@ -41,7 +41,7 @@ mapapps.registerTasks({
 }, gulp);
 
 mapappsBrowserSync.registerTask({
-    port: 8080,
+    port: 9090,
 
     // activate https protocol, generates a self signed certificate for "localhost"
     https: true,
