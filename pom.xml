@@ -31,7 +31,7 @@
             <dependency>
                 <groupId>de.conterra.mapapps</groupId>
                 <artifactId>ct-mapapps-js</artifactId>
-                <version>${mapapps.version}</version>       
+                <version>${mapapps.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -361,7 +361,6 @@
         <proxy.use.rules></proxy.use.rules>
         <cors.request.trustedServers>$\{mapapps.remote.base\}</cors.request.trustedServers>
 
-        <jetty.port>9090</jetty.port>
         <mvn.cmd>mvn</mvn.cmd>
         <gulp.task></gulp.task>
         <gulp.node.env>development</gulp.node.env>
