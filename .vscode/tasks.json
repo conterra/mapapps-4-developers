@@ -13,7 +13,7 @@
             "detail": "Run map.apps for Developers development server",
             "type": "shell",
             "command": "mvn",
-            "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
+            "args": ["compile", "-Denv=dev", "'-Dlocal.configfile=./build.properties'", "-Pinclude-mapapps-deps"],
             "group": "build",
             "isBackground": true
         },
@@ -22,7 +22,7 @@
             "detail": "Run map.apps for Developers development server in 'remote project' mode",
             "type": "shell",
             "command": "mvn",
-            "args": ["jetty:run", "-Denv=dev", "'-Dlocal.configfile=./build.properties'"],
+            "args": ["compile", "-Denv=dev", "'-Dlocal.configfile=./build.properties'"],
             "group": "build",
             "isBackground": true
         },

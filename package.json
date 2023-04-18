@@ -12,6 +12,7 @@
         "@types/arcgis-js-api": "4.24.0",
         "chai": "^4.3.6",
         "ct-mapapps-gulp-js": "^0.7.4",
+        "ct-mapapps-browser-sync": "^0.0.17",
         "eslint-config-ct-prodeng": "^1.2.5",
         "license-checker": "^25.0.1",
         "mocha": "^9.0.0",
