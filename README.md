@@ -16,7 +16,7 @@ $ mvn initialize
 $ mvn compile -Denv=dev -Pinclude-mapapps-deps
 ```
 
-For more details refer to the [Developer's Guide](https://docs.test.conterra.de/en/mapapps/latest/developersguide/getting-started/).
+For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
 ## Updating from older versions
 
