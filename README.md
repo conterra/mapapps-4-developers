@@ -5,6 +5,18 @@ You may use this project as a blueprint for starting your own map.apps project.
 
 For detailed documentation on how to use map.apps for Developers to extend map.apps, see the [map.apps Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
+## Quick start
+
+Clone this project and ensure that you have all required dependencies installed correctly (see [Documentation](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/set-up-development-environment.htm)).
+
+Then run the following commands from the project root directory to start a local development server:
+
+```bash
+$ mvn initialize
+$ mvn compile -Denv=dev -Pinclude-mapapps-deps
+```
+
+For more details refer to the [Developer's Guide](https://docs.test.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
 ## Updating from older versions
 
