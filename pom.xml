@@ -522,6 +522,13 @@
                                     <goal>calculateDependencies</goal>
                                 </goals>
                             </execution>
+                            <!-- 
+
+                                The optimizeJS goal is usually no longer required because compression is done via terser (see gulpfile.js 'compress' option).
+                                Uncomment this block only if you're still using `dojo/text!` in your source code.
+                                Reenabling the optimizeJS goal unfortunately removes all comments from your built JavaScript, which
+                                would incidentally also break source maps.
+                            
                             <execution>
                                 <id>optimize js</id>
                                 <goals>
@@ -530,7 +537,7 @@
                                 <configuration>
                                     <compress>false</compress>
                                 </configuration>
-                            </execution>
+                            </execution> -->
                         </executions>
                     </plugin>
                 </plugins>
