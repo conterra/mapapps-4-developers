@@ -37,14 +37,17 @@ mapapps.registerTasks({
         chrome: 104,
         safari: 15
     },
-    runBrowserTests
+    runBrowserTests,
+    watchFinishedReceiver() {
+        mapappsBrowserSync.state.reload();
+    }
 }, gulp);
 
 mapappsBrowserSync.registerTask({
     port: 9090,
-
     // activate https protocol, generates a self signed certificate for "localhost"
-    https: false,
+    // https://browsersync.io/docs/options#option-https
+    https: true,
 
     jsreg: {
         //npmDir : __dirname + "/node_modules/",
@@ -53,7 +56,9 @@ mapappsBrowserSync.registerTask({
             "chai",
             "@conterra/mapapps-mocha-runner"
         ]
-    }
+    },
+    // prevent reload by browser sync (reload triggered on watch end)
+    externalReloadTrigger: true
 }, gulp);
 
 gulp.task("build",
@@ -90,7 +95,10 @@ gulp.task("run-tests",
             // eslint-disable-next-line max-len
             const testsAt = mapappsBrowserSync.state.url + "/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all&reporter=tap";
             runBrowserTests.push(testsAt);
-            return Promise.resolve();
+            return new Promise((resolve) => {
+                // give browsersync small time
+                setTimeout(resolve, 5000);
+            });
         },
         "run-browser-tests",
         "browser-sync-stop"

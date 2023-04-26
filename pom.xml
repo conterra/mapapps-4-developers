@@ -254,23 +254,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>de.conterra.jsregistry</groupId>
-                <artifactId>ct-jsregistry-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>build-jsregistry.properties</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>buildPacksProperties</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceDirectory>${js.build.outputPath}</sourceDirectory>
-                    <outputDirectory>${js.build.outputPath}</outputDirectory>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
                 <executions>
@@ -316,6 +299,23 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>de.conterra.jsregistry</groupId>
+                <artifactId>ct-jsregistry-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>build-jsregistry.properties</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>buildPacksProperties</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDirectory>${js.build.outputPath}</sourceDirectory>
+                    <outputDirectory>${js.build.outputPath}</outputDirectory>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>de.conterra.mapapps</groupId>

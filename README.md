@@ -20,6 +20,13 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ## Updating from older versions
 
+### from 4.14.3 to 4.15.0
+
+Note here a bigger change inside the `pom.xml` and `gulpfile.js` happened due to the introduction of browsersync as dev server.
+Please compare the files not all changes are documented in detail.
+
+See [Changelog](./CHANGELOG.md#4150---27042023)
+
 ### from 4.14.2 to 4.14.3
 
 See [Changelog](./CHANGELOG.md#4143---20032023)

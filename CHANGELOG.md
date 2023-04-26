@@ -2,16 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.15.0] - TBD
+## [4.15.0] - 27.04.2023
 
 - Support for map.apps 4.15.0
-//TODO: change from SNAPSHOT to fix version
+- Use `ct-mapapps-browser-sync` drop use of jetty
 - Update `mapapps.version` property in `./pom.xml` to `4.15.0`
-- //TODO: change from LATEST to fix version
 - Update `@conterra/ct-mapapps-typings` in `package.json` to `4.15.0`
 - Add properties and samples to use Identity Service in dev project in `test/resources/application.properties` 
 - Rename property `proxy.cors.trustedServers` to `cors.request.trustedServers` in `./pom.xml`, `test/resources/application.properties` and `test/webapp/index.html`
 - Update `ct.jsregistry.version` property in `./pom.xml` to `1.5.9`
+- Update `mocha` to `^10.2.0`,
+- Update `puppeteer` to `^19.11.1`
+- Update `chai` to `^4.3.7`
+- Update `@conterra/mapapps-mocha-runner` to `^1.1.1`
+- Update `"@types/arcgis-js-api` to `4.26.0`
 
 ## [4.14.3] - 20.03.2023
 
