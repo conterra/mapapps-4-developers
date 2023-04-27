@@ -365,15 +365,10 @@
         <gulp.task></gulp.task>
         <gulp.node.env>development</gulp.node.env>
 
-        <mapapps.user>
-            <!-- set correct username for map.apps remote installation-->
-        </mapapps.user>
-        <mapapps.pw>
-            <!-- set correct password for map.apps remote installation-->
-        </mapapps.pw>
-        <mapapps.token>
-            <!-- set correct token for map.apps remote installation-->
-        </mapapps.token>
+        <mapapps.user><!-- Set username for map.apps remote installation--></mapapps.user>
+        <mapapps.pw><!-- Set password for map.apps remote installation--></mapapps.pw>
+        <mapapps.token><!-- Set token for map.apps remote installation--></mapapps.token>
+
         <!-- set to false if map.apps is configured behind integrated windows authentication is required -->
         <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
         <!-- enable this if "upload" profile should only deploy bundles -->
