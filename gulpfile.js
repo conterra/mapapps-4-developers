@@ -47,7 +47,7 @@ mapappsBrowserSync.registerTask({
     port: 9090,
     // activate https protocol, generates a self signed certificate for "localhost"
     // https://browsersync.io/docs/options#option-https
-    https: true,
+    https: false,
 
     jsreg: {
         //npmDir : __dirname + "/node_modules/",
