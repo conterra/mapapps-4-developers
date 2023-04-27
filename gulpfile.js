@@ -58,7 +58,9 @@ mapappsBrowserSync.registerTask({
         ]
     },
     // prevent reload by browser sync (reload triggered on watch end)
-    externalReloadTrigger: true
+    externalReloadTrigger: true,
+    // to prevent auto open of browser, set this to false
+    urlToOpen: true
 }, gulp);
 
 gulp.task("build",
@@ -95,10 +97,7 @@ gulp.task("run-tests",
             // eslint-disable-next-line max-len
             const testsAt = mapappsBrowserSync.state.url + "/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all&reporter=tap";
             runBrowserTests.push(testsAt);
-            return new Promise((resolve) => {
-                // give browsersync small time
-                setTimeout(resolve, 5000);
-            });
+            return Promise.resolve();
         },
         "run-browser-tests",
         "browser-sync-stop"
