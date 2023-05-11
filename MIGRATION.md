@@ -3,6 +3,13 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.14 to 4.15
+
+The http server is switched from jetty to [browsersync)(https://browsersync.io).
+This means that there are bigger changes in the files `pom.xml`, `package.json` and `gulpfile.js`.
+Please integrate your own changes, into these files.
+See also the [Changelog](./CHANGELOG.md#4150---11052023).
+
 ## 4.13 to 4.14
 
 Internally, map.apps modules have been moved. Therefore, an artifact used in the `pom.xml` file in previous versions won't be found anymore.

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.conterra.mapapps</groupId>
     <artifactId>mapapps-4-developers</artifactId>
@@ -103,6 +105,8 @@
                         <excludes>
                             <exclude>apps/**</exclude>
                             <exclude>**/tests/**</exclude>
+                            <exclude>**/sample_tests/**</exclude>
+                            <exclude>**/theme-common/**</exclude>
                         </excludes>
                     </configuration>
                 </plugin>
@@ -292,7 +296,8 @@
                             <replacements>
                                 <replacement>
                                     <!-- remove bundleLocations from app.json -->
-                                    <token>\s*"bundleLocations"\s*:\s*\[\s*"localbundles"\s*,\s*"bundles"\s*\]\s*,\s*</token>
+                                    <token>
+                                        \s*"bundleLocations"\s*:\s*\[\s*"localbundles"\s*,\s*"bundles"\s*\]\s*,\s*</token>
                                     <value></value>
                                 </replacement>
                             </replacements>
@@ -310,6 +315,10 @@
                         <goals>
                             <goal>buildPacksProperties</goal>
                         </goals>
+                        <configuration>
+                            <!-- don't list not shipped bundles in the META-INF\js-registry-packs.properties file -->
+                            <scanPackagesExcludes>apps/**,bundles/sample_tests</scanPackagesExcludes>
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
@@ -353,7 +362,8 @@
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
 
-        <!-- don't do this in production configuration! This allows to go any http traffic over the /proxy endpoint -->
+        <!-- don't do this in production configuration! This allows to go any http traffic over the
+        /proxy endpoint -->
         <proxy.allowedServerUrls>
             *://*:*/**;
         </proxy.allowedServerUrls>
@@ -365,11 +375,15 @@
         <gulp.task></gulp.task>
         <gulp.node.env>development</gulp.node.env>
 
-        <mapapps.user><!-- Set username for map.apps remote installation--></mapapps.user>
-        <mapapps.pw><!-- Set password for map.apps remote installation--></mapapps.pw>
-        <mapapps.token><!-- Set token for map.apps remote installation--></mapapps.token>
+        <mapapps.user><!-- Set username for map.apps remote installation-->
+        </mapapps.user>
+        <mapapps.pw><!-- Set password for map.apps remote installation-->
+        </mapapps.pw>
+        <mapapps.token><!-- Set token for map.apps remote installation-->
+        </mapapps.token>
 
-        <!-- set to false if map.apps is configured behind integrated windows authentication is required -->
+        <!-- set to false if map.apps is configured behind integrated windows authentication is
+        required -->
         <mapapps.useChunkedRequestEncoding>true</mapapps.useChunkedRequestEncoding>
         <!-- enable this if "upload" profile should only deploy bundles -->
         <skip.apps.upload>false</skip.apps.upload>
@@ -519,7 +533,8 @@
                             </execution>
                             <!-- 
 
-                                The optimizeJS goal is usually no longer required because compression is done via terser (see gulpfile.js 'compress' option).
+                                The optimizeJS goal is usually no longer required because compression is done via terser (see
+                            gulpfile.js 'compress' option).
                                 Uncomment this block only if you're still using `dojo/text!` in your source code.
                                 Reenabling the optimizeJS goal unfortunately removes all comments from your built JavaScript, which
                                 would incidentally also break source maps.

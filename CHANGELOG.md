@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.15.0] - 27.04.2023
+## [4.15.0] - 11.05.2023
 
 - Support for map.apps 4.15.0
 - Use `ct-mapapps-browser-sync` drop use of jetty
