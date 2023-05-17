@@ -16,6 +16,9 @@ All notable changes to this project will be documented in this file.
 - Update `chai` to `^4.3.7`
 - Update `@conterra/mapapps-mocha-runner` to `^1.1.1`
 - Update `"@types/arcgis-js-api` to `4.26.0`
+- Integrate the `rollup-build` task into the gulpfile.js
+- Add `build.config.js` to `sample_camera` sample, to demonstrate the rollup build and change `sample_camera/module.js` to make `module.js` the only entrypoint of the bundle.
+- Integrate the optional `gulpfile.overrides.js` file.
 
 ## [4.14.3] - 20.03.2023
 

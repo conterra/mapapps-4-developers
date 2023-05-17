@@ -7,7 +7,9 @@ The changes described here were not made to map.apps interfaces but concern chan
 
 The http server is switched from jetty to [browsersync)(https://browsersync.io).
 This means that there are bigger changes in the files `pom.xml`, `package.json` and `gulpfile.js`.
-Please integrate your own changes, into these files.
+Additional the `rollup-build` task is now integrated into the `gulpfile.js` and the `sample_camera` bundle is using it.
+Please integrate your own changes into these files.
+
 See also the [Changelog](./CHANGELOG.md#4150---11052023).
 
 ## 4.13 to 4.14

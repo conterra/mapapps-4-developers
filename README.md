@@ -22,7 +22,7 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ### from 4.14.3 to 4.15.0
 
-Note here a bigger change inside the `pom.xml` and `gulpfile.js` happened due to the introduction of browsersync as dev server.
+Note here a bigger change inside the `pom.xml` and `gulpfile.js` happened due to the introduction of browsersync as dev server and the support for rollup based builds.
 Please compare the files not all changes are documented in detail.
 
 See [Changelog](./CHANGELOG.md#4150---11052023)
