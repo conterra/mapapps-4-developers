@@ -19,6 +19,9 @@ All notable changes to this project will be documented in this file.
 - Integrate the `rollup-build` task into the gulpfile.js
 - Add `build.config.js` to `sample_camera` sample, to demonstrate the rollup build and change `sample_camera/module.js` to make `module.js` the only entrypoint of the bundle.
 - Integrate the optional `gulpfile.overrides.js` file.
+- Properties `jsregistry.replacement.paths`, `jsregistry.directoryscanner.npmfolder`, `jsregistry.directoryscanner.npmincludes` are moved into gulpfile.js in the `registerBrowserSync` config.
+- Property `jsregistry.sourcemaps.enabled` is obsolete, the dev registry will always support sourcemaps.
+- Property `jsregistry.root.url` is provided automatically by the browsersync dev server.
 
 ## [4.14.3] - 20.03.2023
 
