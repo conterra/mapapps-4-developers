@@ -7,7 +7,7 @@ For detailed documentation on how to use map.apps for Developers to extend map.a
 
 ## Quick start
 
-Clone this project and ensure that you have all required dependencies installed correctly (see [Documentation](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/set-up-development-environment.htm)).
+Clone this project and ensure that you have all required dependencies installed correctly (see [Documentation](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/set-up-development-environment.html)).
 
 Then run the following commands from the project root directory to start a local development server:
 
