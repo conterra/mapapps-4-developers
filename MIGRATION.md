@@ -54,8 +54,8 @@ The following changes have to be applied:
                     <artifactId>ct-mapapps-js</artifactId>
                     <scope>test</scope>
                 </dependency>
-
 ```
+Some changes to be made in the `pom.xml` and `gulpfile.js` to remove usage of the google closure compiler. These changes are found in this [commit](https://github.com/conterra/mapapps-4-developers/commit/1cbea0203d52e9ae92557ef14017a713fe30c771).
 
 ## 4.11 to 4.12
 
