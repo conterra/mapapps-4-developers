@@ -116,7 +116,9 @@ gulp.task("build",
 gulp.task("lint",
     gulp.parallel(
         "js-lint"
-        //,"style-lint"
+        /*, comment in to lint .css/.less files
+        "style-lint"
+        */
     ));
 
 gulp.task("preview",
