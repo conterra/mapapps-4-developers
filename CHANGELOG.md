@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 - Properties `jsregistry.replacement.paths`, `jsregistry.directoryscanner.npmfolder`, `jsregistry.directoryscanner.npmincludes` are moved into gulpfile.js in the `registerBrowserSync` config.
 - Property `jsregistry.sourcemaps.enabled` is obsolete, the dev registry will always support sourcemaps.
 - Property `jsregistry.root.url` is provided automatically by the browsersync dev server.
+- `sample_camera` is using 1.0.0-SNAPSHOT version, like in the pom.xml
 
 ## [4.14.3] - 20.03.2023
 
