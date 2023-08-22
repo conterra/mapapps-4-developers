@@ -1,11 +1,11 @@
 {
     "name": "sample_camera",
-    "version": "0.0.1",
+    "version": "1.0.0-SNAPSHOT",
     "dependencies": {
-        "esri": "^4.6.0",
-        "apprt-vue": "^4.6.0",
-        "apprt-vuetify": "^4.6.0",
-        "apprt-binding": "^4.6.0"
+        "esri": "^4.26.0",
+        "apprt-vue": "^4.15.0",
+        "apprt-vuetify": "^4.15.0",
+        "apprt-binding": "^4.15.0"
     },
     "main": "",
     "layout-widgets": [
