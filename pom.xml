@@ -30,11 +30,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <dependency>
-                <groupId>de.conterra.mapapps</groupId>
-                <artifactId>ct-mapapps-js</artifactId>
-                <version>${mapapps.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -316,7 +311,8 @@
                             <goal>buildPacksProperties</goal>
                         </goals>
                         <configuration>
-                            <!-- don't list not shipped bundles in the META-INF\js-registry-packs.properties file -->
+                            <!-- don't list not shipped bundles in the
+                            META-INF\js-registry-packs.properties file -->
                             <scanPackagesExcludes>apps/**,bundles/sample_tests</scanPackagesExcludes>
                         </configuration>
                     </execution>
@@ -352,11 +348,11 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.15.0</mapapps.version>
+        <mapapps.version>4.15.1</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.5.9</ct.jsregistry.version>
+        <ct.jsregistry.version>1.5.10</ct.jsregistry.version>
         <ct.jsrt-test.version>2.0.2</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->

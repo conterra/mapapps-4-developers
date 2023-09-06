@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.15.1] - 06.09.2023
+
+- Support for map.apps 4.15.1
+- Update `mapapps.version` property in `./pom.xml` to `4.15.1`
+- Update `@conterra/ct-mapapps-typings` in `package.json` to `4.15.1`
+- Update `ct.jsregistry.version` property in `./pom.xml` to `1.5.10`
+- Remove following entry from `<dependencyManagement>`, it is automatically provided by the ´ct-mapapps` parent pom import:
+
+    ```xml
+    <dependency>
+        <groupId>de.conterra.mapapps</groupId>
+        <artifactId>ct-mapapps-js</artifactId>
+        <version>${mapapps.version}</version>
+    </dependency>
+    ```
+
 ## [4.15.0] - 26.05.2023
 
 - Support for map.apps 4.15.0
