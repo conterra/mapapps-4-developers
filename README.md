@@ -20,6 +20,10 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ## Updating from older versions
 
+### from 4.15.0 to 4.15.1
+
+See [Changelog](./CHANGELOG.md#4151---06092023)
+
 ### from 4.14.3 to 4.15.0
 
 Note here a bigger change inside the `pom.xml` and `gulpfile.js` happened due to the introduction of browsersync as dev server and the support for rollup based builds.
