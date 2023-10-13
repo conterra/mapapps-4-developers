@@ -4,7 +4,9 @@
     "version": "0.0.1",
     "license": "CC0-1.0",
     "scripts": {
-        "check-licenses": "node ./src/support/js/check-licenses.js"
+        "check-licenses": "node ./src/support/js/check-licenses.js",
+        "check-types": "tsc --noEmit",
+        "watch-types": "tsc -w --noEmit"
     },
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "4.15.1",
@@ -17,9 +19,10 @@
         "license-checker": "^25.0.1",
         "mocha": "^10.2.0",
         "puppeteer": "^19.11.1",
-        "vue-template-compiler": "2.7.8",
+        "stylelint": "^13.13.1",
         "stylelint-config-ct-prodeng": "1.0.4",
         "stylelint-config-recommended": "5.0.0",
-        "stylelint": "^13.13.1"
+        "typescript": "^5.1.6",
+        "vue-template-compiler": "2.7.8"
     }
 }
