@@ -4,8 +4,8 @@ import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
 import { InjectedReference } from "apprt-core/InjectedReference";
 import CameraControls from "./CameraControls.ts.vue";
-import type {Point} from "esri/geometry/Point";
-import type {Camera} from "esri/Camera";
+import Point from "esri/geometry/Point";
+import Camera from "esri/Camera";
 
 import type {MapWidgetModel} from "map-widget/api";
 
