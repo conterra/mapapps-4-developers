@@ -1,4 +1,4 @@
-import Binding from "apprt-binding/Binding";
+import Binding, { ConvertFunction } from "apprt-binding/Binding";
 import { debounceOrCancel, ifDefined } from "apprt-binding/Transformers";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
@@ -7,7 +7,7 @@ import CameraControls from "./CameraControls.ts.vue";
 import Point from "esri/geometry/Point";
 import Camera from "esri/Camera";
 
-import type {MapWidgetModel} from "map-widget/api";
+import type { MapWidgetModel } from "map-widget/api";
 
 
 class CameraWidgetFactory {
@@ -48,7 +48,7 @@ class CameraWidgetFactory {
     private declareModelToVueBinding(): Binding {
         return Binding.create()
             .sync("viewmode", ifDefined(), ifDefined())
-            .sync("zoom", log("left", ignoreNonIntegerNumbers), log("right", ifDefined(debounceOrCancel(10))))
+            .sync("zoom", log("left", ignoreNonIntegerNumbers()), log("right", ifDefined(debounceOrCancel(10))))
             .sync("rotation", log("left", ifDefined()), log("right", ifDefined(debounceOrCancel(10))))
             .syncToRight("center", ["latitude", "longitude"], ifDefined((center: Point) => [center.latitude, center.longitude]))
             .sync("camera", ["heading", "tilt"], ifDefined(({ heading, tilt }) => [heading, tilt]),
@@ -74,16 +74,18 @@ class CameraWidgetFactory {
     }
 }
 
-function equalsAlmost(a:number, b:number, eps?:number) {
+function equalsAlmost(a: number, b: number, eps?: number) {
     eps = eps || 1e-8;
     return Math.abs(a - b) < eps;
 }
 
-function ignoreNonIntegerNumbers(v: number, { ignore }: any) {
-    if (v && Number.isInteger(v)) {
-        return v;
-    }
-    return ignore();
+function ignoreNonIntegerNumbers(): ConvertFunction {
+    return ((v: number, { ignore }) => {
+        if (v && Number.isInteger(v)) {
+            return v;
+        }
+        return ignore();
+    });
 }
 
 function log(prefix: string, cb: any) { //TODO remove any
