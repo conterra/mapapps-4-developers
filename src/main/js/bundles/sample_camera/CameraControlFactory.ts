@@ -1,11 +1,11 @@
 import Binding, { ConvertFunction } from "apprt-binding/Binding";
 import { debounceOrCancel, ifDefined } from "apprt-binding/Transformers";
+import { InjectedReference } from "apprt-core/InjectedReference";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
-import { InjectedReference } from "apprt-core/InjectedReference";
+import type Camera from "esri/Camera";
+import type Point from "esri/geometry/Point";
 import CameraControls from "./CameraControls.ts.vue";
-import Point from "esri/geometry/Point";
-import Camera from "esri/Camera";
 
 import type { MapWidgetModel } from "map-widget/api";
 
@@ -14,10 +14,9 @@ class CameraWidgetFactory {
 
     private _mapWidgetModel: InjectedReference<MapWidgetModel>;
 
-    private _modelToViewBinding: Binding | undefined;
-
     createInstance(): any {
-        let modelToViewBinding: Binding | undefined = this._modelToViewBinding = this.declareModelToVueBinding();
+        let modelToViewBinding: Binding | undefined = this.declareModelToVueBinding();
+
         const vm = new Vue(CameraControls);
         const model = this._mapWidgetModel;
         const widget = VueDijit(vm);
@@ -45,7 +44,7 @@ class CameraWidgetFactory {
         return widget;
     }
 
-    private declareModelToVueBinding(): Binding {
+    private declareModelToVueBinding() {
         return Binding.create()
             .sync("viewmode", ifDefined(), ifDefined())
             .sync("zoom", log("left", ignoreNonIntegerNumbers()), log("right", ifDefined(debounceOrCancel(10))))
@@ -88,7 +87,7 @@ function ignoreNonIntegerNumbers(): ConvertFunction {
     });
 }
 
-function log(prefix: string, cb: any) { //TODO remove any
+function log(prefix: string, cb: ConvertFunction) {
     return (v: any, ctx: any) => {
         console.debug(`${prefix}: ${ctx.sourceName} -> ${ctx.targetName} : ${v}`);
         return cb && cb(v, ctx);
