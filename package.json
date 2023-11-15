@@ -7,12 +7,12 @@
         "check-licenses": "node ./src/support/js/check-licenses.js"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "4.15.1",
+        "@conterra/ct-mapapps-typings": "4.15.2-next.20231115044654",
         "@conterra/mapapps-mocha-runner": "^1.1.1",
-        "@types/arcgis-js-api": "4.26.0",
+        "@types/arcgis-js-api": "4.28.0",
         "chai": "^4.3.7",
         "ct-mapapps-browser-sync": "0.0.30",
-        "ct-mapapps-gulp-js": "0.9.4",
+        "ct-mapapps-gulp-js": "0.9.5",
         "eslint-config-ct-prodeng": "1.3.0-next-2",
         "license-checker": "^25.0.1",
         "mocha": "^10.2.0",
