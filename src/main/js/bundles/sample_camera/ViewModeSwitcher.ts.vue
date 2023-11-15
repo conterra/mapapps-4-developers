@@ -17,8 +17,9 @@
         </v-radio-group>
     </div>
 </template>
-<script>
-    export default {
+<script lang="ts">
+    import Vue from "apprt-vue/Vue";
+    export default Vue.extend({
         props: {
             // external property is named "value" so v-model can be used
             value: {
@@ -33,10 +34,10 @@
             };
         },
         watch: {
-            selected: function (newVal) {
+            selected: function (newVal: string) {
                 // on selected state we trigger in input event to match v-model component specification
                 this.$emit("input", newVal);
             }
         }
-    };
+    });
 </script>

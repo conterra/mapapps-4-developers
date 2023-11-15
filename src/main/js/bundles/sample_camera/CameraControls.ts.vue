@@ -67,12 +67,13 @@
         </v-layout>
     </v-container>
 </template>
-<script>
-    import PositionViewer from "./PositionViewer.vue";
-    import ViewModeSwitcher from "./ViewModeSwitcher.vue";
+<script lang="ts">
+    import Vue from "apprt-vue/Vue";
+    import PositionViewer from "./PositionViewer.ts.vue";
+    import ViewModeSwitcher from "./ViewModeSwitcher.ts.vue";
     import Bindable from "apprt-vue/mixins/Bindable";
 
-    export default {
+    export default Vue.extend({
         components: {
             'position-viewer': PositionViewer,
             'view-mode-switcher': ViewModeSwitcher
@@ -80,14 +81,16 @@
         mixins: [Bindable],
         data: function () {
             return {
-                latitude: undefined,
-                longitude: undefined,
-                rotation: undefined,
-                zoom: undefined,
-                heading: undefined,
-                tilt: undefined,
-                viewmode: undefined
+                latitude: undefined as number | undefined,
+                longitude: undefined as number | undefined,
+                rotation: undefined as number | undefined,
+                zoom: undefined as number | undefined,
+                heading: undefined as string | undefined,
+                tilt: undefined as number | undefined,
+                viewmode: undefined as string | undefined
             };
         }
-    };
+
+
+    });
 </script>
