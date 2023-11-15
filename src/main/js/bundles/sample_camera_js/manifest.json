@@ -1,5 +1,5 @@
 {
-    "name": "sample_camera",
+    "name": "sample_camera_js",
     "version": "1.0.0-SNAPSHOT",
     "dependencies": {
         "esri": "^4.26.0",
@@ -10,11 +10,11 @@
     "main": "",
     "layout-widgets": [
         {
-            "widgetRole": "camera",
+            "widgetRole": "camera_js",
             "template": "seasons",
             "window": {
                 "autofocus": false,
-                "dockTool": "cameraToggleTool",
+                "dockTool": "cameraJsToggleTool",
                 "minimizeOnClose": true,
                 "marginBox": {
                     "w": 355,
@@ -31,10 +31,10 @@
     "components": [
         {
             "name": "CameraControlFactory",
-            "provides": ["dijit.Widget","sample_camera.Widget"],
+            "provides": ["dijit.Widget","sample_camera_js.Widget"],
             "instanceFactory": true,
             "properties": {
-                "widgetRole": "camera"
+                "widgetRole": "camera_js"
             },
             "references": [
                 {
@@ -44,14 +44,14 @@
             ]
         },
         {
-            "name": "CameraToggleTool",
+            "name": "CameraJsToggleTool",
             "impl": "ct/tools/Tool",
             "provides": [
                 "ct.tools.Tool"
             ],
             "propertiesConstructor": true,
             "properties": {
-                "id": "cameraToggleTool",
+                "id": "cameraJsToggleTool",
                 "title": "${ui.windowTitle}",
                 "tooltip": "${tool.tooltip}",
                 "iconClass": "icon-camera",
@@ -65,7 +65,7 @@
             },
             "references":[{
                 "name": "handlerScope",
-                "providing": "sample_camera.Widget"
+                "providing": "sample_camera_js.Widget"
             }]
         }
     ]
