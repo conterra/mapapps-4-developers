@@ -1,6 +1,29 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [4.16.0] - T.B.D.
+
+- Support for map.apps 4.16.0
+
+### Changes in pom.xml
+
+- Update `mapapps.version` property to `4.16.0`
+- Update `ct.jsregistry.version` property to `1.5.12`
+- Update `frontend-maven-plugin` plugin version to `1.14.2`
+- Update  `frontend-maven-plugin` configuration to:
+  ```xml
+      <configuration>
+         <nodeVersion>v20.9.0</nodeVersion>
+      </configuration>
+  ```
+- Update `maven-compiler-plugin` plugin version to `3.11.0`  
+- Update `maven-javadoc-plugin` plugin version to `3.5.0`  
+- Add version `3.5.0` to `maven-dependency-plugin` plugin  
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.16.0`
+- Update `@types/arcgis-js-api` to `4.28.0`
+- Update `ct-mapapps-gulp-js` property to `0.9.5`
 
 ## [4.15.1] - 06.09.2023
 
