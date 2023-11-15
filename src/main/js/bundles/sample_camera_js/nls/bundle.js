@@ -3,11 +3,11 @@ export default {
         bundleName: "camera",
         bundleDescription: "",
         ui: {
-            windowTitle: "Camera"
+            windowTitle: "Camera JS"
         },
         tool: {
-            title: "Camera",
-            tooltip: "Camera"
+            title: "Camera JS",
+            tooltip: "Camera JS"
         }
     }),
     "de": true
