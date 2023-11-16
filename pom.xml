@@ -60,7 +60,6 @@
             <version>${ct.jsrt-test.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
     <build>
         <pluginManagement>
@@ -69,11 +68,27 @@
                     <groupId>de.conterra.mapapps</groupId>
                     <artifactId>mapapps-maven-plugin</artifactId>
                     <version>${mapapps.version}</version>
+                    <!-- TODO remove after MAPAPPS-6941 has been solved -->
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-utils</artifactId>
+                            <version>3.4.1</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>de.conterra.jsregistry</groupId>
                     <artifactId>ct-jsregistry-maven-plugin</artifactId>
                     <version>${ct.jsregistry.version}</version>
+                    <!-- TODO remove after MAPAPPS-6941 has been solved -->
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-utils</artifactId>
+                            <version>3.4.1</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -352,7 +367,7 @@
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.5.12</ct.jsregistry.version>
+        <ct.jsregistry.version>1.5.13</ct.jsregistry.version>
         <ct.jsrt-test.version>2.0.2</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
