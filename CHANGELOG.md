@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [4.16.0] - T.B.D.
 
 - Support for map.apps 4.16.0
+- The bundle `sample_camera` is now implemented in typescript
+- The bundle `sample_camera_js` with the same functionality is still implemented in javascript
 
 ### Changes in pom.xml
 
@@ -24,6 +26,29 @@ All notable changes to this project will be documented in this file.
 - Update `@conterra/ct-mapapps-typings` to `4.16.0`
 - Update `@types/arcgis-js-api` to `4.28.0`
 - Update `ct-mapapps-gulp-js` property to `0.9.5`
+
+### Changes due to typescript migration of the `sample_camera` bundle
+- changes in `package.json` file
+    - Add script `"check-types": "tsc --noEmit"`
+    - Add script `"watch-types": "tsc -w --noEmit`
+    - Add `"@types/chai": "^4.3.10",` to `devDependencies`
+    - Add `"@types/mocha": "^10.0.3"` to `devDependencies`
+    - Add `"ts-node": "^10.9.1"` to `devDependencies`
+    - Add `"typescript": "^5.1.6"` to `devDependencies`
+- New files
+    - `types\mocha-global.d.ts`
+    - `types\thirdparty.d.ts`
+    - `types\vue-shim.d.ts`
+- Renamed folder `sample_camera` to `sample_camera_js`
+- Implemented sample camera widget in typescript, see folder `sample_camera`
+- changes in `tsconfig.json`
+    - add `"strict": true,`
+    - add `"noImplicitAny": true,`
+    - add `"strictNullChecks": true,`
+    - add `"include": ["src"]`
+- Migrated `sample_tests\all.js` to typescript `sample_tests\all.ts`
+- Migrated `sample_tests\test-init.js` to typescript `sample_tests\test-init.ts`
+- Deleted  `sample_tests\intern-all.js`
 
 ## [4.15.1] - 06.09.2023
 
