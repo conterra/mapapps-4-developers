@@ -1,4 +1,4 @@
-export default {
+const i18n = {
     root: ({
         bundleName: "camera",
         bundleDescription: "",
@@ -12,3 +12,6 @@ export default {
     }),
     "de": true
 };
+
+export type Messages = (typeof i18n)["root"];
+export default i18n;
