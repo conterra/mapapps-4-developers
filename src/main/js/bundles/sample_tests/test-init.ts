@@ -1,8 +1,6 @@
 /*
  * Copyright (C) con terra GmbH
  */
-// eslint-disable-next-line no-undef
-// @ts-ignore
 testConfig({
     jsregistry: [
         {
