@@ -15,8 +15,14 @@ Clone this project and ensure that you have all required dependencies installed 
 Then run the following commands from the project root directory to start a local development server:
 
 ```bash
+# install all required node modules
 $ mvn initialize
+
+# start dev server
 $ mvn compile -Denv=dev -Pinclude-mapapps-deps
+
+# run unit tests
+$ mvn test -P run-js-tests,include-mapapps-deps
 ```
 
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
