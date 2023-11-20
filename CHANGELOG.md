@@ -10,7 +10,8 @@ All notable changes to this project will be documented in this file.
 ### Changes in pom.xml
 
 - Update `mapapps.version` property to `4.16.0`
-- Update `ct.jsregistry.version` property to `1.5.12`
+- Add missing `vuetify.version` with value `1.5.28`
+- Update `ct.jsregistry.version` property to `1.5.14`
 - Update `frontend-maven-plugin` plugin version to `1.14.2`
 - Update  `frontend-maven-plugin` configuration to:
   ```xml
@@ -23,9 +24,22 @@ All notable changes to this project will be documented in this file.
 - Add version `3.5.0` to `maven-dependency-plugin` plugin  
 
 ### Changes in package.json
+
 - Update `@conterra/ct-mapapps-typings` to `4.16.0`
 - Update `@types/arcgis-js-api` to `4.28.0`
-- Update `ct-mapapps-gulp-js` property to `0.9.5`
+- Update `ct-mapapps-gulp-js` property to `0.10.2`
+- Update `ct-mapapps-browser-sync` property to `0.0.34`
+- Update `typescript` to `5.2.2`,
+- Update `vue-template-compiler` to `2.7.15`,
+- Update `@types/chai` to `4.3.10`
+- Update `chai` to `4.3.10`
+- Update `@types/mocha` to `10.0.4`
+- Update `puppeteer` to `21.5.2`
+- Update `stylelint` to `15.11.0`
+- Update `stylelint-config-ct-prodeng` to `2.0.0`
+- Update `stylelint-config-recommended` to `13.0.0`
+- Update `stylelint-config-recommended-less` to `2.0.0`
+
 
 ### Changes due to Typescript migration of the `sample_camera` bundle
 - changes in `package.json` file
