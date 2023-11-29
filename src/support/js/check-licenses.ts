@@ -3,7 +3,7 @@
     Fails with exit code != 0 and an error message if a disallowed license is encountered.
     The script should be executed from the project root directory after dependencies have been installed:
 
-        $ ./node/node ./src/support/js/check-licenses.js
+        $ tsx ./src/support/js/check-licenses.ts
 
     To run checks yourself (e.g. to update the allow list or to get details), install
     license-checker yourself and run it from the project root directory:
@@ -15,8 +15,8 @@
     See also https://www.npmjs.com/package/license-checker
 */
 
-const checker = require("license-checker");
-const process = require("process");
+import { init as initChecker } from "license-checker";
+import { cwd, exit} from "node:process";
 
 // Licenses known to be OK.
 const ACCEPTED_LICENSES = [
@@ -41,17 +41,19 @@ const SKIP_PACKAGES = [
     "taffydb@2.6.2" // BSD-1-Clause License in source code
 ];
 
-checker.init(
+initChecker(
     {
-        start: process.cwd(),
+        start: cwd(),
         onlyAllow: ACCEPTED_LICENSES.join(";"),
         excludePackages: SKIP_PACKAGES.join(";")
     },
     (error, packages) => {
+        void packages; // currently unused
+
         if (error) {
             console.error("Error: ", error);
-            process.exit(1);
+            exit(1);
         }
-        process.exit(0);
+        exit(0);
     }
 );
