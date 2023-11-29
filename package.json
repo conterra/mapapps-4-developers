@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "license": "CC0-1.0",
     "scripts": {
-        "check-licenses": "node ./src/support/js/check-licenses.js",
+        "check-licenses": "tsx ./src/support/js/check-licenses.ts",
         "check-types": "tsc --noEmit",
         "watch-types": "tsc -w --noEmit"
     },
@@ -13,6 +13,7 @@
         "@conterra/mapapps-mocha-runner": "1.1.1",
         "@types/arcgis-js-api": "4.28.0",
         "@types/chai": "4.3.10",
+        "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.4",
         "chai": "4.3.10",
         "ct-mapapps-browser-sync": "0.0.34",
@@ -21,12 +22,13 @@
         "license-checker": "25.0.1",
         "mocha": "10.2.0",
         "puppeteer": "21.5.2",
+        "stylelint": "15.11.0",
         "stylelint-config-ct-prodeng": "2.0.0",
         "stylelint-config-recommended": "13.0.0",
         "stylelint-config-recommended-less": "2.0.0",
-        "stylelint": "15.11.0",
+        "ts-node": "^10.9.1",
+        "tsx": "^4.6.0",
         "typescript": "5.2.2",
-        "vue-template-compiler": "2.7.15",
-        "ts-node": "^10.9.1"
+        "vue-template-compiler": "2.7.15"
     }
 }
