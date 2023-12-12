@@ -43,6 +43,14 @@
             "type": "shell",
             "command": "mvn clean",
             "group": "build"
+        },
+        {
+            "label": "Watch types",
+            "detail": "Start TypeScript compiler in watch mode",
+            "type": "npm",
+            "script": "watch-types",
+            "group": "build",
+            "problemMatcher": [],
         }
     ]
 }
