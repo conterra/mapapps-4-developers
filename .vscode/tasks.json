@@ -47,15 +47,10 @@
         {
             "label": "Watch types",
             "detail": "Start TypeScript compiler in watch mode",
-            "type": "process",
-            "command": [
-                "${workspaceFolder}/node_modules/.bin/tsc.cmd"
-            ],
-            "args": [
-                "--noEmit",
-                "-w"
-            ],
-            "problemMatcher": []
+            "type": "npm",
+            "script": "watch-types",
+            "group": "build",
+            "problemMatcher": [],
         }
     ]
 }
