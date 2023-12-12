@@ -43,6 +43,19 @@
             "type": "shell",
             "command": "mvn clean",
             "group": "build"
+        },
+        {
+            "label": "Watch types",
+            "detail": "Start TypeScript compiler in watch mode",
+            "type": "process",
+            "command": [
+                "${workspaceFolder}/node_modules/.bin/tsc.cmd"
+            ],
+            "args": [
+                "--noEmit",
+                "-w"
+            ],
+            "problemMatcher": []
         }
     ]
 }
