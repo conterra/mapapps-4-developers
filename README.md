@@ -31,7 +31,7 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ### from 4.15.1 to 4.16.0
 
-See [Changelog](./CHANGELOG.md)
+See [Changelog](./CHANGELOG.md#4160---11012024)
 
 ### from 4.15.0 to 4.15.1
 

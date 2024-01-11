@@ -1,7 +1,7 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
-## [4.16.0] - T.B.D.
+## [4.16.0] - 11.01.2024
 
 - Support for map.apps 4.16.0
 - The bundle `sample_camera` is now implemented in Typescript
@@ -28,7 +28,7 @@ All notable changes to this project will be documented in this file.
 - Update `@conterra/ct-mapapps-typings` to `4.16.0`
 - Update `@types/arcgis-js-api` to `4.28.0`
 - Update `ct-mapapps-gulp-js` property to `0.10.2`
-- Update `ct-mapapps-browser-sync` property to `0.0.34`
+- Update `ct-mapapps-browser-sync` property to `0.0.35`
 - Update `typescript` to `5.2.2`,
 - Update `vue-template-compiler` to `2.7.15`,
 - Update `@types/chai` to `4.3.10`
