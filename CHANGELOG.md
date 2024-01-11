@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file.
 - Update `ct-mapapps-browser-sync` property to `0.0.35`
 - Update `typescript` to `5.2.2`,
 - Update `vue-template-compiler` to `2.7.15`,
+- Add  `vue` with version `2.7.15`,
 - Update `@types/chai` to `4.3.10`
 - Update `chai` to `4.3.10`
 - Update `@types/mocha` to `10.0.4`
