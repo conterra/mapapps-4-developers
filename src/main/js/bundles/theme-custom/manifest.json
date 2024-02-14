@@ -12,7 +12,7 @@
     "bundle": true,
     "productName": "map.apps",
     "dependencies": {
-        "font-mapapps": "^4.15.0"
+        "font-mapapps": "^4.17.0"
     },
     "cssThemes": [{
             "comment": "Ensure required layout dependencies are loaded",

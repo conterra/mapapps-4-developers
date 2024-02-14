@@ -347,12 +347,12 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.16.0</mapapps.version>
+        <mapapps.version>4.17.0</mapapps.version>
         <vuetify.version>1.5.28</vuetify.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
-        <ct.jsregistry.version>1.5.14</ct.jsregistry.version>
+        <ct.jsregistry.version>2.0.1</ct.jsregistry.version>
         <ct.jsrt-test.version>2.0.2</ct.jsrt-test.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
