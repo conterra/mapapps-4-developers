@@ -30,7 +30,7 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 ## Updating from older versions
 
 ### from 4.16.0 to 4.17.0
-See [Changelog](./CHANGELOG.md#4170---tbd)
+See [Changelog](./CHANGELOG.md#4170---16022024)
 
 ### from 4.15.1 to 4.16.0
 
