@@ -11,10 +11,10 @@
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "~4.17.0",
         "@conterra/mapapps-mocha-runner": "1.1.1",
-        "@types/arcgis-js-api": "4.28.0",
         "@types/chai": "4.3.10",
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.4",
+        "arcgis-js-api": "4.29.7",
         "chai": "4.3.10",
         "ct-mapapps-browser-sync": "0.0.35",
         "ct-mapapps-gulp-js": "0.10.2",
