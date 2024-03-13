@@ -8,7 +8,7 @@ Initially only the `sample_camera` bundle is included in the `Demo` sample app.
 
 For detailed documentation on how to use map.apps for Developers to extend map.apps, see the [map.apps Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
-## Pre-Requisite
+## Software Requirements
 
 - Java >= 17
 - Maven >= 3.9.0
