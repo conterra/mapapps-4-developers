@@ -3,6 +3,9 @@
 All notable changes to this project will be documented in this file.
 ## [4.17.0] - 16.02.2024
 - Support for map.apps 4.17.0
+- Requires Java 17 or later
+- Requires Maven 3.9.0 or later
+
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.17.0`

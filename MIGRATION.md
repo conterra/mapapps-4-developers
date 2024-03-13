@@ -3,6 +3,10 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.17
+
+As of this version, map.apps requires Java 17 or later (see also [System Requirements](https://docs.conterra.de/en/mapapps/latest/reference/systemrequirements.html)).
+
 ## 4.14 to 4.15
 
 The http server is switched from jetty to [browsersync)(https://browsersync.io).
@@ -55,6 +59,7 @@ The following changes have to be applied:
                     <scope>test</scope>
                 </dependency>
 ```
+
 Some changes to be made in the `pom.xml` and `gulpfile.js` to remove usage of the google closure compiler. These changes are found in this [commit](https://github.com/conterra/mapapps-4-developers/commit/1cbea0203d52e9ae92557ef14017a713fe30c771).
 
 ## 4.11 to 4.12
@@ -70,7 +75,7 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
 
 #### Setup for mocha test-runner
 
-- Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
+-   Step 1: Ensure all dependencies in `pom.xml` and `package.json` are up to date. The correct versions can be found inside the [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
 -   Steps 2: Make the mocha-test-runner available through jsregistry by adding the following lines to `src/main/test/resources/application.properties` file:
 
     ```
@@ -78,20 +83,24 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
     jsregistry.directoryscanner.npmincludes=mocha,chai,@conterra,@conterra/mapapps-mocha-runner
     ```
 
-- Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
+-   Step 3: Adjust configuration for maven goal `run gulp js tests` in `pom.xml` from
+
     ```xml
     <configuration>
         <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/js/tests/runTests.html</arguments>
     </configuration>
     ```
+
     to
+
     ```xml
     <configuration>
         <arguments>run-browser-tests --tests http://localhost:${jetty.server.port}/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&amp;timeout=5000&amp;test=sample_tests/all&amp;reporter=tap</arguments>
     </configuration>
     ```
 
-- Step 4: Create a file with name `.eslintrc` inside the root folder of the project and paste the following content:
+-   Step 4: Create a file with name `.eslintrc` inside the root folder of the project and paste the following content:
+
     ```js
     {
         "extends": "eslint-config-ct-prodeng",
@@ -112,11 +121,12 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
     }
     ```
 
-- Step 5: Create a file with name `init-packs.js` inside `src/main/test/webapp/js/tests` and paste the following content:
+-   Step 5: Create a file with name `init-packs.js` inside `src/main/test/webapp/js/tests` and paste the following content:
+
     ```js
     /*
-    * Copyright (C) con terra GmbH
-    */
+     * Copyright (C) con terra GmbH
+     */
     if (require.packs["@vue/test-utils"]) {
         require.packs["@vue/test-utils"].main = "dist/vue-test-utils.umd";
     }
@@ -125,11 +135,12 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
     }
     ```
 
-- Step 6: Create a file with name `test-init.js` inside `src/main/js/bundles/sample_tests/` and paste the following content:
+-   Step 6: Create a file with name `test-init.js` inside `src/main/js/bundles/sample_tests/` and paste the following content:
+
     ```js
     /*
-    * Copyright (C) con terra GmbH
-    */
+     * Copyright (C) con terra GmbH
+     */
     // eslint-disable-next-line no-undef
     testConfig({
         jsregistry: [
@@ -168,9 +179,9 @@ Even after migration, it is still possible to run old unmigrated tests by apppen
     });
     ```
 
-- Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
+-   Step 7: Open the file `src/main/test/webapp/js/tests/runTests.html` and change the `url=` to `url=../../../resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/all"`
 
-- Step 8: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`.
+-   Step 8: Open the file `src/main/test/webapp/js/tests/test-init.js` and add `"/js/tests/init-packs.js"` to the `deps: []`.
 
 At this stage the setup is ready to run existing mocha unit tests. For migration of existing intern tests to mocha head on to the next section of this guide.
 
@@ -193,11 +204,12 @@ The migration will be explained based on the sample bundle `sample_camera` that 
 
     registerSuite({
         name: module.id,
-        "Camera Control Component": function() {
+        "Camera Control Component": function () {
             assert.ok(new Vue(CameraControls));
         }
     });
     ```
+
     to
 
     ```js
@@ -206,8 +218,8 @@ The migration will be explained based on the sample bundle `sample_camera` that 
     import Vue from "apprt-vue/Vue";
     import CameraControls from "../CameraControls.vue";
 
-    describe(module.id, function() {
-        it("Camera Control Component", function() {
+    describe(module.id, function () {
+        it("Camera Control Component", function () {
             assert.ok(new Vue(CameraControls));
         });
     });
@@ -215,9 +227,9 @@ The migration will be explained based on the sample bundle `sample_camera` that 
 
 ## 4.10 to 4.11
 
-- If you have no customized splashscreen, update the default splashscreen by changing your `init.css`
+-   If you have no customized splashscreen, update the default splashscreen by changing your `init.css`
     and `index.html` file according to [this commit](https://github.com/conterra/mapapps-4-developers/commit/bef4b4d8669045a33fe8b40eef171f9194e291f7)
-- If you have a customized template-bundle, you need to add these imports to the %template-name%.js-file of the bundle:
+-   If you have a customized template-bundle, you need to add these imports to the %template-name%.js-file of the bundle:
 
     ```js
     import "dijit/layout/BorderContainer";
@@ -230,7 +242,7 @@ The migration will be explained based on the sample bundle `sample_camera` that 
 
 Breaking Changes in the API that may have an influence on map.apps development:
 
-- For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
+-   For better memory management, view.destroy() now destroys all attached resources, including the map. To prevent the map from being destroyed, you can unset the map before calling destroy().
 
     ```javascript
     // destroy the view and all attached resources
@@ -243,7 +255,7 @@ Breaking Changes in the API that may have an influence on map.apps development:
     view.destroy();
     ```
 
-- Performance improvements were made to Popups. Prior to this release, it was possible to access the popup feature's geometry without having to specify outFields on the FeatureLayer or the PopupTemplate.
+-   Performance improvements were made to Popups. Prior to this release, it was possible to access the popup feature's geometry without having to specify outFields on the FeatureLayer or the PopupTemplate.
 
 This is important, if own PopupDefinitions are provided that interact with the features's geometry, e.g.
 
@@ -291,26 +303,21 @@ will only work, if `outFields` are specified like
         ```
         ```javascript
         // import specific functions
-        import {
-            buffer,
-            union,
-            intersect,
-            difference
-        } from "esri/geometry/geometryEngine";
+        import { buffer, union, intersect, difference } from "esri/geometry/geometryEngine";
         ```
 
 -   _Esri/core/Evented.js_ no longer delivers a target object
 
     -   old class:
         ```javascript
-        t.prototype.emit = function(t, e) {
+        t.prototype.emit = function (t, e) {
             var r = this,
                 n = this._listenersMap && this._listenersMap.get(t);
             return (
                 !!n &&
                 ((e = e || {}),
                 e.target || (e.target = this.target),
-                n.slice().forEach(function(t) {
+                n.slice().forEach(function (t) {
                     t.call(r.target, e);
                 }),
                 n.length > 0)
@@ -319,11 +326,11 @@ will only work, if `outFields` are specified like
         ```
     -   new class:
         ```javascript
-        t.prototype.emit = function(t, e) {
+        t.prototype.emit = function (t, e) {
             var r = this._listenersMap && this._listenersMap.get(t);
             return (
                 !!r &&
-                (n.__spreadArrays(r).forEach(function(t) {
+                (n.__spreadArrays(r).forEach(function (t) {
                     t.call(null, e);
                 }),
                 r.length > 0)
