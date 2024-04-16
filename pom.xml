@@ -372,6 +372,7 @@
 
         <mapapps.version>4.17.0</mapapps.version>
         <vuetify.version>1.5.28</vuetify.version>
+        <reactivity.version>0.1.0</reactivity.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
@@ -451,6 +452,12 @@
                 <dependency>
                     <groupId>de.conterra.js</groupId>
                     <artifactId>apprt-polyfill</artifactId>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                    <groupId>de.conterra</groupId>
+                    <artifactId>reactivity</artifactId>
+                    <version>${reactivity.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>

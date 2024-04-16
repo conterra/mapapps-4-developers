@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ESNext",
         "module": "ESNext",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "baseUrl": ".",
         "paths": {
             "*": ["./src/main/js/bundles/*", "./node_modules/@conterra/ct-mapapps-typings/*"]
