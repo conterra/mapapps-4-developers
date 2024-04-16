@@ -370,9 +370,8 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.17.0</mapapps.version>
+        <mapapps.version>4.18.0-SNAPSHOT</mapapps.version>
         <vuetify.version>1.5.28</vuetify.version>
-        <reactivity.version>0.1.0</reactivity.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->
@@ -457,7 +456,6 @@
                 <dependency>
                     <groupId>de.conterra</groupId>
                     <artifactId>reactivity</artifactId>
-                    <version>${reactivity.version}</version>
                     <scope>test</scope>
                 </dependency>
             </dependencies>
