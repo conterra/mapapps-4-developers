@@ -3,6 +3,10 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.18
+
+[T.B.D]
+
 ## 4.17
 
 As of this version, map.apps requires Java 17 or later (see also [System Requirements](https://docs.conterra.de/en/mapapps/latest/reference/systemrequirements.html)).

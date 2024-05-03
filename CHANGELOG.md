@@ -1,6 +1,55 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## [4.18.0] - TBD
+- Support for map.apps 4.18.0
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.18.0`
+- Update `vuetify.version` property to `1.5.29`
+- Update `ct.jsregistry.version` property to `2.1.0`
+- Add the following plugin to the plugins configuration below line 158.
+```xml 
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-enforcer-plugin</artifactId>
+      <version>3.4.1</version>
+      <executions>
+          <execution>
+              <id>enforce-versions</id>
+              <goals>
+                  <goal>enforce</goal>
+              </goals>
+              <configuration>
+                  <rules>
+                      <requireMavenVersion>
+                          <version>[3.9.0,)</version>
+                      </requireMavenVersion>
+                      <requireJavaVersion>
+                          <version>[17,)</version>
+                      </requireJavaVersion>
+                  </rules>
+              </configuration>
+          </execution>
+      </executions>
+  </plugin>
+```
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.18.0`
+- Update `ct-mapapps-browser-sync` to `0.0.38`
+- Update `ct-mapapps-gulp-js` to `0.10.3`
+- Update `typescript` to `5.4.5`
+- Add `"@conterra/reactivity-core": "^0.1.0"`
+- Replace `"@types/arcgis-js-api": "4.28.0"` with `"arcgis-js-api": "4.29.10"`
+
+### Changes in tsconfig.json
+- Change `moduleResolution` from `node` to `bundler`
+
+### Changes in src/test/webapp/index.html
+- Change `"@@cors.request.trustedServers@@".split("\s*,\s*")` to `"@@cors.request.trustedServers@@".split(/\s*,\s*/)`
+
 ## [4.17.0] - 16.02.2024
 - Support for map.apps 4.17.0
 - Requires Java 17 or later

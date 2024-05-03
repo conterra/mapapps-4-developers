@@ -15,10 +15,10 @@
         "@types/chai": "4.3.10",
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.4",
-        "arcgis-js-api": "4.29.7",
+        "arcgis-js-api": "4.29.10",
         "chai": "4.3.10",
-        "ct-mapapps-browser-sync": "0.0.35",
-        "ct-mapapps-gulp-js": "0.10.2",
+        "ct-mapapps-browser-sync": "0.0.38",
+        "ct-mapapps-gulp-js": "0.10.3",
         "eslint-config-ct-prodeng": "1.4.0",
         "license-checker": "25.0.1",
         "mocha": "10.2.0",
@@ -29,7 +29,7 @@
         "stylelint-config-recommended-less": "2.0.0",
         "ts-node": "^10.9.1",
         "tsx": "^4.6.0",
-        "typescript": "5.2.2",
+        "typescript": "5.4.5",
         "vue": "2.7.15",
         "vue-template-compiler": "2.7.15"
     }
