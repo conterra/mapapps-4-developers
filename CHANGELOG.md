@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 
 ## [4.18.0] - TBD
 - Support for map.apps 4.18.0
+- Added reactivity API jar as a dependency (`de.conterra.js.reactivity`)
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.18.0`
