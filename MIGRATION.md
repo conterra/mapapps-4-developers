@@ -5,7 +5,7 @@ The changes described here were not made to map.apps interfaces but concern chan
 
 ## 4.18
 
-[T.B.D]
+Follow the steps in [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).
 
 ## 4.17
 
