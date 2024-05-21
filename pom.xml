@@ -371,7 +371,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
         <mapapps.version>4.18.0</mapapps.version>
-        <vuetify.version>1.5.29</vuetify.version>
+        <vuetify.version>1.5.30</vuetify.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
         <!-- java lib versions -->

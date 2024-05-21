@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.18.0`
-- Update `vuetify.version` property to `1.5.29`
+- Update `vuetify.version` property to `1.5.30`
 - Update `ct.jsregistry.version` property to `2.1.0`
 - Add the following plugin to the plugins configuration below line 158.
 ```xml 
@@ -39,10 +39,10 @@ All notable changes to this project will be documented in this file.
 
 ### Changes in package.json
 - Update `@conterra/ct-mapapps-typings` to `4.18.0`
-- Update `ct-mapapps-browser-sync` to `0.0.38`
+- Update `ct-mapapps-browser-sync` to `0.0.39`
 - Update `ct-mapapps-gulp-js` to `0.10.3`
 - Update `typescript` to `5.4.5`
-- Add `"@conterra/reactivity-core": "^0.1.0"`
+- Add `"@conterra/reactivity-core": "^0.3.0"`
 - Replace `"@types/arcgis-js-api": "4.28.0"` with `"arcgis-js-api": "4.29.10"`
 
 ### Changes in tsconfig.json
