@@ -33,10 +33,17 @@ $ mvn test -P run-js-tests,include-mapapps-deps
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
 ## Updating from older versions
+
+### from 4.18.0 to 4.18.1
+
+See [Changelog](./CHANGELOG.md#4118---23052024)
+
 ### from 4.17.0 to 4.18.0
-See [Changelog](./CHANGELOG.md#4118---[t.b.d])
+
+See [Changelog](./CHANGELOG.md#4118---17052024)
 
 ### from 4.16.0 to 4.17.0
+
 See [Changelog](./CHANGELOG.md#4170---16022024)
 
 ### from 4.15.1 to 4.16.0

@@ -9,9 +9,9 @@
         "watch-types": "tsc -w --noEmit"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "~4.18.0",
+        "@conterra/ct-mapapps-typings": "~4.18.1",
         "@conterra/mapapps-mocha-runner": "1.1.1",
-        "@conterra/reactivity-core": "^0.3.0",
+        "@conterra/reactivity-core": "^0.4.0",
         "@types/chai": "4.3.10",
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.4",

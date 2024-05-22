@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.18.0] - TBD
+## [4.18.1] - 23.05.2024
+
+- Support for map.apps 4.18.1
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.18.1`
+- Update `ct.jsregistry.version` property to `2.1.1`
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.18.0`
+- Update `"@conterra/reactivity-core": "^0.3.0"`
+
+## [4.18.0] - 17.05.2024
 - Support for map.apps 4.18.0
 - Added reactivity API jar as a dependency (`de.conterra.js.reactivity`)
 
