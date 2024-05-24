@@ -235,6 +235,7 @@
                         <configuration>
                             <outputDirectory>${project.build.directory}/bundle-imports</outputDirectory>
                             <includeTypes>jar</includeTypes>
+                            <stripVersion>true</stripVersion>
                         </configuration>
                     </execution>
                 </executions>
