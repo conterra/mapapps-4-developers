@@ -11,8 +11,8 @@ All notable changes to this project will be documented in this file.
 - Update `ct.jsregistry.version` property to `2.1.1`
 
 ### Changes in package.json
-- Update `@conterra/ct-mapapps-typings` to `4.18.0`
-- Update `"@conterra/reactivity-core": "^0.3.0"`
+- Update `@conterra/ct-mapapps-typings` to `4.18.1`
+- Update `"@conterra/reactivity-core": "^0.4.0"`
 
 ## [4.18.0] - 17.05.2024
 - Support for map.apps 4.18.0
