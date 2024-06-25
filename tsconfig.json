@@ -15,5 +15,5 @@
         "skipLibCheck": true,
         "esModuleInterop": true
     },
-    "include": ["src"]
+    "include": ["src", "node_modules/arcgis-js-api/index.d.ts"]
 }
