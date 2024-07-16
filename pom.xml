@@ -38,6 +38,7 @@
         <dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-bom-dev-test</artifactId>
+            <version>${mapapps.version}</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>
@@ -396,6 +397,7 @@
                 <dependency>
                     <groupId>de.conterra.mapapps</groupId>
                     <artifactId>ct-mapapps-js-bom-dev</artifactId>
+                    <version>${mapapps.version}</version>
                     <type>pom</type>
                     <scope>test</scope>
                 </dependency>
