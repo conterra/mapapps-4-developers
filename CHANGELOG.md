@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.18.2] - tbd
+## [4.18.2] - 19.07.2024
 
 - Support for map.apps 4.18.2
 
@@ -48,6 +48,10 @@ Introduce use of ct-mapapps-js-bom-* dependencies to reduce the list of manual m
 
 ### Changes in package.json
 - Update `@conterra/ct-mapapps-typings` to `4.18.2`
+- Update `ct-mapapps-browser-sync` to `0.0.41`
+
+### Changes in tsconfig.json
+- add ArcGIS typings:     `"include": ["src", "node_modules/arcgis-js-api/index.d.ts"]`
 
 ## [4.18.1] - 23.05.2024
 
