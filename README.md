@@ -34,13 +34,18 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ## Updating from older versions
 
+### from 4.18.1 to 4.18.2
+
+See [Changelog](./CHANGELOG.md#4182---19072024)
+
+
 ### from 4.18.0 to 4.18.1
 
-See [Changelog](./CHANGELOG.md#4118---23052024)
+See [Changelog](./CHANGELOG.md#4181---23052024)
 
 ### from 4.17.0 to 4.18.0
 
-See [Changelog](./CHANGELOG.md#4118---17052024)
+See [Changelog](./CHANGELOG.md#4180---17052024)
 
 ### from 4.16.0 to 4.17.0
 

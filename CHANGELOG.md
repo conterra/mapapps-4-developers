@@ -2,6 +2,57 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.18.2] - 24.07.2024
+
+- Support for map.apps 4.18.2
+
+### Changes in pom.xml
+
+Introduce use of ct-mapapps-js-bom-* dependencies to reduce the list of manual maintained sub dependencies.
+
+- Update `mapapps.version` property to `4.18.2`
+- Remove all occurrences of `vuetify.version`
+- Remove all occurrences of `ct.jsrt-test.version`
+- Replace `<artifactId>ct-mapapps</artifactId>` in `<dependencyManagement>` by `<artifactId>ct-mapapps-js-bom</artifactId>`
+- Replace all `<dependencies>` by following snippet
+
+  ```xml
+   <dependencies>
+        <!-- include only if old intern test libs are required -->
+        <dependency>
+            <groupId>de.conterra.mapapps</groupId>
+            <artifactId>ct-mapapps-js-bom-dev-test</artifactId>
+            <type>pom</type>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+  ```
+
+  - Replace profile `include-mapapps-deps` by
+
+  ```xml
+    <profile>
+        <id>include-mapapps-deps</id>
+        <dependencies>
+            <dependency>
+                <groupId>de.conterra.mapapps</groupId>
+                <artifactId>ct-mapapps-js-bom-dev</artifactId>
+                <type>pom</type>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </profile>
+  ```
+
+  - add `<stripVersion>true</stripVersion>` to `<configuration>` of `<goal>copy-dependencies</goal>`
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.18.2`
+- Update `ct-mapapps-browser-sync` to `0.0.41`
+
+### Changes in tsconfig.json
+- add ArcGIS typings:     `"include": ["src", "node_modules/arcgis-js-api/index.d.ts"]`
+
 ## [4.18.1] - 23.05.2024
 
 - Support for map.apps 4.18.1
