@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.18.2] - 19.07.2024
+## [4.18.2] - 24.07.2024
 
 - Support for map.apps 4.18.2
 
