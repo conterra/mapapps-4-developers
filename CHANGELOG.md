@@ -1,6 +1,16 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+## [4.18.3] - TBD
+
+- Support for map.apps 4.18.3
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.18.3`
+- Update `ct.jsregistry.version` to `2.1.3`
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.18.3`
 
 ## [4.18.2] - 24.07.2024
 
