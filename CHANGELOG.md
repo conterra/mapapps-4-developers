@@ -1,7 +1,7 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
-## [4.18.3] - TBD
+## [4.18.3] - 07.10.2024
 
 - Support for map.apps 4.18.3
 
