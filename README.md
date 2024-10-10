@@ -35,7 +35,7 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 ## Updating from older versions
 ### from 4.18.2 to 4.18.3
 
-See [Changelog](./CHANGELOG.md#4183---tbd)
+See [Changelog](./CHANGELOG.md#4183---07102024)
 
 ### from 4.18.1 to 4.18.2
 
