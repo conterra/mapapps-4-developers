@@ -30,6 +30,8 @@ $ mvn compile -Denv=dev -Pinclude-mapapps-deps
 $ mvn test -P run-js-tests,include-mapapps-deps
 ```
 
+To execute the tests in your browser, open <http://localhost:9090/js/tests/runTests.html> (may be on a different port depending on your configuration).
+
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
 ## Updating from older versions

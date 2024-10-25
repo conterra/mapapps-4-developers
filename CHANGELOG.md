@@ -1,6 +1,14 @@
 # Changelog
 
 All notable changes to this project will be documented in this file.
+
+## [4.19.0] - TBD
+
+-   Update testing libraries (chai, mocha) in `package.json`
+    - `"chai": "4.5.0"` (`5.x` is ESM only)
+    - `"mocha": "10.7.3"`
+-   Add `sinon` library to `package.json`: `"sinon": "19.0.2"`
+
 ## [4.18.3] - 07.10.2024
 
 - Support for map.apps 4.18.3
