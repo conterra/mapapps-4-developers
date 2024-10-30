@@ -13,7 +13,6 @@
             "widgetRole": "camera_js",
             "template": "seasons",
             "window": {
-                "autofocus": false,
                 "dockTool": "cameraJsToggleTool",
                 "minimizeOnClose": true,
                 "marginBox": {
