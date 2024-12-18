@@ -34,6 +34,43 @@ To execute the tests in your browser, open <http://localhost:9090/js/tests/runTe
 
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
+## End to end browser tests
+
+- TODO Move to Developer's Guide
+
+We prepared a sample end-to-end browser test in the file [sample_camera.spec.ts](./src/test/end-to-end/sample_camera.spec.ts) for you.
+The test is intended to provide a starting point for writing your own end-to-end test for your map.apps bundles.
+This is completely optional and can be ignored or removed if you don't need it.
+
+The test is implemented with the [Playwright](https://playwright.dev/) testing framework.
+To run the test, you need to have Playwright installed locally:
+
+- At first, install the [VSCode extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) for Playwright
+- With the extension installed, you can open the command palette in VSCode and run `Playwright: Install Playwright`
+    - Install at least the _Chromium_ test browser, as the prepared test are configured to run on this browser.
+
+Once you have installed Playwright, you can run the test with the following commands:
+
+```bash
+# run the test
+npm run e2e-test
+```
+
+You can also use the Playwright UI to run the tests interactively:
+
+```bash
+# start the Playwright UI
+npm run e2e-test:ui
+```
+
+Another way to run the test is to use the `Run` button in the test file itself, which is provided by the Playwright extension in VSCode.
+If you right-click on the button, you have even more options for executing the tests, for example to debug them.
+
+The VSCode extension also provides a nice way to write new test with the Playwright test recorder.
+Please checkout the [Playwright documentation](https://playwright.dev/docs/intro) for more information about how to write and run tests with Playwright.
+
+You may also have a look a the configuration file [playwright.config.ts](./playwright.config.ts) to see how we configured Playwright for you.
+
 ## Updating from older versions
 ### from 4.18.2 to 4.18.3
 
