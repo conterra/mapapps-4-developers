@@ -18,8 +18,8 @@ test('expect widget can be used to zoom into the map', async ({ page }) => {
         // As this visual comparison will take longer on ci, it is retried with different intervals
         await expect(page).toHaveScreenshot("expect-widget-can-be-used-to-zoom-into-the-map.png");
     }).toPass({
-        // Probe, wait 1s, probe, wait 2s, probe, wait 10s, probe, wait 10s, probe
         // ... Defaults to [100, 250, 500, 1000].
+        // Probe, wait 1s, probe, wait 2s, probe, wait 5s, probe, wait 10s, probe, wait 10s, probe...
         intervals: [1_000, 2_000, 5_000, 10_000],
         timeout: 60_000
     });
