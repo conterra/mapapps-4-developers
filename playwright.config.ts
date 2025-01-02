@@ -1,6 +1,7 @@
 import {
     defineConfig,
-    devices
+    devices,
+    PlaywrightTestConfig
 } from "@playwright/test";
 import { env } from "process";
 
@@ -11,7 +12,9 @@ const baseURL = "http://localhost:9090";
 const isCI = !!env.CI;
 const headless = isCI;
 
-export default defineConfig({
+const mavenFlags = "--batch-mode --no-transfer-progress";
+
+const config: PlaywrightTestConfig = {
     testDir: "./src/test/end-to-end",
     outputDir: "./target/e2e-tests-results",
 
@@ -42,6 +45,10 @@ export default defineConfig({
         [
             "html",
             { outputFolder: "./target/e2e-tests-reports", open: isCI ? "never": "always" }
+        ],
+        [
+            "junit",
+            { outputFile: "./target/e2e-tests-results/results.xml" }
         ]
     ],
 
@@ -62,16 +69,22 @@ export default defineConfig({
                 launchOptions: {
                     // enable WEBGL for headless tests
                     args: headless
-                        ? ["--headless", "--use-angle=gl"]
+                        ? ["--headless", "--no-sandbox", "--use-angle=gl"]
                         : []
                 }
             }
         }
     ],
+
+    timeout: isCI ? 120000 : 30000,
+
     /* Run your local dev server before starting the tests */
     webServer: {
-        command: "mvn compile -Denv=dev -Pinclude-mapapps-deps",
+        // eslint-disable-next-line max-len
+        command: `mvn ${mavenFlags} initialize && mvn ${mavenFlags} compile -Denv=dev -P include-mapapps-deps`,
         url: baseURL,
         reuseExistingServer: !isCI
     }
-});
+};
+
+export default defineConfig(config);
