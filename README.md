@@ -35,6 +35,10 @@ To execute the tests in your browser, open <http://localhost:9090/js/tests/runTe
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
 ## Updating from older versions
+### from 4.18.3 to 4.19.0
+
+See [Changelog](./CHANGELOG.md#4190---TBD)
+
 ### from 4.18.2 to 4.18.3
 
 See [Changelog](./CHANGELOG.md#4183---07102024)
