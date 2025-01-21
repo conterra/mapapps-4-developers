@@ -12,6 +12,43 @@ All notable changes to this project will be documented in this file.
 ### Changes in package.json
 - Update `@conterra/ct-mapapps-typings` to `4.18.3`
 
+## [4.19.0] - 21.01.2025
+
+- Support for map.apps 4.19.0
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.19.0`
+- Update `ct.jsregistry.version property` to `2.1.4`
+- Update the version of `setproperties-maven-plugin` property to `1.0.5`
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `~4.19.0`
+- Update `@conterra/reactivity-core` to `^0.4.4`
+- Update `@types/chai` to `4.3.10`
+- Update `@types/mocha` to `10.0.10`
+- Update `arcgis-js-api` to `4.31.6`
+- Update `chai` to `4.5.0` (`5.x` is ESM only)
+- Update `ct-mapapps-browser-sync` to `0.0.42`
+- Update `ct-mapapps-gulp-js` to `0.10.8`
+- Update `mocha` to `11.0.1`
+- Update `puppeteer` to `23.11.1`
+- Update `tsx` to `^4.19.2`
+- Update `vue` to `2.7.16`
+- Update `vue-template-compiler` to `2.7.16`
+- Add `sinon` library `"sinon": "19.0.2"`
+- Add `sinon` typings `"@types/sinon": "^17.0.3"`
+- 
+## [4.18.3] - 07.10.2024
+
+- Support for map.apps 4.18.3
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.18.3`
+- Update `ct.jsregistry.version` to `2.1.3`
+
+### Changes in package.json
+- Update `@conterra/ct-mapapps-typings` to `4.18.3`
+
 ## [4.18.2] - 24.07.2024
 
 - Support for map.apps 4.18.2

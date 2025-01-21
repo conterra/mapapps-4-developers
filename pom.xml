@@ -164,7 +164,7 @@
             <plugin>
                 <groupId>de.conterra.maven</groupId>
                 <artifactId>setproperties-maven-plugin</artifactId>
-                <version>1.0.3</version>
+                <version>1.0.5</version>
                 <executions>
                     <execution>
                         <goals>
@@ -352,12 +352,13 @@
         <root.build.outputPath>${project.build.directory}/webapp</root.build.outputPath>
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
-        <mapapps.version>4.18.3</mapapps.version>
+
+        <mapapps.version>4.19.0</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
-        <ct.jsregistry.version>2.1.3</ct.jsregistry.version>
+        <ct.jsregistry.version>2.1.4</ct.jsregistry.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
