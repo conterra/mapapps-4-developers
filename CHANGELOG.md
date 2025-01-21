@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.19.0] - TBD
+## [4.19.0] - 21.01.2025
 
 - Support for map.apps 4.19.0
 
