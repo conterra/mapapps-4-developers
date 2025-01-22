@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.19.0`
-- Update `ct.jsregistry.version property` to `2.1.4`
+- Update `ct.jsregistry.version` property to `2.1.4`
 - Update the version of `setproperties-maven-plugin` property to `1.0.5`
 
 ### Changes in package.json
