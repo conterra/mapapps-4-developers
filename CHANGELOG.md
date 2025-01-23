@@ -59,6 +59,7 @@ Introduce use of ct-mapapps-js-bom-* dependencies to reduce the list of manual m
         <dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-bom-dev-test</artifactId>
+            <version>${mapapps.version}</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>
@@ -74,6 +75,7 @@ Introduce use of ct-mapapps-js-bom-* dependencies to reduce the list of manual m
             <dependency>
                 <groupId>de.conterra.mapapps</groupId>
                 <artifactId>ct-mapapps-js-bom-dev</artifactId>
+                <version>${mapapps.version}</version>
                 <type>pom</type>
                 <scope>test</scope>
             </dependency>
