@@ -353,7 +353,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.19.0</mapapps.version>
+        <mapapps.version>4.19.1-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
