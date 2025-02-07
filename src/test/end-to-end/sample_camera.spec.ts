@@ -1,5 +1,5 @@
-import { test, expect, Page, Locator } from "@playwright/test";
-import { waitForMap } from "./common/testUtils";
+import { test, Page, Locator } from "@playwright/test";
+import { expectToMatchScreenshot, waitForMap } from "./common/testUtils";
 
 /**
  * Test which uses the camera widget to zoom into the map.
@@ -17,7 +17,7 @@ test('expect widget can be used to zoom into the map', async ({ page }) => {
 
     await waitForMap(page);
 
-    await expect(page).toHaveScreenshot("expect-widget-can-be-used-to-zoom-into-the-map.png");
+    await expectToMatchScreenshot(page, "expect-widget-can-be-used-to-zoom-into-the-map.png");
 });
 
 
