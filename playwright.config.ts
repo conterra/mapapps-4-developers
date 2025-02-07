@@ -106,7 +106,7 @@ const config: PlaywrightTestConfig = {
         // eslint-disable-next-line max-len
         command: `mvn ${options.mavenFlags} initialize && mvn ${options.mavenFlags} compile -Denv=dev -P include-mapapps-deps`,
         url: options.baseURL,
-        reuseExistingServer: true
+        reuseExistingServer: !isCI
     }
 };
 
