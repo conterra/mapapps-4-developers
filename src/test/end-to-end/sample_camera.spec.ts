@@ -1,43 +1,68 @@
-import { test, expect, Page } from "@playwright/test";
+import { test, expect, Page, Locator } from "@playwright/test";
+import { waitForMap } from "./common/testUtils";
 
+/**
+ * Test which uses the camera widget to zoom into the map.
+ * It uses the page object model pattern, where interaction with the sample app and
+ * the camera widget is encapsulated in separate page object classes.
+ */
 test('expect widget can be used to zoom into the map', async ({ page }) => {
-    await page.goto('/');
+    const sampleApp = new SampleApp(page);
+    await sampleApp.goTo();
 
-    // open camera widget
-    const cameraTool = page.getByLabel('Camera');
-    await cameraTool.click();
+    await sampleApp.openCameraWidget();
 
-    // zoom in
-    await zoom(page, 25);
+    const cameraWidget = new CameraWidget(page);
+    await cameraWidget.zoomIn(25);
 
-    // wait for the map to update
-    await page.waitForLoadState('networkidle');
+    await waitForMap(page);
 
-    // compare the screenshot
-    await expect(async () => {
-        // As this visual comparison will take longer on ci, it is retried with different intervals
-        await expect(page).toHaveScreenshot("expect-widget-can-be-used-to-zoom-into-the-map.png");
-    }).toPass({
-        // ... Defaults to [100, 250, 500, 1000].
-        // Probe, wait 1s, probe, wait 2s, probe, wait 5s, probe, wait 10s, probe, wait 10s, probe...
-        intervals: [1_000, 2_000, 5_000, 10_000],
-        timeout: 60_000
-    });
+    await expect(page).toHaveScreenshot("expect-widget-can-be-used-to-zoom-into-the-map.png");
 });
 
-async function zoom(page: Page, pixels: number) {
-    const slider = page.locator('.v-slider__thumb').first();
-    await slider.waitFor();
 
-    const sliderPosition = await slider.boundingBox();
-    if (sliderPosition === null) {
-        throw new Error('Slider not found');
+/**
+ * Sample application page object.
+ * Can be used to interact with the sample application.
+ */
+class SampleApp {
+    readonly cameraTool: Locator;
+    constructor(private page: Page) {
+        this.cameraTool = this.page.getByRole('button', { name: 'Camera' });
     }
 
-    // move slider by pixels
-    const y = sliderPosition.y + sliderPosition.height / 2;
-    await page.mouse.move(sliderPosition.x + sliderPosition.width / 2, y);
-    await page.mouse.down();
-    await page.mouse.move(sliderPosition.x + pixels, y);
-    await page.mouse.up();
+    async goTo() {
+        await this.page.goto('/');
+    }
+
+    async openCameraWidget() {
+        await this.cameraTool.click();
+    }
+}
+
+/**
+ * Camera widget page object.
+ * Can be used with the camera widget.
+ */
+class CameraWidget {
+    readonly slider: Locator;
+    constructor(private page: Page) {
+        this.slider = this.page.locator('.v-slider__thumb').first();
+    }
+
+    async zoomIn(pixels = 25) {
+        await this.slider.waitFor();
+
+        const sliderPosition = await this.slider.boundingBox();
+        if (sliderPosition === null) {
+            throw new Error('Slider not found');
+        }
+
+        // move slider by pixels
+        const y = sliderPosition.y + sliderPosition.height / 2;
+        await this.page.mouse.move(sliderPosition.x + sliderPosition.width / 2, y);
+        await this.page.mouse.down();
+        await this.page.mouse.move(sliderPosition.x + pixels, y);
+        await this.page.mouse.up();
+    }
 }

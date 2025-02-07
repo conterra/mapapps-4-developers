@@ -56,6 +56,11 @@ Once you have installed Playwright, you can run the test with the following comm
 npm run e2e-test
 ```
 
+```bash
+# run the test headless
+npm run e2e-test:headless
+```
+
 You can also use the Playwright UI to run the tests interactively:
 
 ```bash
