@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.19.1] - TBD
+## [4.19.2] - TBD
+
+- Support for map.apps 4.19.2
+- Add new profile `standalone` to build a standalone application which does not require a server.
+  - The profile can be tested by `mvn clean package -P compress,standalone`
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.19.2`
+- Added a new profile `standalone` to build a standalone application which does not require a server. Please see the `pom.xml` for more information.
+- The `calculateDependencies` goal of the `ct-jsregistry-maven-plugin` is not longer required, if the rollup build is used.
+
+### Changes in package.json
+...
+
+## [4.19.1] - 14.02.2025
 
 - Support for map.apps 4.19.1
 

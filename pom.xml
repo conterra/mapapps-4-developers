@@ -353,7 +353,7 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.19.1</mapapps.version>
+        <mapapps.version>4.19.2-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
@@ -498,12 +498,14 @@
                         <groupId>de.conterra.jsregistry</groupId>
                         <artifactId>ct-jsregistry-maven-plugin</artifactId>
                         <executions>
+                            <!--
+                            Not longer required, because the calculation of the dependencies is done via rollup build.
                             <execution>
                                 <id>calculate js dependencies</id>
                                 <goals>
                                     <goal>calculateDependencies</goal>
                                 </goals>
-                            </execution>
+                            </execution>-->
                             <!--
 
                                 The optimizeJS goal is usually no longer required because compression is done via terser (see
@@ -560,6 +562,78 @@
                                     <password>${mapapps.pw}</password>
                                     <token>${mapapps.token}</token>
                                     <useChunkedRequestEncoding>${mapapps.useChunkedRequestEncoding}</useChunkedRequestEncoding>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <!-- Triggers a standalone export of the apps.
+            This profile should only be used together with the compressed profile.
+            Example:
+               mvn clean package -P compress,standalone
+            -->
+            <id>standalone</id>
+            <dependencies>
+                <!-- ensure the correct production dependencies are used during standalone export -->
+                <dependency>
+                    <groupId>de.conterra.mapapps</groupId>
+                    <artifactId>ct-mapapps-js-bom-prod</artifactId>
+                    <version>${mapapps.version}</version>
+                    <type>pom</type>
+                    <scope>test</scope>
+                </dependency>
+            </dependencies>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.conterra.mapapps</groupId>
+                        <artifactId>mapapps-maven-plugin</artifactId>
+                        <version>${mapapps.version}</version>
+                        <executions>
+                            <execution>
+                                <id>create-standalone-apps</id>
+                                <goals>
+                                    <goal>standaloneApp</goal>
+                                </goals>
+                                <configuration>
+                                    <!-- Export target folder. All apps are exported into this folder. -->
+                                    <outputDirectory>${project.build.directory}/export</outputDirectory>
+                                    <!-- folder where the apps for export are located -->
+                                    <sourceDirectory>${project.build.directory}/webapp/js/apps</sourceDirectory>
+                                    <!-- (optional) regex which apps should be exported. By default all in the sourceDirectory. -->
+                                    <includePattern>.*</includePattern>
+                                    <!-- (optional) regex which apps should not be exported. By default empty. -->
+                                    <skipPattern></skipPattern>
+                                    <!-- (optional) folder to a local bundles directory, which is used as source of bundles. The bundles need to be compressed and have a dependencies.json. -->
+                                    <localBundlesDirectory>${project.build.directory}/webapp/js/bundles</localBundlesDirectory>
+                                    <!-- (optional) folder with custom index.html or config.js file of the exported app. -->
+                                    <standaloneTemplateOverride>${project.build.directory}/standalone-template</standaloneTemplateOverride>
+                                    <!-- (optional) read the application.properties as source for property replacement of the exported files -->
+                                    <applicationProperties>${project.build.directory}/test-classes/application.properties</applicationProperties>
+                                    <!-- (optional) define further replacement properties, this will overwrite settings from the application.properties -->
+                                    <replacementProperties>
+                                        <myproperty>xyz</myproperty>
+                                    </replacementProperties>
+                                    <!-- (optional) custom javascript modules included in the apps layer file
+                                        e.g. myBundle/someModule,myBundle/anotherModule
+                                     -->
+                                    <exportCustomModules>map-preload-2D</exportCustomModules>
+                                    <!-- (optional) custom files included in the export
+                                        e.g. myBundle/*.gif,myBundle/*.svg
+                                    -->
+                                    <exportCustomFiles></exportCustomFiles>
+
+                                    <!-- If true .js, .json and .css files are pre-compressed,
+                                      which means that .gz and .br variants of the files are added to the export.
+                                      Enable it only if your target server supports pre-compressed files.
+                                      The files are only compressed if the size of the file is bigger than the compressMinSize.
+                                      The compressMinSize is in bytes.
+                                    -->
+                                    <compressFiles>false</compressFiles>
+                                    <compressMinSize>512000</compressMinSize>
                                 </configuration>
                             </execution>
                         </executions>
