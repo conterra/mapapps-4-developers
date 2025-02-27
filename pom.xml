@@ -376,12 +376,12 @@
         <gulp.task></gulp.task>
         <gulp.node.env>development</gulp.node.env>
 
-        <mapapps.user><!-- Set username for map.apps remote installation-->
-        </mapapps.user>
-        <mapapps.pw><!-- Set password for map.apps remote installation-->
-        </mapapps.pw>
-        <mapapps.token><!-- Set token for map.apps remote installation-->
-        </mapapps.token>
+        <!-- Set username for map.apps remote installation, use ${env.MAPAPPS_USER} to reference a environment variable -->
+        <mapapps.user>${env.MAPAPPS_USER}</mapapps.user>
+        <!-- Set password for map.apps remote installation, use ${env.MAPAPPS_USER_PASSWORD} to reference a environment variable -->
+        <mapapps.pw></mapapps.pw>
+        <!-- Set token for map.apps remote installation, use ${env.MAPAPPS_TOKEN} to reference a environment variable -->
+        <mapapps.token></mapapps.token>
 
         <!-- set to false if map.apps is configured behind integrated windows authentication is
         required -->
