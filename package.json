@@ -8,6 +8,10 @@
         "check-types": "tsc --noEmit",
         "watch-types": "tsc -w --noEmit"
     },
+    "dependencies": {
+        "arcgis-js-api": "4.31.6",
+        "vue": "2.7.16"
+    },
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "~4.19.1",
         "@conterra/mapapps-mocha-runner": "1.1.1",
@@ -16,7 +20,6 @@
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.10",
         "@types/sinon": "^17.0.3",
-        "arcgis-js-api": "4.31.6",
         "chai": "4.5.0",
         "ct-mapapps-browser-sync": "0.0.43",
         "ct-mapapps-gulp-js": "0.10.9",
@@ -25,14 +28,13 @@
         "mocha": "11.0.1",
         "puppeteer": "23.11.1",
         "sinon": "19.0.2",
-        "stylelint": "15.11.0",
         "stylelint-config-ct-prodeng": "2.0.0",
-        "stylelint-config-recommended": "13.0.0",
         "stylelint-config-recommended-less": "2.0.0",
+        "stylelint-config-recommended": "13.0.0",
+        "stylelint": "15.11.0",
         "ts-node": "^10.9.1",
         "tsx": "^4.19.2",
         "typescript": "5.7.3",
-        "vue": "2.7.16",
         "vue-template-compiler": "2.7.16"
     }
 }
