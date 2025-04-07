@@ -21,7 +21,7 @@
         "@types/mocha": "10.0.10",
         "@types/sinon": "^17.0.3",
         "chai": "4.5.0",
-        "ct-mapapps-browser-sync": "0.0.43",
+        "ct-mapapps-browser-sync": "0.0.45",
         "ct-mapapps-gulp-js": "0.10.9",
         "eslint-config-ct-prodeng": "1.5.0",
         "license-checker": "25.0.1",

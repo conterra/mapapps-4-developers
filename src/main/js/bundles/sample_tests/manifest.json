@@ -1,4 +1,5 @@
 {
     "name": "sample_tests",
+    "version": "1.0.0-SNAPSHOT",
     "bundle": false
 }

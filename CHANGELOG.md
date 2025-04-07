@@ -17,7 +17,8 @@ All notable changes to this project will be documented in this file.
 - The `calculateDependencies` goal of the `ct-jsregistry-maven-plugin` is not longer required, if the rollup build is used.
 
 ### Changes in package.json
-...
+
+- Update `ct-mapapps-browser-sync` to `0.0.45`
 
 ## [4.19.1] - 14.02.2025
 
