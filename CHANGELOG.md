@@ -12,13 +12,13 @@ All notable changes to this project will be documented in this file.
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.19.2`
 - Update `ct.jsregistry.version` property to `2.1.5`
-- Drop not longer required 52n repository and 52n plugin repository
+- Drop no longer required 52n repository and 52n plugin repository
 - Added a new profile `standalone` to build a standalone application which does not require a server. Please see the `pom.xml` for more information.
 - The `calculateDependencies` goal of the `ct-jsregistry-maven-plugin` is not longer required, if the rollup build is used.
 
 ### Changes in package.json
-
 - Update `ct-mapapps-browser-sync` to `0.0.45`
+- Update `ct-mapapps-gulp-js` to `0.10.13`
 
 ## [4.19.1] - 14.02.2025
 
