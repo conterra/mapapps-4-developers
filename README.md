@@ -36,6 +36,10 @@ For more details refer to the [Developer's Guide](https://docs.conterra.de/en/ma
 
 ## Updating from older versions
 
+### from 4.19.1 to 4.19.2
+
+See [Changelog](./CHANGELOG.md#4192---06052025)
+
 ### from 4.19.0 to 4.19.1
 
 See [Changelog](./CHANGELOG.md#4191---14022025)
