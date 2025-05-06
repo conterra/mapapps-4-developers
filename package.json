@@ -13,9 +13,9 @@
         "vue": "2.7.16"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "~4.19.1",
+        "@conterra/ct-mapapps-typings": "~4.19.2",
         "@conterra/mapapps-mocha-runner": "1.1.1",
-        "@conterra/reactivity-core": "^0.4.4",
+        "@conterra/reactivity-core": "^0.5.0",
         "@types/chai": "4.3.20",
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.10",
@@ -26,7 +26,7 @@
         "eslint-config-ct-prodeng": "1.5.0",
         "license-checker": "25.0.1",
         "mocha": "11.0.1",
-        "puppeteer": "23.11.1",
+        "puppeteer": "24.6.1",
         "sinon": "19.0.2",
         "stylelint-config-ct-prodeng": "2.0.0",
         "stylelint-config-recommended-less": "2.0.0",
