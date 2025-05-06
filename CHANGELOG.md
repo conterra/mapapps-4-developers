@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.19.2] - 06.05.2025
+
+- Support for map.apps 4.19.2
+- Add new profile `standalone` to build a standalone application which does not require a server.
+  - The profile can be tested by `mvn clean package -P compress,standalone`
+- `check-licenses` script: Only check productive dependencies by default (devDependencies are skipped).
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.19.2`
+- Update `ct.jsregistry.version` property to `2.1.6`
+- Drop no longer required 52n repository and 52n plugin repository
+- Added a new profile `standalone` to build a standalone application which does not require a server. Please see the `pom.xml` for more information.
+- The `calculateDependencies` goal of the `ct-jsregistry-maven-plugin` is no longer required, if the rollup build is used.
+
+### Changes in package.json
+- Dependencies are now grouped into `dependencies` and `devDependencies`
+- Update `@conterra/ct-mapapps-typings` to `~4.19.2`,
+  Update `@conterra/reactivity-core` to `^0.5.0`,
+  Update `puppeteer` to `24.6.1`,
+- Update `ct-mapapps-browser-sync` to `0.0.45`
+- Update `ct-mapapps-gulp-js` to `0.10.13`
+
 ## [4.19.1] - 14.02.2025
 
 - Support for map.apps 4.19.1
