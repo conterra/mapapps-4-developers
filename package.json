@@ -10,7 +10,7 @@
     },
     "dependencies": {
         "arcgis-js-api": "4.31.6",
-        "vue": "2.7.16"
+        "vue": "3.0.0"
     },
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "~4.19.2",
