@@ -34,6 +34,18 @@ To execute the tests in your browser, open <http://localhost:9090/js/tests/runTe
 
 For more details refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/getting-started/).
 
+## End to end browser tests
+
+We have prepared some sample end-to-end browser tests for you in the file [sample_camera.spec.ts](src/test/end-to-end/sample_camera.spec.ts), which are based on the [Playwright](https://playwright.dev/) framework.
+
+If Playwright is installed and the development server is started, you can run the tests using
+
+```bash
+npm run e2e-test
+```
+
+For details about end-to end testing refer to the [Developer's Guide](https://docs.conterra.de/en/mapapps/latest/developersguide/guides/testing/end-to-end-testing.html).
+
 ## Updating from older versions
 
 ### from 4.19.0 to 4.19.1
