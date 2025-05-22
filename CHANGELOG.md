@@ -341,7 +341,7 @@ Introduce use of ct-mapapps-js-bom-* dependencies to reduce the list of manual m
 - Replace `module.exports` in nls files with `export default`.
   Support for `module.exports` will be removed soon and should be replaced
   with an appropriate `export` or `export default` directive.
-- replaced the old `favicon.ico` with a modern png base `favicon.png`. The file link inside the `ìndex.html` 
+- replaced the old `favicon.ico` with a modern png base `favicon.png`. The file link inside the `index.html`
   was set accordingly
 - `<artifactId>ct-mapapps-js-api</artifactId>` for `<artifactId>ct-mapapps-js</artifactId>` in `./pom.xml`
 

@@ -17,7 +17,7 @@ As of this version, map.apps requires Java 17 or later (see also [System Require
 
 ## 4.14 to 4.15
 
-The http server is switched from jetty to [browsersync)(https://browsersync.io).
+The http server is switched from jetty to [browsersync](https://browsersync.io).
 This means that there are bigger changes in the files `pom.xml`, `package.json` and `gulpfile.js`.
 Additional the `rollup-build` task is now integrated into the `gulpfile.js` and the `sample_camera` bundle is using it.
 Please integrate your own changes into these files.
@@ -78,7 +78,7 @@ Although we highly recommend to change unit tests to mocha, this step is not man
 
 #### How to run deprecated intern-tests
 
-Even after migration, it is still possible to run old unmigrated tests by apppending the URL parameter `registerInternAdapter=true`:
+Even after migration, it is still possible to run old unmigrated tests by appending the URL parameter `registerInternAdapter=true`:
 [http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true](http://localhost:9090/resources/jsregistry/root/@conterra/mapapps-mocha-runner/latest/mocha.html?boot=/js/tests/test-init.js&timeout=5000&test=sample_tests/intern-all&registerInternAdapter=true)
 
 #### Setup for mocha test-runner
