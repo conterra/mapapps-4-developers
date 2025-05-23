@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.19.3] - TBD
+
+- Added a end-to-end browser test sample based on [Playwright](https://playwright.dev/)
+    - Added dev dependencies
+        - `"@playwright/test": "^1.52.0"`
+        - `"@types/node": "^22.15.17"`
+    - Added new tests under `src/test/end-to-end`
+    - scripts added to `package.json`:
+        - `"e2e-test": "npx playwright test"`
+        - `"e2e-test:headed": "npx playwright test --headed"`
+        - `"e2e-test:ui": "npx playwright test --ui"`
+
 ## [4.19.2] - 06.05.2025
 
 - Support for map.apps 4.19.2
