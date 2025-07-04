@@ -4,8 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [4.19.3] - TBD
 
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.19.3`
+
+### Changes in package.json
+- see playwright section below
+
+### Integrated Playwright for end-to-end testing
 - Added a end-to-end browser test sample based on [Playwright](https://playwright.dev/)
-    - Added dev dependencies
+    - Added dev dependencies in package.json
         - `"@playwright/test": "^1.52.0"`
         - `"@types/node": "^22.15.17"`
     - Added new tests under `src/test/end-to-end`
@@ -13,6 +20,7 @@ All notable changes to this project will be documented in this file.
         - `"e2e-test": "npx playwright test"`
         - `"e2e-test:headed": "npx playwright test --headed"`
         - `"e2e-test:ui": "npx playwright test --ui"`
+
 
 ## [4.19.2] - 06.05.2025
 
