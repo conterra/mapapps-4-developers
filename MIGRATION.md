@@ -3,6 +3,37 @@
 This file contains notes for the migration of bundles to new minor versions of map.apps 4.
 The changes described here were not made to map.apps interfaces but concern changes in the ArcGIS API for JavaScript.
 
+## 4.20
+
+### Bundle renaming
+
+The bundle `esri` has been renamed to `@arcgis/core`. Therefore, some changes have to be made to the imports from `esri` and dependency declarations of the old bundle
+
+This effects the files:
+- src/main/js/bundles/sample_camera/CameraControlFactory.ts
+- src/main/js/bundles/sample_camera/manifest.json
+- src/main/js/bundles/sample_camera_js/manifest.json
+
+### Omnisearch removal
+
+The bundle `omnisearch` has been removed from map.apps , including some changes in the theming. Therefore, change the following properties in src/main/js/bundles/theme-custom/styles/themeSettings.less
+
+Add the following variable definitions:
+
+* `@ct-inverted-background-color: #ffffff;`
+* `@ct-inverted-text-color: #000000;`
+
+Delete the following variable definitions:
+
+* `@ct-omnisearch-input-background-color`
+* `@ct-omnisearch-input-text-color`
+
+Rename the following variable definitions:
+
+* `@ct-omnisearch-result-list-hover-color` → `@ct-search-ui-result-list-hover-color`
+* `@ct-omnisearch-drawer-button-background-color` → `@ct-drawer-button-background-color`
+* `@ct-omnisearch-drawer-button-icon-color` → `@ct-drawer-button-icon-color`
+
 ## 4.19
 
 Follow the steps in [CHANGELOG.md](https://github.com/conterra/mapapps-4-developers/blob/master/CHANGELOG.md).

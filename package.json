@@ -12,11 +12,11 @@
       "e2e-test:ui": "npx playwright test --ui"
     },
     "dependencies": {
-        "arcgis-js-api": "4.31.6",
+        "@arcgis/core": "^4.33.9",
         "vue": "2.7.16"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "~4.19.2",
+        "@conterra/ct-mapapps-typings": "next",
         "@conterra/mapapps-mocha-runner": "1.1.1",
         "@conterra/reactivity-core": "^0.5.0",
         "@playwright/test": "^1.52.0",
