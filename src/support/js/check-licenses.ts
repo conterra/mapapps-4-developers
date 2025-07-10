@@ -41,7 +41,7 @@ const ACCEPTED_LICENSES = [
 // Packages with licenses that are not recognized properly by license-checker.
 // These must be checked manually.
 const SKIP_PACKAGES: string[] = [
-    "arcgis-js-api@4.31.6"
+    "@arcgis/core@4.33.9"
 ];
 
 initChecker(
