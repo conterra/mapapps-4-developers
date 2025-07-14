@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.19.3] - TBD
+## [4.19.3] - 11.07.2025
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.19.3`
