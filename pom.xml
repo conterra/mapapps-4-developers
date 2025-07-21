@@ -339,12 +339,12 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.20.0-SNAPSHOT</mapapps.version>
+        <mapapps.version>4.20.0-PRE-1</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
-        <ct.jsregistry.version>2.1.7-SNAPSHOT</ct.jsregistry.version>
+        <ct.jsregistry.version>2.1.7</ct.jsregistry.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
