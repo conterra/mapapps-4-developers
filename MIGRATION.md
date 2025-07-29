@@ -14,7 +14,7 @@ This effects the files:
 - src/main/js/bundles/sample_camera/manifest.json
 - src/main/js/bundles/sample_camera_js/manifest.json
 
-### Omnisearch removal
+### Changes in themeSettings.less due to Omnisearch removal
 
 The bundle `omnisearch` has been removed from map.apps , including some changes in the theming. Therefore, change the following properties in src/main/js/bundles/theme-custom/styles/themeSettings.less
 
