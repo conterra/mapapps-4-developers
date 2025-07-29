@@ -23,6 +23,10 @@ Add the following variable definitions:
 * `@ct-inverted-background-color: #ffffff;`
 * `@ct-inverted-text-color: #000000;`
 
+Use `@ct-inverted-background-color` as value for `@ct-drawer-button-background-color`
+
+* `@ct-drawer-button-background-color: @ct-inverted-background-color;`
+
 Delete the following variable definitions:
 
 * `@ct-omnisearch-input-background-color`
