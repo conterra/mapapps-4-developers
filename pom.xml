@@ -344,7 +344,7 @@
         <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
-        <ct.jsregistry.version>2.1.7</ct.jsregistry.version>
+        <ct.jsregistry.version>2.1.8-SNAPSHOT</ct.jsregistry.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
