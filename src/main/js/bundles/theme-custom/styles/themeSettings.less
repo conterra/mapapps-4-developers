@@ -15,6 +15,8 @@
 @minor-border-color: @secondary-color;					// Color of borders inside widgets: horizontal line in Calendar between weeks, around color swatches in ColorPalette, above Dialog action bar
 @popup-border-color: @secondary-color;					// Border for Dialog, Menu, Tooltip.   Must also update tooltip.png (the arrow image file) to match
 
+@ct-inverted-background-color: #fff;                        // background-color for widgets that stay in bright theme no matter if the base theme is dark or light (e.g. search-ui, calcite inputs)
+@ct-inverted-text-color: #000;                              // text-color for widgets that stay in bright theme no matter if the base theme is dark or light (e.g. search-ui, calcite inputs)
 
 @disabled-border-color: @disabled-color;						// Border color for disabled/readonly Button, TextBox etc. widgets
 @disabled-background-color: darken(@disabled-color, 10%);                                // Disabled button, textbox, etc.
@@ -250,11 +252,11 @@
 @ct-dGrid-header-background-color: @ct-highlight-color;
 @ct-dGrid-header-text-color: @ct-highlight-text-color;
 @ct-dGrid-hovered-row-color: desaturate(lighten(@ct-highlight-color, 10%), 5%); //bg color of hovered grid rows  TODO: rename to '@ct-dGrid-header-hovered-background-color:'
-@ct-dGrid-hovered-row-text-color: @ct-highlight-text-color; //text color of hovered grid rows
-@ct-dGrid-highlighted-row-color: lighten(@ct-icon-muted-hovered-color, 10%); //bg color of hovered grid rows //TODO: rename to '@ct-dGrid-hovered-row-color'
-@ct-dGrid-highlighted-row-text-color: @ct-highlight-text-color; //text color of hovered grid rows  //TODO: rename to '@ct-dGrid-hovered-text-color'
-@ct-dGrid-selected-row-color: darken(@ct-dGrid-highlighted-row-color, 20%); //bg color of selected grid rows
-@ct-dGrid-selected-row-text-color: @ct-dGrid-highlighted-row-text-color; //text color of selected grid rows
+@ct-dGrid-hovered-row-text-color: @document-text-color; //text color of hovered grid rows
+@ct-dGrid-highlighted-row-color: lighten(@ct-icon-muted-hovered-color, 20%); //bg color of hovered grid rows //TODO: rename to '@ct-dGrid-hovered-row-color'
+@ct-dGrid-highlighted-row-text-color: @ct-dGrid-hovered-row-text-color; //text color of hovered grid rows  //TODO: rename to '@ct-dGrid-hovered-text-color'
+@ct-dGrid-selected-row-color: darken(@ct-dGrid-highlighted-row-color, 10%); //bg color of selected grid rows
+@ct-dGrid-selected-row-text-color: @ct-dGrid-hovered-row-text-color; //text color of selected grid rows
 @ct-dGrid-border-color: @ct-dGrid-background-color;
 @ct-dGrid-vertical-table-borders: false;
 @ct-dGrid-horizontal-table-borders: true;
@@ -265,12 +267,9 @@
 @ct-scrollbar-thumb-color: darken(@ct-highlight-color, 10);
 @ct-scrollbar-thumb-border-color: #fff;
 
-// Omni Search Colors
-@ct-omnisearch-input-background-color: #fff;
-@ct-omnisearch-input-text-color: #000;
-@ct-omnisearch-result-list-hover-color: @minor-selected-color;
-@ct-omnisearch-drawer-button-background-color: @ct-omnisearch-input-background-color;                                   // special drawer button when placed next to omnisearch
-@ct-omnisearch-drawer-button-icon-color: darken(@disabled-text-color, 30);
+@ct-search-ui-result-list-hover-color: @minor-selected-color;
+@ct-drawer-button-background-color: @ct-inverted-background-color;                                   // special drawer button when placed next to search-ui
+@ct-drawer-button-icon-color: darken(@disabled-text-color, 30);
 
 // Scale Bar Colors
 @ct-scalebar-color: lighten(@ct-primary-contrast-text-color, 10%);

@@ -3,8 +3,8 @@ import { debounceOrCancel, ifDefined } from "apprt-binding/Transformers";
 import { InjectedReference } from "apprt-core/InjectedReference";
 import Vue from "apprt-vue/Vue";
 import VueDijit from "apprt-vue/VueDijit";
-import type Camera from "esri/Camera";
-import type Point from "esri/geometry/Point";
+import type Camera from "@arcgis/core/Camera";
+import type Point from "@arcgis/core/geometry/Point";
 import CameraControls from "./CameraControls.ts.vue";
 
 import type { MapWidgetModel } from "map-widget/api";
