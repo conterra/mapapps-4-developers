@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [4.20.0] - TBD
 
+- `package-lock.json` now part of the repository and not longer ignored by `.gitignore`
+  - We recommend the use of `package-lock.json` to ensure you build environment is using stable dependencies.
+
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.20.0`
 - Update `ct.jsregistry.version` property to `2.1.8`
