@@ -8,7 +8,7 @@
     To run checks yourself (e.g. to update the allow list or to get details), install
     license-checker yourself and run it from the project root directory:
 
-        $ npm install -g license-checker
+        $ pnpm install -g license-checker
         $ license-checker --summary # outputs list of used licenses
         $ license-checker --json    # outputs details
 
@@ -40,9 +40,7 @@ const ACCEPTED_LICENSES = [
 
 // Packages with licenses that are not recognized properly by license-checker.
 // These must be checked manually.
-const SKIP_PACKAGES: string[] = [
-    "@arcgis/core@4.33.9"
-];
+const SKIP_PACKAGES: string[] = ["@arcgis/core@4.33.14"];
 
 initChecker(
     {

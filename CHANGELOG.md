@@ -4,8 +4,11 @@ All notable changes to this project will be documented in this file.
 
 ## [4.20.0] - TBD
 
-- `package-lock.json` now part of the repository and not longer ignored by `.gitignore`
-  - We recommend the use of `package-lock.json` to ensure you build environment is using stable dependencies.
+- Migrate to the package manager [PNPM](https://pnpm.io/) (previously: NPM).
+  PNPM supports additional settings like `onlyBuiltDependencies` that reduce attack vectors from the supply chain.
+  It also offers improved performance.
+- PNPM's lockfile `pnpm-lock.yaml` is now part of the repository and no longer ignored by `.gitignore`.
+  - We recommend the use of `pnpm-lock.yaml` to ensure your build environment is using stable dependencies.
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.20.0`
