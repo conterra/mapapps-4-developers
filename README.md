@@ -43,7 +43,7 @@ If you like to run the tests, you need to install Playwright and its dependencie
 
 ```bash
 # Install playwright
-npx playwright install --with-deps
+pnpx playwright install --with-deps
 ```
 
 After that, start the development server and run the tests:
@@ -52,7 +52,7 @@ After that, start the development server and run the tests:
 # start dev server
 mvn compile -Denv=dev -Pinclude-mapapps-deps
 # run end-to-end tests
-npm run e2e-test
+pnpm run e2e-test
 ```
 
 In headed mode test browser are shown during the test execution.
@@ -60,7 +60,7 @@ To run the tests in headed mode, execute:
 
 ```bash
 # run end-to-end tests headed
-npm run e2e-test:headed
+pnpm run e2e-test:headed
 ```
 
 We also recommend installing the VS Code Extension for Playwright, which allows you to run and debug tests directly in the IDE.

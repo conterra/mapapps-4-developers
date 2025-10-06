@@ -1,0 +1,13 @@
+onlyBuiltDependencies:
+  - "esbuild"
+  - "puppeteer"
+
+ignoredBuiltDependencies:
+  - "@vaadin/vaadin-usage-statistics"
+  - "es5-ext"
+
+# Needed for compatibility with old packages.
+# This produces a legacy node_modules layout where every package can see every other package.
+shamefullyHoist: true
+
+linkWorkspacePackages: false
