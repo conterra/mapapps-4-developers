@@ -12,7 +12,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.20.0`
-- Update `ct.jsregistry.version` property to `2.1.8`
+- Update `ct.jsregistry.version` property to `2.1.9`
 
 ### Changes in package.json
 - In the dependencies section, change `"arcgis-js-api": "4.31.6"` to `"@arcgis/core": "4.33.9"`
