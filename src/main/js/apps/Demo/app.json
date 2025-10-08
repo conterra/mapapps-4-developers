@@ -25,19 +25,19 @@
                         {
                             "title": "Gemeinden",
                             "type": "AGS_FEATURE",
-                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/0",
+                            "url": "https://services.conterra.de/server/rest/services/mapapps/grenzen/FeatureServer/0",
                             "definitionExpression": "kgs8 LIKE '05515%'"
                         },
                         {
                             "title": "Kreise",
                             "type": "AGS_FEATURE",
-                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/1",
+                            "url": "https://services.conterra.de/server/rest/services/mapapps/grenzen/FeatureServer/1",
                             "definitionExpression": "land_nr = 5"
                         },
                         {
                             "title": "Bundeslaender",
                             "type": "AGS_FEATURE",
-                            "url": "https://services.conterra.de/arcgis/rest/services/common/grenzen/FeatureServer/2"
+                            "url": "https://services.conterra.de/server/rest/services/mapapps/grenzen/FeatureServer/2"
                         }
                     ]
                 },
