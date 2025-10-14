@@ -9,15 +9,15 @@ importers:
   .:
     dependencies:
       '@arcgis/core':
-        specifier: ^4.33.10
+        specifier: ^4.33.14
         version: 4.33.14
       vue:
         specifier: 2.7.16
         version: 2.7.16
     devDependencies:
       '@conterra/ct-mapapps-typings':
-        specifier: 4.19.3
-        version: 4.19.3
+        specifier: 4.20.0
+        version: 4.20.0
       '@conterra/mapapps-mocha-runner':
         specifier: 1.1.1
         version: 1.1.1(mocha@11.0.1)
@@ -649,8 +649,8 @@ packages:
     resolution: {integrity: sha512-bkFqkLhh3pMBUQQkpVgWDWq/lqzc2678eUyDlTBhRqhCHFguYYGM0Efga7tYk4TogG/3x0EEl66/OQ+WGbWB/Q==}
     engines: {node: '>=6.9.0'}
 
-  '@conterra/ct-mapapps-typings@4.19.3':
-    resolution: {integrity: sha512-5RDn3wEZtZOG2RnvZnSRq0Mu6blPHVBae3grU9jdlK5UhhQ8WUW5DFHagJtIZ5SWA/ZXlPysG+THXaTzjc0oYg==}
+  '@conterra/ct-mapapps-typings@4.20.0':
+    resolution: {integrity: sha512-CoOP56OeCmr5s3AF3ePbs27SExBLU+H4AJ5VcY4+h5VpzHZaqrzs84YlEUHEVGUUxLhptgEzv9MvH9Q7j2gEtQ==}
 
   '@conterra/mapapps-mocha-runner@1.1.1':
     resolution: {integrity: sha512-ItUeCIibsAxt6oXDjCSFhq+1nZbdQT7HqBgLeUrP/BrWWfM5LUvC6ejPD7mqE68h5o0bLQQetmrS6+yF9PsWxg==}
@@ -6261,7 +6261,7 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@conterra/ct-mapapps-typings@4.19.3': {}
+  '@conterra/ct-mapapps-typings@4.20.0': {}
 
   '@conterra/mapapps-mocha-runner@1.1.1(mocha@11.0.1)':
     dependencies:
