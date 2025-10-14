@@ -15,11 +15,11 @@ All notable changes to this project will be documented in this file.
 - Update `ct.jsregistry.version` property to `2.1.9`
 
 ### Changes in package.json
-- In the dependencies section, change `"arcgis-js-api": "4.31.6"` to `"@arcgis/core": "4.33.9"`
+- In the dependencies section, change `"arcgis-js-api": "4.31.6"` to `"@arcgis/core": "4.33.14"`
 - In the devDependencies section, change `@conterra/ct-mapapps-typings` to `4.20.0`
 
 ### Changes in check-licenses.ts
-- Change `arcgis-js-api@4.31.6` to `@arcgis/core@4.33.9`
+- Change `arcgis-js-api@4.31.6` to `@arcgis/core@4.33.14`
 
 ### Changes in the src/ Folder
 - See [Migration Guide](./MIGRATION.md#4200---TBD)
