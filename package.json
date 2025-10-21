@@ -12,35 +12,38 @@
       "e2e-test:ui": "playwright test --ui"
     },
     "dependencies": {
-        "@arcgis/core": "^4.33.14",
+        "@arcgis/core": "4.33.14",
         "vue": "2.7.16"
     },
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "4.20.0",
         "@conterra/mapapps-mocha-runner": "1.1.1",
-        "@conterra/reactivity-core": "^0.5.0",
+        "@conterra/reactivity-core": "0.8.0",
         "@playwright/test": "^1.52.0",
         "@types/chai": "4.3.20",
         "@types/license-checker": "^25.0.6",
         "@types/mocha": "10.0.10",
-        "@types/node": "^22.15.17",
+        "@types/node": "^22.18.1",
         "@types/sinon": "^17.0.3",
         "chai": "4.5.0",
-        "ct-mapapps-browser-sync": "0.0.45",
-        "ct-mapapps-gulp-js": "0.10.13",
+        "ct-mapapps-browser-sync": "0.0.47",
+        "ct-mapapps-gulp-js": "0.10.15",
+        "dojo-typings": "1.11.11",
+        "dotenv": "17.2.3",
+        "eslint": "8.57.1",
         "eslint-config-ct-prodeng": "1.5.0",
         "license-checker": "25.0.1",
-        "mocha": "11.0.1",
-        "puppeteer": "24.6.1",
+        "mocha": "11.7.4",
+        "puppeteer": "24.25.0",
         "sinon": "19.0.2",
         "stylelint-config-ct-prodeng": "2.0.0",
         "stylelint-config-recommended-less": "2.0.0",
         "stylelint-config-recommended": "13.0.0",
         "stylelint": "15.11.0",
         "ts-node": "^10.9.1",
-        "tsx": "^4.19.2",
-        "typescript": "5.7.3",
+        "tsx": "^4.20.5",
+        "typescript": "5.9.2",
         "vue-template-compiler": "2.7.16"
     },
-    "packageManager": "pnpm@10.17.1"
+    "packageManager": "pnpm@10.18.3"
 }
