@@ -9,14 +9,28 @@ All notable changes to this project will be documented in this file.
   It also offers improved performance.
 - PNPM's lockfile `pnpm-lock.yaml` is now part of the repository and no longer ignored by `.gitignore`.
   - We recommend the use of `pnpm-lock.yaml` to ensure your build environment is using stable dependencies.
+- Add dotenv to support local `.env` files for property replacement.
+  - The `gulpfile.js` was updated to load environment variables from a `.env` file if present.
 
 ### Changes in pom.xml
 - Update `mapapps.version` property to `4.20.0`
 - Update `ct.jsregistry.version` property to `2.1.9`
+- Update `frontend-maven-plugin` plugin version to `1.15.4`
 
 ### Changes in package.json
 - In the dependencies section, change `"arcgis-js-api": "4.31.6"` to `"@arcgis/core": "4.33.14"`
 - In the devDependencies section, change `@conterra/ct-mapapps-typings` to `4.20.0`
+- In the devDependencies section, change `ct-mapapps-gulp-js` to `0.10.15`
+- In the devDependencies section, change `ct-mapapps-browser-sync` to `0.0.47`
+- In the devDependencies section, change `@conterra/reactivity-core` to `0.8.0`
+- In the devDependencies section, change `@types/node` to `^22.18.1`
+- In the devDependencies section, change `mocha` to `11.7.4`
+- In the devDependencies section, change `puppeteer` to `24.25.0`
+- In the devDependencies section, change `tsx` to `^4.20.5`
+- In the devDependencies section, change `typescript` to `5.9.2`
+- In the devDependencies section add `dojo-typings` to `1.11.11`
+- In the devDependencies section add `eslint` to `8.57.1`
+- In the devDependencies section add `dotenv` to `17.2.3`
 
 ### Changes in check-licenses.ts
 - Change `arcgis-js-api@4.31.6` to `@arcgis/core@4.33.14`

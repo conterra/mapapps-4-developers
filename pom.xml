@@ -89,11 +89,11 @@
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.14.2</version>
+                    <version>1.15.4</version>
                     <configuration>
                         <nodeVersion>v22.17.1</nodeVersion>
                         <!-- Keep this in sync with the package manager version in package.json -->
-                        <pnpmVersion>10.17.1</pnpmVersion>
+                        <pnpmVersion>10.18.3</pnpmVersion>
                     </configuration>
                 </plugin>
                 <plugin>

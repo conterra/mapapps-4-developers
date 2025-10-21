@@ -1,5 +1,6 @@
 /.idea
 /.vs
+/.env
 **/nbactions.xml
 **/*.iml
 **/*.lnk
