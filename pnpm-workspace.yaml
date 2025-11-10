@@ -1,3 +1,6 @@
+overrides:
+  "@types/minimatch": "-"
+
 onlyBuiltDependencies:
   - "esbuild"
   - "puppeteer"
