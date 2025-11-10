@@ -1,0 +1,42 @@
+name: Notify Teams on new PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Post card to Microsoft Teams
+        env:
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+        run: |
+          payload=$(cat <<'JSON'
+          {
+            "@type": "MessageCard",
+            "@context": "http://schema.org/extensions",
+            "summary": "Neuer Pull Request",
+            "themeColor": "0076D7",
+            "title": "Neuer PR: #${{ github.event.pull_request.number }} – ${{ github.event.pull_request.title }}",
+            "sections": [{
+              "activityTitle": "[${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }}) hat einen Pull Request eröffnet",
+              "facts": [
+                {"name": "Repository", "value": "${{ github.repository }}"},
+                {"name": "Branch", "value": "${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}"},
+                {"name": "Entwurf", "value": "${{ github.event.pull_request.draft }}"}
+              ],
+              "markdown": true
+            }],
+            "potentialAction": [{
+              "@type": "OpenUri",
+              "name": "PR öffnen",
+              "targets": [{"os": "default", "uri": "${{ github.event.pull_request.html_url }}"}]
+            }]
+          }
+          JSON
+          )
+          curl -sS -X POST \
+            -H "Content-Type: application/json" \
+            -d "$payload" \
+            "$TEAMS_WEBHOOK_URL"
