@@ -24,7 +24,7 @@ jobs:
               "facts": [
                 {"name": "Repository", "value": "${{ github.repository }}"},
                 {"name": "Branch", "value": "${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}"},
-                {"name": "Entwurf", "value": "${{ github.event.pull_request.draft }}"}
+                {"name": "Beschreibung", "value": "${{ github.event.pull_request.body }}"}
               ],
               "markdown": true
             }],
