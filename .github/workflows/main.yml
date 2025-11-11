@@ -1,4 +1,4 @@
-name: Send PR events to Power Automate
+name: Send PR events to MS Power Automate
 
 on:
   pull_request_target:
