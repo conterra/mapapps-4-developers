@@ -2,7 +2,7 @@ name: Send PR events to Power Automate
 
 on:
   pull_request_target:
-    types: [opened, reopened, ready_for_review]
+    types: [opened]
 
 jobs:
   notify-power-automate:
@@ -11,18 +11,14 @@ jobs:
       contents: read
 
     steps:
-      - name: Prepare and send PR event to Power Automate
+      - name: POST raw PR event to Power Automate
         env:
           FLOW_URL: ${{ secrets.FLOW_WEBHOOK_URL }}
         run: |
           set -euo pipefail
-
-          echo "→ Sending pull_request event to Power Automate..."
           curl -sS -X POST \
             -H "Content-Type: application/json" \
             -H "X-GitHub-Event: pull_request" \
             -H "X-Repository: $GITHUB_REPOSITORY" \
             --data-binary "@$GITHUB_EVENT_PATH" \
             "$FLOW_URL"
-
-          echo "✅ Event sent for PR #${{ github.event.number }} in ${{ github.repository }}"
