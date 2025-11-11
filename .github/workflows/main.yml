@@ -1,42 +1,28 @@
-name: Notify Teams on new PR
+name: Send PR events to Power Automate
 
 on:
-  pull_request:
-    types: [opened]
+  pull_request_target:
+    types: [opened, reopened, ready_for_review]
 
 jobs:
-  notify:
+  notify-power-automate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
     steps:
-      - name: Post card to Microsoft Teams
+      - name: Prepare and send PR event to Power Automate
         env:
-          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          FLOW_URL: ${{ secrets.FLOW_WEBHOOK_URL }}
         run: |
-          payload=$(cat <<'JSON'
-          {
-            "@type": "MessageCard",
-            "@context": "http://schema.org/extensions",
-            "summary": "Neuer Pull Request",
-            "themeColor": "0076D7",
-            "title": "Neuer PR: #${{ github.event.pull_request.number }} – ${{ github.event.pull_request.title }}",
-            "sections": [{
-              "activityTitle": "[${{ github.event.pull_request.user.login }}](${{ github.event.pull_request.user.html_url }}) hat einen Pull Request eröffnet",
-              "facts": [
-                {"name": "Repository", "value": "${{ github.repository }}"},
-                {"name": "Branch", "value": "${{ github.event.pull_request.head.ref }} → ${{ github.event.pull_request.base.ref }}"},
-                {"name": "Beschreibung", "value": "${{ github.event.pull_request.body }}"}
-              ],
-              "markdown": true
-            }],
-            "potentialAction": [{
-              "@type": "OpenUri",
-              "name": "PR öffnen",
-              "targets": [{"os": "default", "uri": "${{ github.event.pull_request.html_url }}"}]
-            }]
-          }
-          JSON
-          )
+          set -euo pipefail
+
+          echo "→ Sending pull_request event to Power Automate..."
           curl -sS -X POST \
             -H "Content-Type: application/json" \
-            -d "$payload" \
-            "$TEAMS_WEBHOOK_URL"
+            -H "X-GitHub-Event: pull_request" \
+            -H "X-Repository: $GITHUB_REPOSITORY" \
+            --data-binary "@$GITHUB_EVENT_PATH" \
+            "$FLOW_URL"
+
+          echo "✅ Event sent for PR #${{ github.event.number }} in ${{ github.repository }}"
