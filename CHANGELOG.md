@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
   It also offers improved performance.
 - PNPM's lockfile `pnpm-lock.yaml` is now part of the repository and no longer ignored by `.gitignore`.
   - We recommend the use of `pnpm-lock.yaml` to ensure your build environment is using stable dependencies.
+- Add PNPM's file `pnpm-workspace.yaml` to adopt node_modules new folder structure.
 - Add dotenv to support local `.env` files for property replacement.
   - The `gulpfile.js` was updated to load environment variables from a `.env` file if present.
 
