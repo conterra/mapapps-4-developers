@@ -2,7 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.20.0] - TBD
+## [4.20.2] - 28.11.2025
+
+### Changes in pom.xml
+- Update `mapapps.version` property to `4.20.2`
+
+## [4.20.1] - never released
+
+Version number accidentally reserved in npm registry.
+
+## [4.20.0] - 19.11.2025
 
 - Migrate to the package manager [PNPM](https://pnpm.io/) (previously: NPM).
   PNPM supports additional settings like `onlyBuiltDependencies` that reduce attack vectors from the supply chain.
