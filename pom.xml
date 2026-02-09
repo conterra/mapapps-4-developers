@@ -341,9 +341,9 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.20.3-SNAPSHOT</mapapps.version>
+        <mapapps.version>4.20.3</mapapps.version>
         <!-- JS lib versions -->
-        <apprt.version>4.20.3</apprt.version>
+        <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
         <ct.jsregistry.version>2.1.10</ct.jsregistry.version>
