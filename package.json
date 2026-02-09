@@ -16,7 +16,7 @@
         "vue": "2.7.16"
     },
     "devDependencies": {
-        "@conterra/ct-mapapps-typings": "4.20.0",
+        "@conterra/ct-mapapps-typings": "4.20.3",
         "@conterra/mapapps-mocha-runner": "1.1.1",
         "@conterra/reactivity-core": "0.8.0",
         "@playwright/test": "^1.52.0",

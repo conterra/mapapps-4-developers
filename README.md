@@ -70,13 +70,21 @@ For details about end-to-end testing refer to the [Developer's Guide](https://do
 
 ## Updating from older versions
 
+### from 4.20.2 to 4.20.3
+
+See [Changelog](./CHANGELOG.md#4203---10022026)
+
+### from 4.20.0 to 4.20.2
+
+See [Changelog](./CHANGELOG.md#4202---28112025)
+
 ### from 4.19.3 to 4.20.0
 
-See [Changelog](./CHANGELOG.md#4200---TBD)
+See [Changelog](./CHANGELOG.md#4200---19112025)
 
 ### from 4.19.2 to 4.19.3
 
-See [Changelog](./CHANGELOG.md#4193---TBD)
+See [Changelog](./CHANGELOG.md#4193---11072025)
 
 ### from 4.19.1 to 4.19.2
 

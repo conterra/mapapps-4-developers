@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.20.3] - 10.02.2026
+
+### Changes in pom.xml
+
+- Update `mapapps.version` property to `4.20.3`
+- Update `ct.jsregistry.version` property to `2.1.10`
+
+### Changes in package.json
+
+- In the devDependencies section, change `@conterra/ct-mapapps-typings` to `4.20.3`
+
 ## [4.20.2] - 28.11.2025
 
 ### Changes in pom.xml
