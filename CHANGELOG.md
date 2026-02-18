@@ -62,6 +62,7 @@ Version number accidentally reserved in npm registry.
     - Added dev dependencies in package.json
         - `"@playwright/test": "^1.52.0"`
         - `"@types/node": "^22.15.17"`
+    - Added `playwright.config.ts`
     - Added new tests under `src/test/end-to-end`
     - scripts added to `package.json`:
         - `"e2e-test": "npx playwright test"`
