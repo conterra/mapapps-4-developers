@@ -13,7 +13,7 @@
             <dependency>
                 <groupId>de.conterra.mapapps</groupId>
                 <artifactId>ct-mapapps-js-bom</artifactId>
-                <version>${mapapps.version}</version>
+                <version>${apprt.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -24,7 +24,7 @@
         <dependency>
             <groupId>de.conterra.mapapps</groupId>
             <artifactId>ct-mapapps-js-bom-dev-test</artifactId>
-            <version>${mapapps.version}</version>
+            <version>${apprt.version}</version>
             <type>pom</type>
             <scope>test</scope>
         </dependency>
@@ -341,12 +341,12 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.20.2</mapapps.version>
+        <mapapps.version>4.20.3</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
-        <ct.jsregistry.version>2.1.9</ct.jsregistry.version>
+        <ct.jsregistry.version>2.1.10</ct.jsregistry.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
@@ -386,7 +386,7 @@
                 <dependency>
                     <groupId>de.conterra.mapapps</groupId>
                     <artifactId>ct-mapapps-js-bom-dev</artifactId>
-                    <version>${mapapps.version}</version>
+                    <version>${apprt.version}</version>
                     <type>pom</type>
                     <scope>test</scope>
                 </dependency>
@@ -573,7 +573,7 @@
                 <dependency>
                     <groupId>de.conterra.mapapps</groupId>
                     <artifactId>ct-mapapps-js-bom-prod</artifactId>
-                    <version>${mapapps.version}</version>
+                    <version>${apprt.version}</version>
                     <type>pom</type>
                     <scope>test</scope>
                 </dependency>

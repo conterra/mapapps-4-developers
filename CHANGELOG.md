@@ -2,9 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.20.3] - 10.02.2026
+
+### Changes in pom.xml
+
+- Update `mapapps.version` property to `4.20.3`
+- Update `ct.jsregistry.version` property to `2.1.10`
+- (Optional): the placeholder `apprt.version` is used in place of `mapapps.version` for all dependencies which transport map.apps javascript resources.
+
+### Changes in package.json
+
+- In the devDependencies section, change `@conterra/ct-mapapps-typings` to `4.20.3`
+
 ## [4.20.2] - 28.11.2025
 
 ### Changes in pom.xml
+
 - Update `mapapps.version` property to `4.20.2`
 
 ## [4.20.1] - never released
@@ -23,11 +36,13 @@ Version number accidentally reserved in npm registry.
   - The `gulpfile.js` was updated to load environment variables from a `.env` file if present.
 
 ### Changes in pom.xml
+
 - Update `mapapps.version` property to `4.20.0`
 - Update `ct.jsregistry.version` property to `2.1.9`
 - Update `frontend-maven-plugin` plugin version to `1.15.4`
 
 ### Changes in package.json
+
 - In the dependencies section, change `"arcgis-js-api": "4.31.6"` to `"@arcgis/core": "4.33.14"`
 - In the devDependencies section, change `@conterra/ct-mapapps-typings` to `4.20.0`
 - In the devDependencies section, change `ct-mapapps-gulp-js` to `0.10.15`
