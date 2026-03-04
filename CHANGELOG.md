@@ -59,9 +59,9 @@ Version number accidentally reserved in npm registry.
 
 or simply run:
 ```sh
-npm uninstall arcgis-js-api
-npm i --save @arcgis/core@4.33.14
-npm i --save-dev @conterra/ct-mapapps-typings@4.20.0 ct-mapapps-gulp-js@0.10.15 ct-mapapps-browser-sync@0.0.47 @conterra/reactivity-core@0.8.0 @types/node@22.18.1 mocha@11.7.4 puppeteer@24.25.0 tsx@4.20.5 typescript@5.9.2 dojo-typings@1.11.11 eslint@8.57.1 dotenv@17.2.3
+pnpm remove arcgis-js-api
+pnpm add @arcgis/core@4.33.14
+pnpm add -D @conterra/ct-mapapps-typings@4.20.0 ct-mapapps-gulp-js@0.10.15 ct-mapapps-browser-sync@0.0.47 @conterra/reactivity-core@0.8.0 @types/node@22.18.1 mocha@11.7.4 puppeteer@24.25.0 tsx@4.20.5 typescript@5.9.2 dojo-typings@1.11.11 eslint@8.57.1 dotenv@17.2.3
 ```
 
 ### Changes in check-licenses.ts
