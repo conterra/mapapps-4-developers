@@ -57,6 +57,13 @@ Version number accidentally reserved in npm registry.
 - In the devDependencies section add `eslint` to `8.57.1`
 - In the devDependencies section add `dotenv` to `17.2.3`
 
+or simply run:
+```sh
+pnpm remove arcgis-js-api
+pnpm add @arcgis/core@4.33.14
+pnpm add -D @conterra/ct-mapapps-typings@4.20.0 ct-mapapps-gulp-js@0.10.15 ct-mapapps-browser-sync@0.0.47 @conterra/reactivity-core@0.8.0 @types/node@22.18.1 mocha@11.7.4 puppeteer@24.25.0 tsx@4.20.5 typescript@5.9.2 dojo-typings@1.11.11 eslint@8.57.1 dotenv@17.2.3
+```
+
 ### Changes in check-licenses.ts
 - Change `arcgis-js-api@4.31.6` to `@arcgis/core@4.33.14`
 
