@@ -31,4 +31,7 @@ module.exports = {
 
     // should the browser be opened pointing to the dev server?
     openBrowser: true,
+
+    // enable/disable csp injection (default is true)
+    csp: true,
 };
