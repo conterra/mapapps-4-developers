@@ -18,7 +18,7 @@
     "devDependencies": {
         "@conterra/ct-mapapps-typings": "4.20.3",
         "@conterra/mapapps-mocha-runner": "1.1.1",
-        "@conterra/reactivity-core": "0.8.0",
+        "@conterra/reactivity-core": "0.8.8",
         "@playwright/test": "^1.52.0",
         "@types/chai": "4.3.20",
         "@types/license-checker": "^25.0.6",
@@ -26,10 +26,10 @@
         "@types/node": "^22.18.1",
         "@types/sinon": "^17.0.3",
         "chai": "4.5.0",
-        "ct-mapapps-browser-sync": "0.0.47",
-        "ct-mapapps-gulp-js": "0.10.15",
+        "ct-mapapps-browser-sync": "0.0.48",
+        "ct-mapapps-gulp-js": "0.10.17",
         "dojo-typings": "1.11.11",
-        "dotenv": "17.2.3",
+        "dotenv": "17.4.2",
         "eslint": "8.57.1",
         "eslint-config-ct-prodeng": "1.5.0",
         "license-checker": "25.0.1",
@@ -42,7 +42,8 @@
         "stylelint": "15.11.0",
         "ts-node": "^10.9.1",
         "tsx": "^4.20.5",
-        "typescript": "5.9.2",
+        "typescript": "5.9.3",
+        "vite": "7.3.5",
         "vue-template-compiler": "2.7.16"
     },
     "packageManager": "pnpm@11.8.0"

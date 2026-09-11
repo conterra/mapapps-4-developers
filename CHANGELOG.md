@@ -9,7 +9,12 @@ All notable changes to this project will be documented in this file.
 - Update `mapapps.version` property to `4.20.4`
 - Update `ct.jsregistry.version` property to `2.2.1`
 - Update `frontend-maven-plugin` to `2.0.1`
-- Updat `pnpm` to `11.8.0` 
+- Update `pnpm` to `11.8.0` 
+- Update some dependencies to newer versions:
+  - In the devDependencies section, update `ct-mapapps-gulp-js` to `0.10.17`, `ct-mapapps-browser-sync` to `0.0.48`,
+    `@conterra/reactivity-core` to `0.8.8`, `dotenv` to `17.4.2` and `typescript` to `5.9.3`.
+  - Add `vite` `7.3.5` to the devDependencies section. It is a required peer dependency of `ct-mapapps-gulp-js`
+  - Add `overrides` for some transitive dependencies to `pnpm-workspace.yaml`.
 
 ## [4.20.3] - 10.02.2026
 
