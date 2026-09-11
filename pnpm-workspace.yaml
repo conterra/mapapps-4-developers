@@ -14,3 +14,9 @@ ignoredBuiltDependencies:
 shamefullyHoist: true
 
 linkWorkspacePackages: false
+
+allowBuilds:
+  esbuild: true
+  puppeteer: true
+  "@vaadin/vaadin-usage-statistics": false
+  es5-ext: false

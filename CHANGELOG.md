@@ -2,10 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.20.x] - tbd
+## [4.20.4] - tbd
 
 - Add `csp.middleware.js` to support Content Security Policy (CSP) headers in the development server.
   - Update `gulpfile.js` middleware configuration to use `csp.middleware.js`.
+- Update `mapapps.version` property to `4.20.4`
+- Update `ct.jsregistry.version` property to `2.2.1`
+- Update `frontend-maven-plugin` to `2.0.1`
+- Updat `pnpm` to `11.8.0` 
 
 ## [4.20.3] - 10.02.2026
 

@@ -89,11 +89,11 @@
                 <plugin>
                     <groupId>com.github.eirslett</groupId>
                     <artifactId>frontend-maven-plugin</artifactId>
-                    <version>1.15.4</version>
+                    <version>2.0.1</version>
                     <configuration>
                         <nodeVersion>v22.17.1</nodeVersion>
                         <!-- Keep this in sync with the package manager version in package.json -->
-                        <pnpmVersion>10.18.3</pnpmVersion>
+                        <pnpmVersion>11.8.0</pnpmVersion>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -341,12 +341,12 @@
         <js.build.outputPath>${root.build.outputPath}/js</js.build.outputPath>
 
 
-        <mapapps.version>4.20.3</mapapps.version>
+        <mapapps.version>4.20.4-SNAPSHOT</mapapps.version>
         <!-- JS lib versions -->
         <apprt.version>${mapapps.version}</apprt.version>
 
         <!-- java lib versions -->
-        <ct.jsregistry.version>2.1.10</ct.jsregistry.version>
+        <ct.jsregistry.version>2.2.1</ct.jsregistry.version>
 
         <!-- the default app, replaced in the *.html files to switch app names-->
         <default.app.name>Demo</default.app.name>
