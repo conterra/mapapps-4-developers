@@ -70,6 +70,10 @@ For details about end-to-end testing refer to the [Developer's Guide](https://do
 
 ## Updating from older versions
 
+### from 4.20.3 to 4.20.4
+
+See [Changelog](./CHANGELOG.md#4204---21092026)
+
 ### from 4.20.2 to 4.20.3
 
 See [Changelog](./CHANGELOG.md#4203---10022026)
