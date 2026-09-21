@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.20.4] - tbd
+## [4.20.4] - 21.09.2026
 
 - Add `csp.middleware.js` to support Content Security Policy (CSP) headers in the development server.
   - Update `gulpfile.js` middleware configuration to use `csp.middleware.js`.
