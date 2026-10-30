@@ -91,9 +91,9 @@
                     <artifactId>frontend-maven-plugin</artifactId>
                     <version>2.0.1</version>
                     <configuration>
-                        <nodeVersion>v22.17.1</nodeVersion>
+                        <nodeVersion>v22.23.4</nodeVersion>
                         <!-- Keep this in sync with the package manager version in package.json -->
-                        <pnpmVersion>11.8.0</pnpmVersion>
+                        <pnpmVersion>11.28.9</pnpmVersion>
                     </configuration>
                 </plugin>
                 <plugin>
