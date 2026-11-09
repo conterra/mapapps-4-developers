@@ -46,5 +46,5 @@
         "vite": "7.3.5",
         "vue-template-compiler": "2.7.16"
     },
-    "packageManager": "pnpm@11.28.9
+    "packageManager": "pnpm@11.28.9"
 }
